@@ -1,24 +1,51 @@
-import React from 'react';
-import Navbar from './components/Navbar';
+import React, { Suspense, lazy } from 'react';
 import Hero from './components/Hero';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { ThemeProvider } from './context/ThemeContext';
+
+// Lazy load other components
+const Navbar = lazy(() => import('./components/Navbar'));
+const Services = lazy(() => import('./components/Services'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="h-32 w-full flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+  </div>
+);
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
-      <div className="fixed inset-0 bg-[url('https://images.unsplash.com/photo-1601662528567-526cd06f6582?auto=format&fit=crop&q=80')] opacity-[0.03] bg-repeat mix-blend-overlay pointer-events-none" />
-      <Navbar />
-      <main className="relative">
-        <Hero />
-        <Services />
-        <Portfolio />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-black dark:bg-black light:bg-white">
+        <div className="fixed inset-0 bg-[url('https://images.unsplash.com/photo-1601662528567-526cd06f6582?auto=format&fit=crop&q=80')] opacity-[0.03] bg-repeat mix-blend-overlay pointer-events-none" />
+        <main className="relative">
+          <Suspense fallback={<LoadingFallback />}>
+            <Navbar />
+          </Suspense>
+          
+          <Hero />
+          
+          <Suspense fallback={<LoadingFallback />}>
+            <Services />
+          </Suspense>
+          
+          <Suspense fallback={<LoadingFallback />}>
+            <Portfolio />
+          </Suspense>
+          
+          <Suspense fallback={<LoadingFallback />}>
+            <Contact />
+          </Suspense>
+          
+          <Suspense fallback={<LoadingFallback />}>
+            <Footer />
+          </Suspense>
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
 

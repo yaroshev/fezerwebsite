@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Hammer, Ruler, Paintbrush, Award } from 'lucide-react';
 import ServiceModal from './ServiceModal';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<null | typeof services[0]>(null);
+  const { elementRef, isVisible } = useIntersectionObserver();
 
   const services = [
     {
@@ -46,111 +48,111 @@ const Services = () => {
     {
       icon: <Hammer className="h-8 w-8" />,
       title: "Professional Installation",
-      description: "Expert installation by certified professionals",
+      description: "Expert installation services ensuring perfect fit and finish",
       features: [
-        "Precise fitting",
-        "Hardware installation",
-        "Level adjustment",
-        "Clean workspace",
-        "Quality inspection",
-        "Post-installation support"
+        "Site preparation",
+        "Professional installation team",
+        "Quality assurance checks",
+        "Clean-up services",
+        "Final inspection",
+        "Warranty coverage"
       ],
       benefits: [
-        "Professional finish",
-        "Warranty coverage",
+        "Professional results",
+        "Time-efficient installation",
         "Minimal disruption",
         "Expert craftsmanship"
       ],
       process: [
         {
-          title: "Site Preparation",
-          description: "We prepare the installation area and protect surrounding surfaces."
+          title: "Pre-Installation Inspection",
+          description: "We assess the installation site and prepare the area for work."
         },
         {
-          title: "Installation",
-          description: "Our team carefully installs each component with precision."
+          title: "Installation Process",
+          description: "Our expert team carefully installs your cabinetry with precision."
         },
         {
           title: "Quality Check",
-          description: "Thorough inspection of all installed elements for perfect functionality."
+          description: "Thorough inspection ensures everything meets our high standards."
         },
         {
           title: "Final Walkthrough",
-          description: "We demonstrate proper usage and care of your new installations."
+          description: "We demonstrate functionality and address any questions."
         }
       ]
     },
     {
       icon: <Paintbrush className="h-8 w-8" />,
       title: "Renovation Services",
-      description: "Complete kitchen and bathroom renovation services",
+      description: "Complete renovation solutions for your space",
       features: [
-        "Full space planning",
+        "Space planning",
+        "Design consultation",
         "Material selection",
-        "Lighting design",
-        "Plumbing coordination",
-        "Electrical updates",
-        "Project management"
+        "Project management",
+        "Construction oversight",
+        "Final finishing"
       ],
       benefits: [
-        "Increased home value",
-        "Modern functionality",
-        "Energy efficiency",
-        "Updated aesthetics"
+        "Comprehensive service",
+        "Expert project management",
+        "Quality materials",
+        "Timely completion"
       ],
       process: [
         {
           title: "Planning",
-          description: "Comprehensive planning including timeline and material selection."
+          description: "Detailed project planning and timeline development."
         },
         {
-          title: "Demolition",
-          description: "Careful removal of existing elements with minimal disruption."
+          title: "Design",
+          description: "Creating the perfect design for your renovation."
         },
         {
           title: "Construction",
-          description: "Skilled craftsmen execute the renovation according to plan."
+          description: "Expert execution of the renovation plan."
         },
         {
-          title: "Finishing",
-          description: "Final touches and thorough cleanup of the renovated space."
+          title: "Completion",
+          description: "Final touches and quality assurance."
         }
       ]
     },
     {
       icon: <Award className="h-8 w-8" />,
       title: "Quality Assurance",
-      description: "Premium materials and craftsmanship guaranteed",
+      description: "Rigorous quality control for lasting satisfaction",
       features: [
         "Material inspection",
         "Construction review",
-        "Hardware testing",
-        "Finish examination",
-        "Functionality check",
-        "Long-term warranty"
+        "Functionality testing",
+        "Finish inspection",
+        "Performance checks",
+        "Documentation"
       ],
       benefits: [
+        "Guaranteed quality",
+        "Long-term durability",
         "Peace of mind",
-        "Long-lasting quality",
-        "Superior materials",
-        "Expert workmanship"
+        "Warranty protection"
       ],
       process: [
         {
-          title: "Material Verification",
-          description: "Thorough inspection of all materials before construction begins."
+          title: "Initial Assessment",
+          description: "Thorough inspection of all materials and components."
         },
         {
-          title: "Construction Oversight",
-          description: "Regular quality checks throughout the building process."
+          title: "Construction Review",
+          description: "Regular checks during the construction process."
         },
         {
           title: "Final Inspection",
-          description: "Comprehensive testing of all components and features."
+          description: "Comprehensive testing of all installed elements."
         },
         {
           title: "Documentation",
-          description: "Detailed warranty information and care instructions provided."
+          description: "Detailed documentation of all quality assurance measures."
         }
       ]
     }
@@ -159,23 +161,35 @@ const Services = () => {
   return (
     <section id="services" className="py-32 section-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-white text-center mb-16">Our Services</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <h2 className="text-4xl font-bold dark:text-white light:text-black text-center mb-16">Our Services</h2>
+        <div 
+          ref={elementRef as React.RefObject<HTMLDivElement>}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {services.map((service, index) => (
             <div
               key={index}
               onClick={() => setSelectedService(service)}
-              className="group bg-white/[0.07] backdrop-blur-lg p-8 rounded-2xl border border-white/10 
-                hover:shadow-[0_15px_30px_-10px_rgba(255,255,255,0.08)] hover:-translate-y-1 hover:scale-[1.02]
-                hover:bg-white/[0.09] transition-all duration-500 ease-out cursor-pointer"
+              className={`group dark:bg-white/[0.07] light:bg-black/[0.07] backdrop-blur-lg p-8 rounded-2xl 
+                dark:border-white/10 light:border-black/10 
+                dark:hover:shadow-[0_15px_30px_-10px_rgba(255,255,255,0.08)] 
+                light:hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.08)] 
+                hover:-translate-y-1 hover:scale-[1.02]
+                dark:hover:bg-white/[0.09] light:hover:bg-black/[0.09] 
+                transition-all duration-500 ease-out cursor-pointer
+                ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
+              style={{
+                animationDelay: `${index * 100}ms`
+              }}
             >
-              <div className="text-gray-100 mb-6 group-hover:scale-110 group-hover:text-white transition-all duration-500">
+              <div className="dark:text-gray-100 light:text-gray-800 mb-6 group-hover:scale-110 
+                dark:group-hover:text-white light:group-hover:text-black transition-all duration-500">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4 transition-colors duration-500">
+              <h3 className="text-xl font-semibold dark:text-white light:text-black mb-4 transition-colors duration-500">
                 {service.title}
               </h3>
-              <p className="text-gray-400 group-hover:text-gray-200 transition-colors duration-500">
+              <p className="dark:text-gray-400 light:text-gray-600 dark:group-hover:text-gray-200 light:group-hover:text-gray-800 transition-colors duration-500">
                 {service.description}
               </p>
             </div>
