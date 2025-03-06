@@ -28,8 +28,7 @@ node_modules
 .DS_Store
 
 # Large media files
-public/DomumMarch24_NoLogo.mp4
-public/Sequence 01.mp4
+# Removed specific video files as they're now tracked with Git LFS
 
 # Build
 dist
