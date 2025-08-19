@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { site, nav as navItems, services as servicesContent, contact as contactContent, footer as footerContent } from '../content';
 
 const Footer = () => {
   return (
@@ -8,25 +9,31 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-semibold dark:text-white light:text-black mb-4">Domum</h3>
-            <p className="dark:text-gray-400 light:text-gray-600 mb-6">
-              Crafting premium cabinetry and storage solutions for Victoria's finest homes.
-            </p>
+            <h3 className="text-xl font-semibold dark:text-white light:text-black mb-4">{site.name}</h3>
+            {site.tagline && (
+              <p className="dark:text-gray-400 light:text-gray-600 mb-6">{site.tagline}</p>
+            )}
             <div className="space-y-3">
-              <a href="tel:2506810228" className="flex items-center gap-3 dark:text-gray-400 light:text-gray-600 
-                dark:hover:text-white light:hover:text-black transition-colors duration-300">
-                <Phone className="h-5 w-5" />
-                <span>(250) 681-0228</span>
-              </a>
-              <a href="mailto:info@domumimpro.com" className="flex items-center gap-3 dark:text-gray-400 light:text-gray-600 
-                dark:hover:text-white light:hover:text-black transition-colors duration-300">
-                <Mail className="h-5 w-5" />
-                <span>info@domumimpro.com</span>
-              </a>
-              <div className="flex items-center gap-3 dark:text-gray-400 light:text-gray-600">
-                <MapPin className="h-5 w-5" />
-                <span>Victoria, British Columbia</span>
-              </div>
+              {contactContent.phone && (
+                <a href={`tel:${contactContent.phone}`} className="flex items-center gap-3 dark:text-gray-400 light:text-gray-600 
+                  dark:hover:text-white light:hover:text-black transition-colors duration-300">
+                  <Phone className="h-5 w-5" />
+                  <span>{contactContent.phone}</span>
+                </a>
+              )}
+              {contactContent.email && (
+                <a href={`mailto:${contactContent.email}`} className="flex items-center gap-3 dark:text-gray-400 light:text-gray-600 
+                  dark:hover:text-white light:hover:text-black transition-colors duration-300">
+                  <Mail className="h-5 w-5" />
+                  <span>{contactContent.email}</span>
+                </a>
+              )}
+              {contactContent.location && (
+                <div className="flex items-center gap-3 dark:text-gray-400 light:text-gray-600">
+                  <MapPin className="h-5 w-5" />
+                  <span>{contactContent.location}</span>
+                </div>
+              )}
             </div>
           </div>
 
@@ -34,13 +41,13 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold dark:text-white light:text-black mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['Services', 'Portfolio', 'Contact'].map((item) => (
-                <li key={item}>
+              {navItems.map((item) => (
+                <li key={item.href}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={item.href}
                     className="dark:text-gray-400 light:text-gray-600 dark:hover:text-white light:hover:text-black transition-colors duration-300"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
@@ -51,18 +58,13 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold dark:text-white light:text-black mb-4">Our Services</h3>
             <ul className="space-y-2">
-              {[
-                'Custom Cabinetry',
-                'Professional Installation',
-                'Renovation Services',
-                'Quality Assurance'
-              ].map((service) => (
-                <li key={service}>
+              {servicesContent.map((s) => (
+                <li key={s.title}>
                   <a
                     href="#services"
                     className="dark:text-gray-400 light:text-gray-600 dark:hover:text-white light:hover:text-black transition-colors duration-300"
                   >
-                    {service}
+                    {s.title}
                   </a>
                 </li>
               ))}
@@ -73,15 +75,11 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold dark:text-white light:text-black mb-4">Hours</h3>
             <ul className="space-y-2">
-              <li className="dark:text-gray-400 light:text-gray-600">
-                <span className="font-medium dark:text-gray-300 light:text-gray-700">Mon - Fri:</span> 8:00 AM - 5:00 PM
-              </li>
-              <li className="dark:text-gray-400 light:text-gray-600">
-                <span className="font-medium dark:text-gray-300 light:text-gray-700">Saturday:</span> By Appointment
-              </li>
-              <li className="dark:text-gray-400 light:text-gray-600">
-                <span className="font-medium dark:text-gray-300 light:text-gray-700">Sunday:</span> Closed
-              </li>
+              {footerContent.hours.map((h) => (
+                <li key={h.label} className="dark:text-gray-400 light:text-gray-600">
+                  <span className="font-medium dark:text-gray-300 light:text-gray-700">{h.label}:</span> {h.value}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -89,7 +87,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 dark:border-white/10 light:border-black/10 border-t">
           <div className="text-center dark:text-gray-400 light:text-gray-600">
-            <p>&copy; {new Date().getFullYear()} Domum. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           </div>
         </div>
       </div>

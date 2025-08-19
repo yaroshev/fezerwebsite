@@ -6,8 +6,8 @@ interface ServiceModalProps {
   onClose: () => void;
   service: {
     icon: React.ReactNode;
-    title: string;
-    description: string;
+    title?: string;
+    description?: string;
     features?: string[];
     benefits?: string[];
     process?: {
@@ -57,9 +57,11 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
             </div>
 
             {/* Description */}
-            <p className="dark:text-gray-200 light:text-gray-700 mb-8">
-              {service.description}
-            </p>
+            {service.description && (
+              <p className="dark:text-gray-200 light:text-gray-700 mb-8">
+                {service.description}
+              </p>
+            )}
 
             {/* Features */}
             {service.features && (

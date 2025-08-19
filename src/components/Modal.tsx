@@ -11,8 +11,8 @@ interface ModalProps {
     image: string;
     title: string;
     description: string;
-    category: string;
-    tags: string[];
+    category?: string;
+    tags?: string[];
     fullDescription?: string;
     details?: {
       client?: string;
@@ -91,19 +91,21 @@ const Modal = ({ isOpen, onClose, project, onPrevious, onNext, showNavigation }:
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-sm px-3 py-1 rounded-full 
-                    dark:bg-white/10 light:bg-black/5 
-                    dark:text-gray-200 light:text-gray-700 
-                    dark:border-white/10 light:border-black/10 border"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+            {project.tags && (
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="text-sm px-3 py-1 rounded-full 
+                      dark:bg-white/10 light:bg-black/5 
+                      dark:text-gray-200 light:text-gray-700 
+                      dark:border-white/10 light:border-black/10 border"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
 
             {/* Project Details */}
             {project.details && (

@@ -1,14 +1,17 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { contact as contactContent } from '../content';
 
 const Contact = () => {
   return (
     <section id="contact" className="py-32 section-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold dark:text-white light:text-black text-center mb-6">Contact Us</h2>
-        <p className="dark:text-gray-400 light:text-gray-600 text-center max-w-2xl mx-auto mb-16">
-          Ready to transform your space? Get in touch with us for a consultation and let's bring your vision to life.
-        </p>
+        <h2 className="text-4xl font-bold dark:text-white light:text-black text-center mb-6">{contactContent.title || 'Contact'}</h2>
+        {contactContent.description && (
+          <p className="dark:text-gray-400 light:text-gray-600 text-center max-w-2xl mx-auto mb-16">
+            {contactContent.description}
+          </p>
+        )}
 
         <div className="max-w-4xl mx-auto">
           <div className="dark:bg-white/[0.07] light:bg-black/[0.07] backdrop-blur-lg rounded-2xl 
@@ -22,26 +25,32 @@ const Contact = () => {
               <div className="space-y-8">
                 <h3 className="text-2xl font-semibold dark:text-white light:text-black">Get in Touch</h3>
                 <div className="space-y-6">
-                  <a href="tel:2506810228" className="flex items-center gap-4 dark:text-gray-400 light:text-gray-600 
-                    dark:hover:text-white light:hover:text-black transition-colors duration-300">
-                    <div className="dark:bg-white/[0.05] light:bg-black/[0.05] p-3 rounded-lg">
-                      <Phone className="h-6 w-6" />
+                  {contactContent.phone && (
+                    <a href={`tel:${contactContent.phone}`} className="flex items-center gap-4 dark:text-gray-400 light:text-gray-600 
+                      dark:hover:text-white light:hover:text-black transition-colors duration-300">
+                      <div className="dark:bg-white/[0.05] light:bg-black/[0.05] p-3 rounded-lg">
+                        <Phone className="h-6 w-6" />
+                      </div>
+                      <span>{contactContent.phone}</span>
+                    </a>
+                  )}
+                  {contactContent.email && (
+                    <a href={`mailto:${contactContent.email}`} className="flex items-center gap-4 dark:text-gray-400 light:text-gray-600 
+                      dark:hover:text-white light:hover:text-black transition-colors duration-300">
+                      <div className="dark:bg-white/[0.05] light:bg-black/[0.05] p-3 rounded-lg">
+                        <Mail className="h-6 w-6" />
+                      </div>
+                      <span>{contactContent.email}</span>
+                    </a>
+                  )}
+                  {contactContent.location && (
+                    <div className="flex items-center gap-4 dark:text-gray-400 light:text-gray-600">
+                      <div className="dark:bg-white/[0.05] light:bg-black/[0.05] p-3 rounded-lg">
+                        <MapPin className="h-6 w-6" />
+                      </div>
+                      <span>{contactContent.location}</span>
                     </div>
-                    <span>(250) 681-0228</span>
-                  </a>
-                  <a href="mailto:info@domumimpro.com" className="flex items-center gap-4 dark:text-gray-400 light:text-gray-600 
-                    dark:hover:text-white light:hover:text-black transition-colors duration-300">
-                    <div className="dark:bg-white/[0.05] light:bg-black/[0.05] p-3 rounded-lg">
-                      <Mail className="h-6 w-6" />
-                    </div>
-                    <span>info@domumimpro.com</span>
-                  </a>
-                  <div className="flex items-center gap-4 dark:text-gray-400 light:text-gray-600">
-                    <div className="dark:bg-white/[0.05] light:bg-black/[0.05] p-3 rounded-lg">
-                      <MapPin className="h-6 w-6" />
-                    </div>
-                    <span>Victoria, British Columbia</span>
-                  </div>
+                  )}
                 </div>
               </div>
 

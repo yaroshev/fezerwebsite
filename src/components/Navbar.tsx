@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { site, nav as navItems } from '../content';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,28 +18,28 @@ const Navbar = () => {
           transition-transform duration-[1500ms] ease-in-out origin-[0%_0%]" />
         <div className="px-8 py-4 relative">
           <div className="flex items-center justify-between">
-            <a href="#" className="flex items-center group">
+            <a href="#hero" className="flex items-center group">
               <div className="flex gap-[3px] group-hover:scale-110 transition-transform duration-300">
                 <div className="w-[2px] h-6 dark:bg-white light:bg-black rounded-full"></div>
                 <div className="w-[2px] h-6 dark:bg-white light:bg-black rounded-full"></div>
                 <div className="w-[2px] h-6 dark:bg-white light:bg-black rounded-full"></div>
               </div>
               <span className="ml-3 text-lg font-medium dark:text-white light:text-black transition-colors duration-300">
-                Domum
+                {site.name}
               </span>
             </a>
             <div className="hidden md:flex md:items-center md:space-x-8">
               <div className="flex items-baseline space-x-8">
-                {['Services', 'Portfolio', 'Contact'].map((item) => (
+                {navItems.map((item) => (
                   <a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
+                    key={item.href}
+                    href={item.href}
                     className="dark:text-gray-300 light:text-gray-600 dark:hover:text-white light:hover:text-black px-3 py-2 text-sm font-medium transition-all duration-300
                       relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left
                       after:scale-x-0 dark:after:bg-white light:after:bg-black after:transition-transform after:duration-300
                       hover:after:scale-x-100"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 ))}
               </div>
@@ -91,17 +92,17 @@ const Navbar = () => {
         <div className={`overflow-hidden rounded-2xl dark:border-white/10 light:border-black/10 transition-all duration-500
           ${isMenuOpen ? 'dark:bg-white/[0.07] light:bg-black/[0.07] backdrop-blur-xl' : 'bg-transparent backdrop-blur-none'}`}>
           <div className="p-6 space-y-4">
-            {['Services', 'Portfolio', 'Contact'].map((item) => (
+            {navItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.href}
+                href={item.href}
                 className="block dark:text-gray-300 light:text-gray-600 dark:hover:text-white light:hover:text-black py-2 text-lg font-medium transition-all duration-300
                   relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left
                   after:scale-x-0 dark:after:bg-white light:after:bg-black after:transition-transform after:duration-300
                   hover:after:scale-x-100"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {item}
+                {item.label}
               </a>
             ))}
             <button

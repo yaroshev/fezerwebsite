@@ -4,8 +4,10 @@ import { ThemeProvider } from './context/ThemeContext';
 
 // Lazy load other components
 const Navbar = lazy(() => import('./components/Navbar'));
+const About = lazy(() => import('./components/About'));
 const Services = lazy(() => import('./components/Services'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
 
@@ -25,21 +27,29 @@ function App() {
           <Suspense fallback={<LoadingFallback />}>
             <Navbar />
           </Suspense>
-          
+
           <Hero />
-          
+
+          <Suspense fallback={<LoadingFallback />}>
+            <About />
+          </Suspense>
+
           <Suspense fallback={<LoadingFallback />}>
             <Services />
           </Suspense>
-          
+
           <Suspense fallback={<LoadingFallback />}>
             <Portfolio />
           </Suspense>
-          
+
+          <Suspense fallback={<LoadingFallback />}>
+            <Testimonials />
+          </Suspense>
+
           <Suspense fallback={<LoadingFallback />}>
             <Contact />
           </Suspense>
-          
+
           <Suspense fallback={<LoadingFallback />}>
             <Footer />
           </Suspense>
