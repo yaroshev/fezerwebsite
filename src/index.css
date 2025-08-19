@@ -16,6 +16,12 @@
   }
 }
 
+/* Smooth theme transition for frequently changed properties */
+.theme-transition *,
+.theme-transition, .theme-transition body {
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, fill 300ms ease, stroke 300ms ease, box-shadow 300ms ease;
+}
+
 .backdrop-blur-lg {
   backdrop-filter: blur(16px);
 }
@@ -92,30 +98,17 @@
     }
   }
 
-  @keyframes pulse-bg {
-    0% {
-      @apply bg-black;
-    }
-    50% {
-      @apply bg-[rgb(15,15,15)];
-    }
-    100% {
-      @apply bg-black;
-    }
+  /* Separate keyframes for dark and light to avoid invalid @apply in keyframes */
+  @keyframes pulse-bg-dark {
+    0% { background-color: #000000; }
+    50% { background-color: rgb(15, 15, 15); }
+    100% { background-color: #000000; }
   }
 
-  .light {
-    @keyframes pulse-bg {
-      0% {
-        @apply bg-white;
-      }
-      50% {
-        @apply bg-[rgb(245,245,245)];
-      }
-      100% {
-        @apply bg-white;
-      }
-    }
+  @keyframes pulse-bg-light {
+    0% { background-color: #ffffff; }
+    50% { background-color: rgb(245, 245, 245); }
+    100% { background-color: #ffffff; }
   }
 
   @keyframes modal-in {
@@ -142,7 +135,11 @@
   }
 
   .animate-pulse-bg {
-    animation: pulse-bg 2s ease-in-out infinite;
+    animation: pulse-bg-dark 2s ease-in-out infinite;
+  }
+
+  .light .animate-pulse-bg {
+    animation-name: pulse-bg-light;
   }
 
   .animate-modal-in {

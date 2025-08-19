@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ModalProps {
@@ -26,6 +26,44 @@ interface ModalProps {
 
 const Modal = ({ isOpen, onClose, project, onPrevious, onNext, showNavigation }: ModalProps) => {
   if (!isOpen) return null;
+
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const previouslyFocused = useRef<Element | null>(null);
+
+  useEffect(() => {
+    previouslyFocused.current = document.activeElement;
+    dialogRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        onClose();
+      }
+      if (e.key === 'Tab') {
+        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable || focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown, true);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown, true);
+      document.body.style.overflow = '';
+      if (previouslyFocused.current instanceof HTMLElement) previouslyFocused.current.focus();
+    };
+  }, [onClose]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8">
@@ -59,8 +97,15 @@ const Modal = ({ isOpen, onClose, project, onPrevious, onNext, showNavigation }:
         </>
       )}
 
-      <div className="relative w-full max-w-4xl dark:bg-[#1a1a1a] light:bg-white backdrop-blur-2xl rounded-2xl overflow-hidden
-        dark:border-white/10 light:border-black/10 border shadow-2xl animate-modal-in">
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-dialog-title"
+        tabIndex={-1}
+        className="relative w-full max-w-4xl dark:bg-[#1a1a1a] light:bg-white backdrop-blur-2xl rounded-2xl overflow-hidden
+        dark:border-white/10 light:border-black/10 border shadow-2xl animate-modal-in"
+      >
         <button
           onClick={onClose}
           className="absolute right-4 top-4 z-10 p-2 rounded-full 
@@ -86,7 +131,7 @@ const Modal = ({ isOpen, onClose, project, onPrevious, onNext, showNavigation }:
           {/* Content Section */}
           <div className="p-8 space-y-6 dark:bg-[#1a1a1a] light:bg-white relative">
             <div>
-              <h3 className="text-2xl font-bold dark:text-white light:text-black mb-2">{project.title}</h3>
+              <h3 id="project-dialog-title" className="text-2xl font-bold dark:text-white light:text-black mb-2">{project.title}</h3>
               <p className="dark:text-gray-300 light:text-gray-700">{project.description}</p>
             </div>
 

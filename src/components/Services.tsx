@@ -7,7 +7,7 @@ import { services as servicesContent, ServiceItem } from '../content';
 const Services = () => {
   type ModalService = Omit<ServiceItem, 'icon'> & { icon: React.ReactNode };
   const [selectedService, setSelectedService] = useState<null | ModalService>(null);
-  const { elementRef, isVisible } = useIntersectionObserver();
+  const { elementRef, isVisible } = useIntersectionObserver<HTMLDivElement>();
 
   const services = servicesContent;
 
@@ -23,11 +23,12 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold dark:text-white light:text-black text-center mb-16">Our Services</h2>
         <div 
-          ref={elementRef as React.RefObject<HTMLDivElement>}
+          ref={elementRef}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {services.map((service, index) => (
-            <div
+            <button
+              type="button"
               key={index}
               onClick={() => setSelectedService(service)}
               className={`group dark:bg-white/[0.07] light:bg-black/[0.07] backdrop-blur-lg p-8 rounded-2xl 
@@ -36,7 +37,7 @@ const Services = () => {
                 light:hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.08)] 
                 hover:-translate-y-1 hover:scale-[1.02]
                 dark:hover:bg-white/[0.09] light:hover:bg-black/[0.09] 
-                transition-all duration-500 ease-out cursor-pointer
+                transition-all duration-500 ease-out cursor-pointer text-left
                 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
               style={{
                 animationDelay: `${index * 100}ms`
@@ -52,7 +53,7 @@ const Services = () => {
               <p className="dark:text-gray-400 light:text-gray-600 dark:group-hover:text-gray-200 light:group-hover:text-gray-800 transition-colors duration-500">
                 {service.description}
               </p>
-            </div>
+            </button>
           ))}
         </div>
       </div>

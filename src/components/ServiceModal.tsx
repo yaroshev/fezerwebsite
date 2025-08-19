@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { X, Check } from 'lucide-react';
 
 interface ServiceModalProps {
@@ -20,6 +20,44 @@ interface ServiceModalProps {
 const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
   if (!isOpen) return null;
 
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const previouslyFocused = useRef<Element | null>(null);
+
+  useEffect(() => {
+    previouslyFocused.current = document.activeElement;
+    dialogRef.current?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        onClose();
+      }
+      if (e.key === 'Tab') {
+        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable || focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown, true);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKeyDown, true);
+      document.body.style.overflow = '';
+      if (previouslyFocused.current instanceof HTMLElement) previouslyFocused.current.focus();
+    };
+  }, [onClose]);
+
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
       {/* Backdrop */}
@@ -31,6 +69,11 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
       {/* Modal */}
       <div className="relative min-h-screen flex items-center justify-center p-4">
         <div 
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="service-dialog-title"
+          tabIndex={-1}
           className="relative dark:bg-[#1a1a1a] light:bg-white backdrop-blur-xl rounded-2xl 
             dark:border-white/10 light:border-black/10
             w-full max-w-3xl overflow-hidden shadow-2xl transform transition-all"
@@ -53,7 +96,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
                   {service.icon}
                 </div>
               </div>
-              <h3 className="text-2xl font-bold dark:text-white light:text-black">{service.title}</h3>
+              <h3 id="service-dialog-title" className="text-2xl font-bold dark:text-white light:text-black">{service.title}</h3>
             </div>
 
             {/* Description */}

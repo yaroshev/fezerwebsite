@@ -20,6 +20,7 @@ const Hero = () => {
               muted
               loop
               playsInline
+              preload="metadata"
               onLoadedData={() => setIsVideoLoaded(true)}
               className={`w-full h-full object-cover scale-105 transition-opacity duration-1000 
                 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
