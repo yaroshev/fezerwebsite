@@ -1,24 +1,24 @@
 // Centralized content configuration for the template
 
 export const site = {
-  name: 'Your Brand',
-  tagline: '',
+  name: 'Fezer',
+  tagline: 'The Field Operations OS for Construction',
 };
 
 export const nav = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Overview', href: '#about' },
+  { label: 'Features', href: '#services' },
+  { label: 'Screens', href: '#portfolio' },
+  { label: 'Proof', href: '#testimonials' },
+  { label: 'Request Access', href: '#contact' },
 ];
 
 export const hero = {
-  eyebrow: '',
-  heading: 'Headline goes here',
-  subheading: 'Short subheading that explains your value proposition.',
-  primaryCta: { label: 'Get Started', href: '#contact' },
-  secondaryCta: { label: 'Learn More', href: '#about' },
+  eyebrow: 'Fezer — Field Operations OS',
+  heading: 'Control the job. Not just the paperwork.',
+  subheading: 'All‑in‑one, iOS‑native system for time, tasks, tools, supplies, teams, and reports. Built for crews and PMs—clock‑in to close‑out, handled.',
+  primaryCta: { label: 'Request Access', href: '#contact' },
+  secondaryCta: { label: 'Book a Demo', href: '#contact' },
   background: {
     type: 'none' as 'none' | 'image' | 'video',
     src: '',
@@ -26,11 +26,18 @@ export const hero = {
 };
 
 export const about = {
-  title: 'About',
+  title: 'Fezer in one minute',
   paragraphs: [
-    'Use this section to describe your company or product. Keep it concise and focused on outcomes.',
+    'Fezer is the all‑in‑one workforce and asset management platform for construction teams—clock‑in to close‑out, handled.',
+    'Paper, spreadsheets, and point tools slow the field. Fezer replaces them with a fast, native app that gives foremen, PMs, and owners real‑time control over labor, tools, schedules, and progress—complete with QR workflows, blueprint access, role‑based views, and automated reporting.',
   ],
-  highlights: [] as string[],
+  highlights: [
+    'iOS‑native performance with offline tolerance',
+    'End‑to‑end: time, tasks, tools, supplies, projects, teams, reports',
+    'Role‑aware UX for Admins, Employees, and Clients',
+    'Traceability by default with QR‑based check‑out/in',
+    'Real‑time sync and notifications across crews and sites',
+  ] as string[],
 };
 
 export type ServiceIconKey = 'ruler' | 'hammer' | 'paintbrush' | 'award';
@@ -47,35 +54,23 @@ export type ServiceItem = {
 export const services: ServiceItem[] = [
   {
     icon: 'ruler',
-    title: 'Service One',
-    description: 'Short description of the service.',
-    features: [],
-    benefits: [],
-    process: [],
+    title: 'Time that tells the truth',
+    description: 'Clock‑in/out with project assignment, mid‑shift switches, live timer, and guardrails at clock‑out.',
   },
   {
     icon: 'hammer',
-    title: 'Service Two',
-    description: 'Short description of the service.',
-    features: [],
-    benefits: [],
-    process: [],
+    title: 'Tools that never go missing',
+    description: 'QR‑based check‑out/in, accountability indicators, bulk assign and register, and condition capture on return.',
   },
   {
     icon: 'paintbrush',
-    title: 'Service Three',
-    description: 'Short description of the service.',
-    features: [],
-    benefits: [],
-    process: [],
+    title: 'Tasks that move',
+    description: 'Create, assign, and complete tasks with role‑aware lists and fast home widgets for action.',
   },
   {
     icon: 'award',
-    title: 'Service Four',
-    description: 'Short description of the service.',
-    features: [],
-    benefits: [],
-    process: [],
+    title: 'Projects with context',
+    description: 'Blueprints and documents with alignment, clearing, paging, and reporting modes—right where crews work.',
   },
 ];
 
@@ -87,27 +82,21 @@ export type Testimonial = {
 };
 
 export const testimonials = {
-  title: 'What clients say',
+  title: 'Proof from the field',
   items: [
     {
-      quote: 'This is a sample testimonial. Replace it with a real client quote to build trust.',
-      author: 'Alex Doe',
-      role: 'Founder, Example Co.',
-      avatar: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=64&h=64&q=80',
-    },
-    {
-      quote: 'Another short testimonial to demonstrate the layout in both light and dark modes.',
-      author: 'Jordan Smith',
-      role: 'Product Lead',
+      quote: 'We finally know where our tools and time go—every day.',
+      author: 'Ops Director',
+      role: 'Mid‑Size GC',
     },
   ] as Testimonial[],
 };
 
 export const contact = {
-  title: 'Contact',
-  description: 'Reach out with any questions or project ideas.',
+  title: 'Request Access',
+  description: 'Join the Fezer beta. Tell us about your crew and we’ll get you set up.',
   phone: '',
-  email: '',
+  email: 'hello@fezer.app',
   location: '',
 };
 
@@ -134,29 +123,26 @@ export type PortfolioProject = {
 };
 
 export const portfolio = {
-  title: 'Portfolio',
-  categories: ['Sample'],
+  title: 'Screens',
+  categories: ['App'],
   items: [
     {
-      image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=60',
-      title: 'Sample Project One',
-      description: 'A short description for the sample project.',
-      category: 'Sample',
-      tags: ['UX', 'Web'],
-    },
-    {
       image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=60',
-      title: 'Sample Project Two',
-      description: 'Another placeholder project to show the grid.',
-      category: 'Sample',
-      tags: ['Brand', 'Strategy'],
+      title: 'Home Dashboard',
+      description: 'Live status widgets and one‑tap actions.',
+      category: 'App',
     },
     {
       image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60',
-      title: 'Sample Project Three',
-      description: 'Replace with your real portfolio item.',
-      category: 'Sample',
-      tags: ['App', 'Design'],
+      title: 'Admin Console',
+      description: 'Projects, inventory, and teams in one place.',
+      category: 'App',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=60',
+      title: 'Project Mode',
+      description: 'Blueprints and documents with alignment and reports.',
+      category: 'App',
     },
   ] as PortfolioProject[],
 };

@@ -56,7 +56,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-semibold dark:text-white light:text-black mb-4">Our Services</h3>
+            <h3 className="text-xl font-semibold dark:text-white light:text-black mb-4">Core capabilities</h3>
             <ul className="space-y-2">
               {servicesContent.map((s) => (
                 <li key={s.title}>

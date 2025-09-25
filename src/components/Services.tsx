@@ -21,7 +21,7 @@ const Services = () => {
   return (
     <section id="services" className="py-32 section-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold dark:text-white light:text-black text-center mb-16">Our Services</h2>
+        <h2 className="text-4xl font-bold dark:text-white light:text-black text-center mb-16">Core capabilities</h2>
         <div 
           ref={elementRef}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
@@ -43,7 +43,7 @@ const Services = () => {
                 animationDelay: `${index * 100}ms`
               }}
             >
-              <div className="dark:text-gray-100 light:text-gray-800 mb-6 group-hover:scale-110 
+              <div className="dark:text-gray-100 light:text-gray-800 mb-6 group-hover:scale-110 brand-text 
                 dark:group-hover:text-white light:group-hover:text-black transition-all duration-500">
                 {iconMap[service.icon]}
               </div>

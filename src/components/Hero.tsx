@@ -54,7 +54,7 @@ const Hero = () => {
             light:bg-[linear-gradient(90deg,transparent_10%,rgba(0,0,0,0.05)_20%,rgba(0,0,0,0.1)_30%,rgba(0,0,0,0.05)_40%,transparent_50%)]
             transition-transform duration-[1500ms] ease-in-out" />
           {heroContent.eyebrow && (
-            <span className="font-medium mb-3 sm:mb-4 block tracking-wide animate-slide-up dark:text-white light:text-black">{heroContent.eyebrow}</span>
+            <span className="font-medium mb-3 sm:mb-4 block tracking-wide animate-slide-up brand-text">{heroContent.eyebrow}</span>
           )}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight animate-slide-up [text-wrap:balance] dark:text-white light:text-black">
             {heroContent.heading}
@@ -68,11 +68,7 @@ const Hero = () => {
             {heroContent.secondaryCta?.label && (
               <a
                 href={heroContent.secondaryCta.href}
-                className="inline-flex items-center gap-1.5 sm:gap-2 border 
-                  dark:text-white light:text-black 
-                  dark:border-white/20 light:border-black/30 
-                  px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-sm sm:text-base font-semibold 
-                  dark:hover:bg-white/10 light:hover:bg-black/10 transition-all"
+                className="inline-flex items-center gap-1.5 sm:gap-2 brand-outline px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-sm sm:text-base font-semibold transition-all"
               >
                 {heroContent.secondaryCta.label}
               </a>
@@ -80,9 +76,7 @@ const Hero = () => {
             {heroContent.primaryCta?.label && (
               <a
                 href={heroContent.primaryCta.href}
-                className="flex justify-center items-center dark:bg-white dark:text-slate-900 light:bg-black light:text-white 
-                  px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-sm sm:text-base font-semibold 
-                  dark:hover:bg-white/80 light:hover:bg-black/80 dark:hover:text-black light:hover:text-white transition-all"
+                className="flex justify-center items-center brand-btn px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg text-sm sm:text-base font-semibold transition-all"
               >
                 {heroContent.primaryCta.label}
               </a>

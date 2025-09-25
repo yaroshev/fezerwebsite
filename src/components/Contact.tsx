@@ -23,7 +23,7 @@ const Contact = () => {
             <div className="grid lg:grid-cols-[1.2fr,2px,2fr] gap-8 lg:gap-12">
               {/* Contact Information */}
               <div className="space-y-8">
-                <h3 className="text-2xl font-semibold dark:text-white light:text-black">Get in Touch</h3>
+                <h3 className="text-2xl font-semibold dark:text-white light:text-black brand-text">Get in Touch</h3>
                 <div className="space-y-6">
                   {contactContent.phone && (
                     <a href={`tel:${contactContent.phone}`} className="flex items-center gap-4 dark:text-gray-400 light:text-gray-600 
@@ -57,8 +57,9 @@ const Contact = () => {
               {/* Divider */}
               <div className="hidden lg:block dark:bg-white/10 light:bg-black/10 w-px h-full mx-auto" />
 
-              {/* Contact Form */}
-              <form className="space-y-6">
+              {/* Contact Form (Netlify) */}
+              <form name="fezer-beta" method="POST" data-netlify="true" className="space-y-6">
+                <input type="hidden" name="form-name" value="fezer-beta" />
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium dark:text-gray-300 light:text-gray-700 mb-2">
@@ -120,11 +121,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium dark:text-gray-300 light:text-gray-700 mb-2">
-                    Message
+                    Company & Crew Size
                   </label>
                   <textarea
                     id="message"
-                    name="message"
+                    name="company"
                     rows={4}
                     className="w-full dark:bg-white/[0.05] light:bg-black/[0.05] rounded-lg border 
                       dark:border-white/10 light:border-black/10 
@@ -134,16 +135,14 @@ const Contact = () => {
                       dark:focus:bg-white/[0.08] light:focus:bg-black/[0.08]
                       dark:focus:ring-2 dark:focus:ring-white/10 light:focus:ring-black/10
                       transition-all duration-300 p-3 resize-none"
-                    placeholder="Your message"
+                    placeholder="Company, crews, and goals for Fezer"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 
-                    dark:bg-white dark:text-black light:bg-black light:text-white
-                    rounded-lg py-3 font-semibold hover:bg-opacity-90 transition-all duration-300"
+                  className="w-full flex items-center justify-center gap-2 brand-btn rounded-lg py-3 font-semibold transition-all duration-300"
                 >
-                  Send Message
+                  Request Access
                   <Send className="h-5 w-5" />
                 </button>
               </form>

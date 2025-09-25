@@ -12,6 +12,13 @@ const About = () => {
               {p}
             </p>
           ))}
+          {aboutContent.highlights && aboutContent.highlights.length > 0 && (
+            <ul className="grid sm:grid-cols-2 gap-3 pt-6">
+              {aboutContent.highlights.map((h, i) => (
+                <li key={i} className="dark:text-gray-300 light:text-gray-700 text-base">• {h}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </section>

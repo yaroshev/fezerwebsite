@@ -19,11 +19,7 @@ const Navbar = () => {
         <div className="px-8 py-4 relative">
           <div className="flex items-center justify-between">
             <a href="#hero" className="flex items-center group">
-              <div className="flex gap-[3px] group-hover:scale-110 transition-transform duration-300">
-                <div className="w-[2px] h-6 dark:bg-white light:bg-black rounded-full"></div>
-                <div className="w-[2px] h-6 dark:bg-white light:bg-black rounded-full"></div>
-                <div className="w-[2px] h-6 dark:bg-white light:bg-black rounded-full"></div>
-              </div>
+              <img src="/fezer-logo.svg" alt="Fezer" className="h-6 w-6" loading="eager" decoding="async"/>
               <span className="ml-3 text-lg font-medium dark:text-white light:text-black transition-colors duration-300">
                 {site.name}
               </span>
@@ -43,6 +39,7 @@ const Navbar = () => {
                   </a>
                 ))}
               </div>
+              {/* Removed redundant CTA per request */}
               <button
                 onClick={toggleTheme}
                 className="relative w-14 h-7 rounded-full 
