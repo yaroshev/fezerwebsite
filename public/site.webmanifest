@@ -1,0 +1,17 @@
+{
+  "name": "Fezer",
+  "short_name": "Fezer",
+  "description": "Field operations OS for construction. Time, tasks, tools, supplies, teams, and reports—fast and iOS-native.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/fezer-logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/fezer-logo-black.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
+
+
+

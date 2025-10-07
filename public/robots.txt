@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps help search engines discover pages
+Sitemap: https://fezer.app/sitemap.xml
+
+
+
