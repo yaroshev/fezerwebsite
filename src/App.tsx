@@ -10,17 +10,36 @@ function App() {
     if (path.startsWith('/invite/')) {
       const token = path.split('/invite/')[1];
       document.title = 'Fezer Task Invite';
-      // Show a simple banner with instructions to open in app
+      const deepLink = `me.fezer://invite/${token}`;
+      // Try to open the app; if it fails, show TestFlight fallback + instructions
       const el = document.getElementById('web-fallback');
       if (el) {
-        el.innerText = `Open Fezer and accept invite. Token: ${token}`;
+        el.innerHTML = `Opening Fezer… If nothing happens, <a class="underline" href="https://testflight.apple.com/join/kvGPdcqB" target="_blank" rel="noopener noreferrer">install via TestFlight</a> then return to this link.`;
       }
+      // Attempt app open
+      const now = Date.now();
+      window.location.href = deepLink;
+      setTimeout(() => {
+        // If still here after ~1s, user likely doesn't have the app installed
+        if (Date.now() - now < 1600) {
+          window.location.href = 'https://testflight.apple.com/join/kvGPdcqB';
+        }
+      }, 1200);
     } else if (path.startsWith('/tasks/')) {
       document.title = 'Fezer Task';
+      const id = path.split('/tasks/')[1];
+      const deepLink = `me.fezer://tasks/${id}`;
       const el = document.getElementById('web-fallback');
       if (el) {
-        el.innerText = 'This task link opens in the Fezer iOS app.';
+        el.innerHTML = `Opening Fezer… If nothing happens, <a class="underline" href="https://testflight.apple.com/join/kvGPdcqB" target="_blank" rel="noopener noreferrer">install via TestFlight</a> then return to this link.`;
       }
+      const now = Date.now();
+      window.location.href = deepLink;
+      setTimeout(() => {
+        if (Date.now() - now < 1600) {
+          window.location.href = 'https://testflight.apple.com/join/kvGPdcqB';
+        }
+      }, 1200);
     }
   }, []);
 
