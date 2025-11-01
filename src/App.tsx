@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { Clock, CheckSquare, QrCode, Boxes, Users, FileText } from 'lucide-react';
 import phoneImage from '../phone.png';
 
@@ -42,6 +43,14 @@ function App() {
       }, 1200);
     }
   }, []);
+
+  // Lightweight routing without react-router
+  if (typeof window !== 'undefined') {
+    const path = window.location.pathname;
+    if (path === '/privacypolicy') {
+      return <PrivacyPolicy />;
+    }
+  }
 
   const handleAndroidClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -164,7 +173,7 @@ function App() {
             <div className="text-sm text-neutral-700">
               <a href="mailto:hello@fezer.app" className="hover:opacity-70 transition-opacity">hello@fezer.app</a>
               <span className="mx-2">·</span>
-              <a href="/privacy" className="hover:opacity-70 transition-opacity">Privacy</a>
+              <a href="/privacypolicy" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-3 py-1.5 text-sm font-medium hover:bg-black/5 transition-colors">Privacy Policy</a>
               <span className="mx-2">·</span>
               <a href="/terms" className="hover:opacity-70 transition-opacity">Terms</a>
             </div>
