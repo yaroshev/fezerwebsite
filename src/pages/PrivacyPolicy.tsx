@@ -19,7 +19,7 @@ function PrivacyPolicy() {
 
       <main className="mx-auto w-full max-w-3xl px-4 sm:px-6 md:px-10 py-10">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Privacy Policy</h1>
-        <p className="mt-3 text-neutral-600">Last updated: November 1, 2025</p>
+        <p className="mt-3 text-neutral-600">Last updated: November 11, 2025</p>
 
         <div className="mt-8 space-y-8 text-neutral-800">
           <section>
@@ -108,6 +108,18 @@ function PrivacyPolicy() {
                 </p>
               </div>
               <div>
+                <h3 className="font-medium">AI features (Google Gemini)</h3>
+                <p className="mt-1 leading-relaxed">
+                  When you use Fezer’s AI features, the content of your prompts and the conversation history you
+                  choose to include are sent to Google&apos;s Generative Language API (Gemini) for processing to
+                  generate responses. We do not send your account password, payment information, or device contacts
+                  to Gemini. Data is transmitted over HTTPS. We do not use AI outputs for advertising. We configure
+                  AI calls to avoid provider-side training where supported by the API. For sensitive or regulated
+                  environments, your organization can disable AI features at any time. If AI is disabled or a key
+                  is not provisioned, the app remains fully functional without AI responses.
+                </p>
+              </div>
+              <div>
                 <h3 className="font-medium">Organization access</h3>
                 <p className="mt-1 leading-relaxed">
                   If your account is provisioned by an organization, your admin and authorized users may access
@@ -132,11 +144,65 @@ function PrivacyPolicy() {
           </section>
 
           <section>
+            <h2 className="text-xl font-semibold">Mobile Permissions</h2>
+            <div className="mt-2 space-y-4">
+              <div>
+                <h3 className="font-medium">Camera</h3>
+                <p className="mt-1 leading-relaxed">
+                  Used to scan tools and supplies via QR codes, capture verification selfies for clock-in/out,
+                  and attach photos to tasks and reports.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium">Photos</h3>
+                <p className="mt-1 leading-relaxed">
+                  Read access to select photos you attach to tasks or reports; write access to save work photos
+                  you capture in the app to your library (with your consent).
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium">Location (When In Use)</h3>
+                <p className="mt-1 leading-relaxed">
+                  Used to display your location on the map and recenter the map; optionally used for attendance
+                  verification and project proximity features when enabled by your organization. We do not collect
+                  background location.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium">Contacts</h3>
+                <p className="mt-1 leading-relaxed">
+                  Used to help you find and invite teammates by matching phone/email identifiers you select. We do
+                  not upload your entire address book; access is limited to the contacts you choose.
+                </p>
+              </div>
+              <p className="leading-relaxed">
+                You may revoke permissions at any time in iOS Settings. Certain features may be unavailable without
+                the corresponding permission.
+              </p>
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-xl font-semibold">Data Retention</h2>
             <p className="mt-2 leading-relaxed">
               We retain personal data for as long as necessary to provide the Services, comply with legal
               obligations, resolve disputes, and enforce agreements. Retention periods vary based on data type,
               organizational settings, and legal requirements.
+            </p>
+            <p className="mt-2 leading-relaxed">
+              You can request account deletion from the iOS app (Settings &gt; Delete Account). We process deletion
+              requests by removing or anonymizing associated personal data subject to legal retention requirements
+              and safety obligations. Organization-controlled data may be retained under your organization’s policies.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold">Data Storage and Processors</h2>
+            <p className="mt-2 leading-relaxed">
+              We host application data primarily on Supabase (PostgreSQL, object storage) in the United States with
+              role-based access controls and row-level security. AI prompts and responses are processed by Google&apos;s
+              Generative Language API (Gemini) for the sole purpose of returning responses. We do not sell personal
+              data and we do not use third-party advertising SDKs in the mobile app.
             </p>
           </section>
 
@@ -168,6 +234,10 @@ function PrivacyPolicy() {
             <p className="mt-2 leading-relaxed">
               To exercise rights, contact us at <a className="underline" href="mailto:hello@fezer.app">hello@fezer.app</a>.
               We may need to verify your identity and coordinate with your organization where applicable.
+            </p>
+            <p className="mt-2 leading-relaxed">
+              For California residents, you may exercise rights under the CCPA/CPRA as applicable. We do not sell or
+              share personal information for cross-context behavioral advertising.
             </p>
           </section>
 
@@ -222,5 +292,7 @@ function PrivacyPolicy() {
 }
 
 export default PrivacyPolicy;
+
+
 
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import { Clock, CheckSquare, QrCode, Boxes, Users, FileText } from 'lucide-react';
-import phoneImage from '../phone.png';
+import PhoneSlideshow from './components/PhoneSlideshow';
 
 function App() {
   const [showAndroidModal, setShowAndroidModal] = useState(false);
@@ -107,12 +107,19 @@ function App() {
 
           {/* Right: 1/3 width phone + downloads, match height */}
           <div className="md:col-span-1">
-            <div className="h-full min-h-[300px] sm:min-h-[400px] md:min-h-[520px] flex items-center justify-center">
-              <img
-                src={phoneImage}
-                alt="Fezer app on phone"
-                className="w-[250px] sm:w-[280px] md:w-[300px] lg:w-[340px] h-auto rounded-[2rem] sm:rounded-[2.5rem] border border-neutral-200"
+            <div className="relative h-full min-h-[300px] sm:min-h-[400px] md:min-h-[520px] flex items-center justify-center">
+              {/* Subtle organic bubbles behind the phone, small footprint */}
+              <div
+                className="pointer-events-none absolute -top-2 right-6 w-16 h-16 rounded-full opacity-25 blur-2xl -z-10"
+                style={{ background: 'radial-gradient(circle at 50% 50%, rgba(158,199,255,0.55), rgba(13,43,87,0) 60%)' }}
+                aria-hidden="true"
               />
+              <div
+                className="pointer-events-none absolute bottom-10 left-8 w-14 h-14 rounded-full opacity-25 blur-2xl -z-10"
+                style={{ background: 'radial-gradient(circle at 50% 50%, rgba(13,43,87,0.3), rgba(158,199,255,0) 60%)' }}
+                aria-hidden="true"
+              />
+              <PhoneSlideshow />
             </div>
           </div>
         </div>
