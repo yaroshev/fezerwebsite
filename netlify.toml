@@ -33,6 +33,11 @@
   status = 200
 
 [[redirects]]
+  from = "/scan"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
   from = "/privacypolicy"
   to = "/index.html"
   status = 200

@@ -2,81 +2,13 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["HKJ66KH489.com.fezerapp"],
+        "appIDs": ["HKJ66KH489.Me.Fezer", "HKJ66KH489.com.fezerapp"],
         "components": [
-          { 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            "/": "/invite/*"
-          },
-          { 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            "/": "/tasks/*"
-          }
+          { "/": "/invite/*" },
+          { "/": "/tasks/*" },
+          { "/": "/scan" }
         ]
       }
     ]
   }
 }
-
-
-
