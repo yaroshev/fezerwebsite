@@ -5,9 +5,17 @@ import PhoneSlideshow from './components/PhoneSlideshow';
 
 function App() {
   const [showAndroidModal, setShowAndroidModal] = useState(false);
-  // Minimal fallback for invite/task links
+  // OAuth callback bridge: Supabase redirects here (HTTPS), we forward to app (custom scheme).
+  // Android browsers often don't hand off me.fezer:// directly; this page bridges the gap.
   React.useEffect(() => {
     const path = window.location.pathname;
+    if (path === '/auth/callback' || path === '/auth/callback/') {
+      const qs = window.location.search || '';
+      const hash = window.location.hash || '';
+      const deepLink = `me.fezer://auth-callback${qs}${hash}`;
+      window.location.replace(deepLink);
+      return;
+    }
     if (path.startsWith('/invite/')) {
       const token = path.split('/invite/')[1];
       document.title = 'Fezer Task Invite';
