@@ -5,27 +5,9 @@ import PhoneSlideshow from './components/PhoneSlideshow';
 
 function App() {
   const [showAndroidModal, setShowAndroidModal] = useState(false);
-  // Minimal fallback for invite/task links + OAuth callback redirect
+  // Minimal fallback for invite/task links
   React.useEffect(() => {
     const path = window.location.pathname;
-    const search = window.location.search || '';
-    const hash = window.location.hash || '';
-    const params = new URLSearchParams(search);
-    const hasCode = params.has('code');
-    const hasState = params.has('state');
-    const hasAccessToken = hash.includes('access_token');
-    const isOAuthCallback = hasAccessToken || (hasCode && hasState);
-
-    // OAuth callback: Supabase redirects to /auth/callback OR to / (site_url) with params.
-    // Forward to app deep link so the app can complete sign-in.
-    if (
-      (path === '/auth/callback' || path.startsWith('/auth/callback/')) ||
-      ((path === '/' || path === '') && isOAuthCallback)
-    ) {
-      const deepLink = `me.fezer://auth-callback${search}${hash}`;
-      window.location.replace(deepLink);
-      return;
-    }
     if (path.startsWith('/invite/')) {
       const token = path.split('/invite/')[1];
       document.title = 'Fezer Task Invite';
@@ -65,19 +47,6 @@ function App() {
   // Lightweight routing without react-router
   if (typeof window !== 'undefined') {
     const path = window.location.pathname;
-    const search = window.location.search || '';
-    const hash = window.location.hash || '';
-    const params = new URLSearchParams(search);
-    const isOAuthCallback =
-      path === '/auth/callback' || path.startsWith('/auth/callback/') ||
-      ((path === '/' || path === '') && (params.has('code') && params.has('state') || hash.includes('access_token')));
-    if (isOAuthCallback) {
-      return (
-        <div className="min-h-screen flex items-center justify-center bg-white">
-          <p className="text-neutral-600">Opening Fezer…</p>
-        </div>
-      );
-    }
     if (path === '/privacypolicy') {
       return <PrivacyPolicy />;
     }
