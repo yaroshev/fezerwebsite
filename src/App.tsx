@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import DeleteAccount from './pages/DeleteAccount';
 import { Clock, CheckSquare, QrCode, Boxes, Users, FileText } from 'lucide-react';
 import PhoneSlideshow from './components/PhoneSlideshow';
 
@@ -49,6 +50,9 @@ function App() {
     const path = window.location.pathname;
     if (path === '/privacypolicy') {
       return <PrivacyPolicy />;
+    }
+    if (path === '/delete-account') {
+      return <DeleteAccount />;
     }
   }
 

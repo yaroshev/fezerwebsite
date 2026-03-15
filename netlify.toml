@@ -41,3 +41,8 @@
   from = "/privacypolicy"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/delete-account"
+  to = "/index.html"
+  status = 200

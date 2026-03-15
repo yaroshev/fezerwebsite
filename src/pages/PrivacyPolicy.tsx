@@ -190,7 +190,8 @@ function PrivacyPolicy() {
               organizational settings, and legal requirements.
             </p>
             <p className="mt-2 leading-relaxed">
-              You can request account deletion from the iOS app (Settings &gt; Delete Account). We process deletion
+              You can request account deletion from the iOS app (Settings &gt; Delete Account) or{' '}
+              <a href="/delete-account" className="underline font-medium">submit a request online</a>. We process deletion
               requests by removing or anonymizing associated personal data subject to legal retention requirements
               and safety obligations. Organization-controlled data may be retained under your organization’s policies.
             </p>
@@ -276,11 +277,13 @@ function PrivacyPolicy() {
               <img src="/fezer-logo-transparent-blue.png" alt="Fezer logo" className="w-6 h-6" />
               <span className="text-sm text-neutral-700">Fezer</span>
             </div>
-            <div className="text-sm text-neutral-700">
+            <div className="text-sm text-neutral-700 flex flex-wrap items-center gap-x-2 gap-y-2">
               <a href="mailto:hello@fezer.app" className="hover:opacity-70 transition-opacity">hello@fezer.app</a>
-              <span className="mx-2">·</span>
+              <span>·</span>
               <a href="/privacypolicy" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-4 py-2 text-sm font-medium hover:bg-black/5 transition-colors">Privacy Policy</a>
-              <span className="mx-2">·</span>
+              <span>·</span>
+              <a href="/delete-account" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-4 py-2 text-sm font-medium hover:bg-black/5 transition-colors">Request Account Deletion</a>
+              <span>·</span>
               <a href="/terms" className="hover:opacity-70 transition-opacity">Terms</a>
             </div>
           </div>
