@@ -7,6 +7,20 @@ import Nav from './components/Nav';
 
 function App() {
   const [activeSection, setActiveSection] = React.useState<string>('top');
+  const [androidModalOpen, setAndroidModalOpen] = React.useState(false);
+  const [androidEmail, setAndroidEmail] = React.useState('');
+
+  const handleAndroidSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const email = androidEmail.trim();
+    if (!email) return;
+    const subject = encodeURIComponent('Request access to Fezer Android beta');
+    const body = encodeURIComponent(
+      `Hi Fezer team,\n\nI'd like to request access to the Fezer Android beta.\n\nEmail: ${email}\n\nThank you.`
+    );
+    window.location.href = `mailto:hello@fezer.app?subject=${subject}&body=${body}`;
+    setAndroidModalOpen(false);
+  };
   // Track active section for nav (home page only)
   React.useEffect(() => {
     const path = window.location.pathname;
@@ -115,16 +129,15 @@ function App() {
                 <Download className="w-6 h-6" strokeWidth={2} />
                 <span className="font-semibold text-[15px]">iOS</span>
               </a>
-              <a
-                href="https://play.google.com/apps/testing/me.fezer"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => setAndroidModalOpen(true)}
                 className="btn-press flex items-center justify-center gap-2 rounded-2xl border-2 border-neutral-200 bg-white text-neutral-700 px-5 py-3.5 min-h-[48px] active:scale-[0.96] transition-transform"
-                aria-label="Join Fezer Android beta via Google Play testing"
+                aria-label="Request access to Fezer Android beta"
               >
                 <Download className="w-6 h-6" strokeWidth={2} />
                 <span className="font-semibold text-[15px]">Android</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -148,8 +161,23 @@ function App() {
                   <p className="mt-3 text-2xl font-semibold tracking-tight text-neutral-900">Do Great Work</p>
                 </div>
                 <div className="mt-8 flex flex-row gap-4">
-                  <a href="https://testflight.apple.com/join/kvGPdcqB" target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center rounded-full bg-black text-white px-6 py-3 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2" aria-label="Download Fezer for iOS via TestFlight">Download for iOS</a>
-                  <a href="https://play.google.com/apps/testing/me.fezer" target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-700 px-6 py-3 text-sm font-medium hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 transition-colors duration-200" aria-label="Join Fezer Android beta via Google Play testing">Download for Android</a>
+                  <a
+                    href="https://testflight.apple.com/join/kvGPdcqB"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-press inline-flex items-center justify-center rounded-full bg-black text-white px-6 py-3 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                    aria-label="Download Fezer for iOS via TestFlight"
+                  >
+                    Download for iOS
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setAndroidModalOpen(true)}
+                    className="btn-press inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-700 px-6 py-3 text-sm font-medium hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 transition-colors duration-200"
+                    aria-label="Request access to Fezer Android beta"
+                  >
+                    Request Android access
+                  </button>
                 </div>
               </div>
             </div>
@@ -248,6 +276,62 @@ function App() {
           </a>
         </div>
       </section>
+
+      {/* Android access lightbox */}
+      {androidModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-6"
+          aria-modal="true"
+          role="dialog"
+        >
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={() => setAndroidModalOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="relative z-10 w-full max-w-md rounded-2xl bg-white shadow-xl border border-neutral-200/80 p-6 sm:p-7 animate-mobile-modal-in">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2 className="text-xl font-semibold tracking-tight text-neutral-900">Request Android access</h2>
+                <p className="mt-1.5 text-sm text-neutral-600">
+                  Android is in limited beta. Share your email and we&apos;ll send you an invite when a slot opens.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setAndroidModalOpen(false)}
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800 transition-colors"
+                aria-label="Close"
+              >
+                ×
+              </button>
+            </div>
+            <form onSubmit={handleAndroidSubmit} className="mt-5 space-y-4">
+              <div>
+                <label htmlFor="android-email" className="block text-sm font-medium text-neutral-800">
+                  Work email <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="android-email"
+                  type="email"
+                  required
+                  value={androidEmail}
+                  onChange={(e) => setAndroidEmail(e.target.value)}
+                  placeholder="you@company.com"
+                  className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-400"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full rounded-full bg-[#0d2b57] text-white px-6 py-3 text-sm font-semibold btn-press disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={!androidEmail.trim()}
+              >
+                Submit request
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
       <footer className="w-full border-t border-neutral-200/80 bg-white safe-area-bottom">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-8 sm:py-10">
