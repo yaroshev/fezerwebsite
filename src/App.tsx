@@ -3,8 +3,35 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import DeleteAccount from './pages/DeleteAccount';
 import { Clock, CheckSquare, QrCode, Boxes, Users, FileText } from 'lucide-react';
 import PhoneSlideshow from './components/PhoneSlideshow';
+import Nav from './components/Nav';
 
 function App() {
+  const [activeSection, setActiveSection] = React.useState<string>('top');
+  // Track active section for nav (home page only)
+  React.useEffect(() => {
+    const path = window.location.pathname;
+    if (path !== '/' && path !== '') return;
+
+    const sections = ['top', 'features', 'contact'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id') || 'top';
+            setActiveSection(id);
+          }
+        }
+      },
+      { rootMargin: '-20% 0px -60% 0px', threshold: 0 }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   // Minimal fallback for invite/task links
   React.useEffect(() => {
     const path = window.location.pathname;
@@ -57,6 +84,7 @@ function App() {
 
   return (
     <div className="min-h-screen w-full bg-[#fafafa] text-black flex flex-col">
+      <Nav activeId={activeSection} />
       <main id="top" className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 flex items-center min-h-[90vh]">
         <div className="mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-14 items-stretch">
           {/* Left: 2/3 width content card */}
@@ -168,7 +196,22 @@ function App() {
         </div>
       </section>
 
-      <footer id="contact" className="w-full border-t border-neutral-200/80 bg-white">
+      <section id="contact" className="w-full bg-[#fafafa]">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-12 sm:py-16">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">Contact</h2>
+          <p className="mt-3 text-neutral-500 max-w-2xl">Questions, feedback, or ready to get started? Reach out.</p>
+          <div className="mt-8">
+            <a
+              href="mailto:hello@fezer.app"
+              className="link-underline inline-flex items-center gap-2 text-lg font-medium text-neutral-900 hover:text-neutral-700 transition-colors duration-200"
+            >
+              hello@fezer.app
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="w-full border-t border-neutral-200/80 bg-white">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-10">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="flex items-center gap-3">

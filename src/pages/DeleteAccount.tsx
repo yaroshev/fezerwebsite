@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Nav from '../components/Nav';
 
 function DeleteAccount() {
   const [email, setEmail] = useState('');
@@ -25,16 +26,8 @@ function DeleteAccount() {
   const isValid = email.trim().length > 0 && confirmed;
 
   return (
-    <div className="min-h-screen w-full bg-white text-black">
-      <header className="border-b border-neutral-200 bg-white">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-6 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3">
-            <img src="/fezer-logo-transparent-blue.png" alt="Fezer logo" className="w-7 h-7" />
-            <span className="text-base font-semibold tracking-tight">Fezer</span>
-          </a>
-          <a href="/privacypolicy" className="text-sm text-neutral-600 hover:opacity-80">Privacy Policy</a>
-        </div>
-      </header>
+    <div className="min-h-screen w-full bg-[#fafafa] text-black">
+      <Nav activePath="/delete-account" />
 
       <main className="mx-auto w-full max-w-xl px-4 sm:px-6 md:px-10 py-12">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Request Account Deletion</h1>
