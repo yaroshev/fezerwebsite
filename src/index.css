@@ -21,10 +21,23 @@
     }
   }
 
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-area-x {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
   /* Fezer brand variables */
   :root {
-    --fezer-primary: #0d2b57; /* dark blue */
-    --fezer-accent: #9ec7ff;  /* light blue */
+    --fezer-primary: #0d2b57;
+    --fezer-accent: #9ec7ff;
+    --fezer-gradient: linear-gradient(180deg, #f0f7ff 0%, #fafafa 50%, #ffffff 100%);
+    --fezer-hero-mobile: linear-gradient(180deg, #e8f1ff 0%, #f5f9ff 35%, #fafafa 100%);
   }
   .light {
     --fezer-primary: #9ec7ff; /* swap in light mode */
@@ -293,6 +306,49 @@
   @media (max-width: 640px) {
     .mobile-btn {
       @apply min-h-[48px] text-base font-medium;
+    }
+  }
+
+  /* Touch-friendly: disable hover lift on touch devices to prevent sticky states */
+  @media (hover: none) {
+    .hover-lift:hover {
+      transform: none;
+      box-shadow: inherit;
+    }
+  }
+
+  /* Prevent zoom on input focus (iOS) - 16px minimum on inputs */
+  @media (max-width: 640px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Mobile feature carousel - horizontal scroll with snap */
+  .mobile-feature-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .mobile-feature-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .mobile-feature-snap {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  /* Phone glow for mobile hero */
+  .phone-glow {
+    box-shadow: 0 0 0 1px rgba(13, 43, 87, 0.06),
+                0 24px 48px -12px rgba(13, 43, 87, 0.15),
+                0 0 80px -20px rgba(158, 199, 255, 0.4);
+  }
+  @media (max-width: 767px) {
+    .phone-glow {
+      box-shadow: 0 0 0 1px rgba(13, 43, 87, 0.04),
+                  0 32px 64px -16px rgba(13, 43, 87, 0.2),
+                  0 0 100px -24px rgba(158, 199, 255, 0.5);
     }
   }
 }

@@ -12,7 +12,7 @@ const discoveredScreens: string[] = (() => {
   return entries.map(([, url]) => url);
 })();
 
-export default function PhoneSlideshow(): JSX.Element {
+export default function PhoneSlideshow({ className }: { className?: string }): JSX.Element {
   const [index, setIndex] = React.useState<number>(0);
   const total = discoveredScreens.length;
 
@@ -28,7 +28,7 @@ export default function PhoneSlideshow(): JSX.Element {
 
   return (
     <div
-      className="relative w-[190px] sm:w-[210px] md:w-[230px] lg:w-[260px] aspect-[9/19.5] rounded-[2rem] sm:rounded-[2.5rem] border border-neutral-200/80 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12)] overflow-hidden bg-neutral-900 animate-float"
+      className={`relative w-[200px] sm:w-[210px] md:w-[230px] lg:w-[260px] aspect-[9/19.5] rounded-[1.75rem] sm:rounded-[2.5rem] border border-neutral-200/80 overflow-hidden bg-neutral-900 animate-float shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12)] ${className ?? ''}`}
       aria-label="Fezer app phone preview"
     >
       {/* Inset screen with a subtle bezel */}

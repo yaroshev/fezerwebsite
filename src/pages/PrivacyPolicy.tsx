@@ -263,21 +263,20 @@ function PrivacyPolicy() {
         </div>
       </main>
 
-      <footer className="w-full border-t border-neutral-200 bg-white">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-10">
+      <footer className="w-full border-t border-neutral-200 bg-white safe-area-bottom">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-8 sm:py-10">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <img src="/fezer-logo-transparent-blue.png" alt="Fezer logo" className="w-6 h-6" />
               <span className="text-sm text-neutral-700">Fezer</span>
             </div>
-            <div className="text-sm text-neutral-700 flex flex-wrap items-center gap-x-2 gap-y-2">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-x-2 sm:gap-y-2 text-sm text-neutral-700">
               <a href="mailto:hello@fezer.app" className="hover:opacity-70 transition-opacity">hello@fezer.app</a>
-              <span>·</span>
-              <a href="/privacypolicy" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-4 py-2 text-sm font-medium hover:bg-black/5 transition-colors">Privacy Policy</a>
-              <span>·</span>
-              <a href="/delete-account" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-4 py-2 text-sm font-medium hover:bg-black/5 transition-colors">Request Account Deletion</a>
-              <span>·</span>
-              <a href="/terms" className="hover:opacity-70 transition-opacity">Terms</a>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-x-2">
+                <a href="/privacypolicy" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-4 py-2.5 text-sm font-medium hover:bg-black/5 transition-colors min-h-[44px] sm:min-h-0 sm:py-2">Privacy Policy</a>
+                <a href="/delete-account" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-4 py-2.5 text-sm font-medium hover:bg-black/5 transition-colors min-h-[44px] sm:min-h-0 sm:py-2">Request Account Deletion</a>
+                <a href="/terms" className="hover:opacity-70 transition-opacity py-2 sm:py-0">Terms</a>
+              </div>
             </div>
           </div>
           <p className="mt-4 text-xs text-neutral-500">© {new Date().getFullYear()} Fezer. All rights reserved.</p>

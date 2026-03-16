@@ -26,11 +26,11 @@ function DeleteAccount() {
   const isValid = email.trim().length > 0 && confirmed;
 
   return (
-    <div className="min-h-screen w-full bg-[#fafafa] text-black">
+    <div className="min-h-screen w-full bg-[#fafafa] text-black font-sans">
       <Nav activePath="/delete-account" />
 
-      <main className="mx-auto w-full max-w-xl px-4 sm:px-6 md:px-10 py-12">
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Request Account Deletion</h1>
+      <main className="mx-auto w-full max-w-xl px-4 sm:px-6 md:px-10 py-8 sm:py-12">
+        <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900">Request Account Deletion</h1>
         <p className="mt-3 text-neutral-600 leading-relaxed">
           Submit this form to request deletion of your Fezer account and associated personal data. We will process
           your request and remove or anonymize your data subject to legal retention requirements.
@@ -106,19 +106,19 @@ function DeleteAccount() {
         )}
       </main>
 
-      <footer className="w-full border-t border-neutral-200 bg-white mt-16">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-10">
+      <footer className="w-full border-t border-neutral-200 bg-white mt-12 sm:mt-16 safe-area-bottom">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-8 sm:py-10">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <img src="/fezer-logo-transparent-blue.png" alt="Fezer logo" className="w-6 h-6" />
               <span className="text-sm text-neutral-700">Fezer</span>
             </div>
-            <div className="text-sm text-neutral-700">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-x-2 text-sm text-neutral-700">
               <a href="mailto:hello@fezer.app" className="hover:opacity-70 transition-opacity">hello@fezer.app</a>
-              <span className="mx-2">·</span>
-              <a href="/privacypolicy" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-4 py-2 text-sm font-medium hover:bg-black/5 transition-colors">Privacy Policy</a>
-              <span className="mx-2">·</span>
-              <a href="/terms" className="hover:opacity-70 transition-opacity">Terms</a>
+              <div className="flex flex-wrap items-center gap-2">
+                <a href="/privacypolicy" className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-black px-4 py-2.5 text-sm font-medium hover:bg-black/5 transition-colors min-h-[44px] sm:min-h-0 sm:py-2">Privacy Policy</a>
+                <a href="/terms" className="hover:opacity-70 transition-opacity py-2 sm:py-0">Terms</a>
+              </div>
             </div>
           </div>
           <p className="mt-4 text-xs text-neutral-500">© {new Date().getFullYear()} Fezer. All rights reserved.</p>
