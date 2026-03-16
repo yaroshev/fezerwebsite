@@ -91,11 +91,11 @@ function App() {
                   Download for iOS
                 </a>
                 <a
-                  href="https://play.google.com/apps/testing/me.fezer"
+                  href="https://play.google.com/store/apps/details?id=me.fezer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-press inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-700 px-6 py-3 sm:px-5 sm:py-2.5 text-base sm:text-sm font-medium min-h-[48px] sm:min-h-0 hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 transition-colors duration-200"
-                  aria-label="Join Fezer Android beta via Google Play testing"
+                  aria-label="Download Fezer for Android via Google Play"
                 >
                   Download for Android
                 </a>
