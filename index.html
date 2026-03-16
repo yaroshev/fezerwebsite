@@ -7,18 +7,20 @@
     <link rel="icon" type="image/png" href="/fezer-logo-transparent-white.png" media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="Fezer is the iOS‑native field operations OS for construction. Time, tasks, tools, supplies, teams, and reports in one fast app—built for crews and PMs." />
-    <meta name="keywords" content="construction workforce management, tool tracking QR, field operations software, construction time tracking, construction task management, jobsite inventory management, blueprint viewer app, construction project reporting" />
-    <meta property="og:title" content="Fezer — Field Operations OS for Construction" />
-    <meta property="og:description" content="Run projects, people, tools, and time from a single iOS‑native system." />
+    <meta name="description" content="Fezer (Beta) — Field operations OS for construction. Time, tasks, tools, supplies, teams, and reports in one fast app. iOS and Android. Built for crews and PMs." />
+    <meta name="keywords" content="construction workforce management, tool tracking QR, field operations software, construction time tracking, construction task management, jobsite inventory management, blueprint viewer app, construction project reporting, Fezer beta" />
+    <meta property="og:title" content="Fezer (Beta) — Field Operations OS for Construction" />
+    <meta property="og:description" content="Run projects, people, tools, and time from a single app. iOS and Android beta—built for crews and PMs." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/fezer-social.png" />
+    <meta property="og:image" content="https://fezer.app/fezer-social.png" />
     <meta property="og:url" content="https://fezer.app/" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Fezer — Field Operations OS for Construction" />
-    <meta name="twitter:description" content="Run projects, people, tools, and time from a single iOS‑native system." />
-    <meta name="twitter:image" content="/fezer-social.png" />
+    <meta name="twitter:title" content="Fezer (Beta) — Field Operations OS for Construction" />
+    <meta name="twitter:description" content="Run projects, people, tools, and time from a single app. iOS and Android beta—built for crews and PMs." />
+    <meta name="twitter:image" content="https://fezer.app/fezer-social.png" />
     <meta name="theme-color" content="#ffffff" />
+    <meta name="author" content="Fezer" />
     <link rel="canonical" href="https://fezer.app/" />
     <link rel="apple-touch-icon" href="/FezerLogo.png" />
     <link rel="manifest" href="/site.webmanifest" crossorigin="anonymous" />
@@ -31,25 +33,46 @@
         } catch (e) {}
       })();
     </script>
-    <title>Fezer — Field Operations OS for Construction</title>
+    <title>Fezer (Beta) — Field Operations OS for Construction | iOS & Android</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
             "@type": "Organization",
+            "@id": "https://fezer.app/#organization",
             "name": "Fezer",
             "url": "https://fezer.app/",
-            "logo": "/fezer-logo.png"
+            "logo": "https://fezer.app/fezer-logo.png"
           },
           {
             "@type": "SoftwareApplication",
             "name": "Fezer",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "iOS",
+            "softwareVersion": "Beta",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-            "image": "/fezer-logo.png",
-            "url": "https://fezer.app/"
+            "image": "https://fezer.app/fezer-logo.png",
+            "url": "https://fezer.app/",
+            "downloadUrl": "https://testflight.apple.com/join/kvGPdcqB"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Fezer",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Android",
+            "softwareVersion": "Beta",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "image": "https://fezer.app/fezer-logo.png",
+            "url": "https://fezer.app/",
+            "downloadUrl": "https://play.google.com/apps/testing/me.fezer"
+          },
+          {
+            "@type": "WebSite",
+            "name": "Fezer",
+            "url": "https://fezer.app/",
+            "description": "Fezer (Beta) — Field operations OS for construction. Time, tasks, tools, supplies, teams, and reports in one fast app.",
+            "publisher": { "@id": "https://fezer.app/#organization" }
           }
         ]
       }

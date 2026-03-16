@@ -28,7 +28,7 @@ export default function PhoneSlideshow(): JSX.Element {
 
   return (
     <div
-      className="relative w-[190px] sm:w-[210px] md:w-[230px] lg:w-[260px] aspect-[9/19.5] rounded-[2rem] sm:rounded-[2.5rem] border border-neutral-200 shadow-[0_10px_25px_rgba(0,0,0,0.08)] overflow-hidden bg-neutral-900"
+      className="relative w-[190px] sm:w-[210px] md:w-[230px] lg:w-[260px] aspect-[9/19.5] rounded-[2rem] sm:rounded-[2.5rem] border border-neutral-200/80 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12)] overflow-hidden bg-neutral-900 animate-float"
       aria-label="Fezer app phone preview"
     >
       {/* Inset screen with a subtle bezel */}

@@ -1,7 +1,7 @@
 {
-  "name": "Fezer",
+  "name": "Fezer (Beta)",
   "short_name": "Fezer",
-  "description": "Field operations OS for construction. Time, tasks, tools, supplies, teams, and reports—fast and iOS-native.",
+  "description": "Fezer (Beta) — Field operations OS for construction. Time, tasks, tools, supplies, teams, and reports. iOS and Android.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
