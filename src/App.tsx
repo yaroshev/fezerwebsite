@@ -9,17 +9,29 @@ function App() {
   const [activeSection, setActiveSection] = React.useState<string>('top');
   const [androidModalOpen, setAndroidModalOpen] = React.useState(false);
   const [androidEmail, setAndroidEmail] = React.useState('');
+  const [androidSubmitState, setAndroidSubmitState] = React.useState<'idle' | 'sending' | 'done' | 'error'>('idle');
 
-  const handleAndroidSubmit = (e: React.FormEvent) => {
+  const handleAndroidSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const email = androidEmail.trim();
     if (!email) return;
-    const subject = encodeURIComponent('Request access to Fezer Android beta');
-    const body = encodeURIComponent(
-      `Hi Fezer team,\n\nI'd like to request access to the Fezer Android beta.\n\nEmail: ${email}\n\nThank you.`
-    );
-    window.location.href = `mailto:hello@fezer.app?subject=${subject}&body=${body}`;
-    setAndroidModalOpen(false);
+    setAndroidSubmitState('sending');
+    const formData = new FormData();
+    formData.append('form-name', 'android-research');
+    formData.append('email', email);
+    formData.append('request_type', 'Android beta access');
+    formData.append('bot', '');
+    try {
+      const res = await fetch('/', { method: 'POST', body: formData });
+      if (res.ok) {
+        setAndroidSubmitState('done');
+        setAndroidEmail('');
+      } else {
+        setAndroidSubmitState('error');
+      }
+    } catch {
+      setAndroidSubmitState('error');
+    }
   };
   // Track active section for nav (home page only)
   React.useEffect(() => {
@@ -286,7 +298,10 @@ function App() {
         >
           <div
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
-            onClick={() => setAndroidModalOpen(false)}
+            onClick={() => {
+              setAndroidModalOpen(false);
+              setAndroidSubmitState('idle');
+            }}
             aria-hidden="true"
           />
           <div className="relative z-10 w-full max-w-md rounded-2xl bg-white shadow-xl border border-neutral-200/80 p-6 sm:p-7 animate-mobile-modal-in">
@@ -299,7 +314,10 @@ function App() {
               </div>
               <button
                 type="button"
-                onClick={() => setAndroidModalOpen(false)}
+                onClick={() => {
+                  setAndroidModalOpen(false);
+                  setAndroidSubmitState('idle');
+                }}
                 className="inline-flex h-8 w-8 items-center justify-center rounded-full text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800 transition-colors"
                 aria-label="Close"
               >
@@ -307,27 +325,37 @@ function App() {
               </button>
             </div>
             <form onSubmit={handleAndroidSubmit} className="mt-5 space-y-4">
-              <div>
-                <label htmlFor="android-email" className="block text-sm font-medium text-neutral-800">
-                  Work email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="android-email"
-                  type="email"
-                  required
-                  value={androidEmail}
-                  onChange={(e) => setAndroidEmail(e.target.value)}
-                  placeholder="you@company.com"
-                  className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-400"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full rounded-full bg-[#0d2b57] text-white px-6 py-3 text-sm font-semibold btn-press disabled:opacity-60 disabled:cursor-not-allowed"
-                disabled={!androidEmail.trim()}
-              >
-                Submit request
-              </button>
+              <input type="text" name="bot" className="hidden" tabIndex={-1} autoComplete="off" />
+              {androidSubmitState === 'done' ? (
+                <p className="text-sm text-neutral-700 py-2">Thanks — we&apos;ll email you when a slot opens.</p>
+              ) : (
+                <>
+                  <div>
+                    <label htmlFor="android-email" className="block text-sm font-medium text-neutral-800">
+                      Work email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="android-email"
+                      type="email"
+                      required
+                      value={androidEmail}
+                      onChange={(e) => setAndroidEmail(e.target.value)}
+                      placeholder="you@company.com"
+                      className="mt-2 w-full rounded-xl border border-neutral-200 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-400"
+                    />
+                  </div>
+                  {androidSubmitState === 'error' && (
+                    <p className="text-sm text-red-600">Something went wrong. Try again or email hello@fezer.app.</p>
+                  )}
+                  <button
+                    type="submit"
+                    className="w-full rounded-full bg-[#0d2b57] text-white px-6 py-3 text-sm font-semibold btn-press disabled:opacity-60 disabled:cursor-not-allowed"
+                    disabled={!androidEmail.trim() || androidSubmitState === 'sending'}
+                  >
+                    {androidSubmitState === 'sending' ? 'Sending…' : 'Submit request'}
+                  </button>
+                </>
+              )}
             </form>
           </div>
         </div>

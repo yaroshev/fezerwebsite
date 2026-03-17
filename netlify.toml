@@ -12,6 +12,7 @@
 [build.processing.html]
   pretty_urls = true
 
+# Forms: android-research = Android beta request form (form research documentation)
 # Explicitly tell Netlify to use Git LFS
 [git]
   lfs = true 
