@@ -8,6 +8,6 @@
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
-    { "src": "/fezer-app-icon.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any" }
+    { "src": "/fezer-app-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ]
 }
