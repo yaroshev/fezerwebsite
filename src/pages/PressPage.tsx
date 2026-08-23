@@ -14,7 +14,7 @@ const FACTS: { label: string; value: string }[] = [
   { label: 'Price', value: 'Free -  no subscription, no ads, no in-app purchases' },
   { label: 'Download size', value: 'About 3.5 MB' },
   { label: 'Languages', value: 'English' },
-  { label: 'Privacy', value: 'App Store privacy label: "Data Not Collected." No account, no server, no analytics.' },
+  { label: 'Privacy', value: 'Plans stay on device. No account, no ads. Anonymous product analytics; see the Privacy Policy.' },
   { label: 'Website', value: 'fezer.app' },
 ];
 
@@ -93,9 +93,9 @@ export default function PressPage() {
                   tap, then compare the two side by side so tomorrow’s plan starts from evidence.
                   Above the day sits a goal layer -  life areas called fronts, goals broken into
                   steps, and vision boards -  whose steps commit directly onto the schedule. The
-                  app is free with no subscription, ads or in-app purchases, and it has no
-                  accounts and no server: everything a user plans and tracks stays on their
-                  device, and the App Store privacy label reads "Data Not Collected."
+                  app has no accounts: everything a user plans and tracks stays on their
+                  device. We use anonymous product analytics to keep the app working; we
+                  cannot read a user's schedule.
                 </p>
 
                 <h2 className="mt-10 text-2xl sm:text-3xl font-semibold tracking-tight">
@@ -105,7 +105,7 @@ export default function PressPage() {
                   {[
                     'Plan vs. actual: almost every planner records intentions; Fezer also records the day as it ran and confronts the two -  the core loop is calibration, not organization.',
                     'Genuinely free, structurally: with no servers, sync or AI infrastructure to fund, there is nothing a subscription would pay for. No premium tier exists.',
-                    'Privacy as architecture: no account, no backend, no analytics SDK. The data cannot leak because it is never transmitted.',
+                    'Privacy as architecture: no account, no cloud copy of the day. Plans stay on the device. Product analytics are anonymous and cannot read a schedule.',
                     'A 3.5 MB app in 2026: a full planner, tracker, goal system and vision board smaller than most app updates.',
                     'Built by one person: designed, developed and shipped by a solo independent developer.',
                   ].map((point) => (

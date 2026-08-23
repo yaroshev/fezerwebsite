@@ -8,14 +8,15 @@ function PrivacyPolicy() {
 
       <main className="mx-auto w-full max-w-3xl px-4 sm:px-6 md:px-10 py-10">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight dark:text-neutral-100">Privacy Policy</h1>
-        <p className="mt-3 text-neutral-600 dark:text-neutral-400">Fezer · Last updated: July 27, 2026</p>
+        <p className="mt-3 text-neutral-600 dark:text-neutral-400">Fezer · Last updated: August 23, 2026</p>
 
         <div className="mt-6 rounded-2xl border border-neutral-200/80 bg-white p-5 sm:p-6 dark:border-neutral-800 dark:bg-neutral-900">
           <h2 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">Summary</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-300">
-            Fezer does not collect, transmit, sell, or share any personal data. The app has no account
-            system, no analytics, no advertising, and no tracking. Everything you create in Fezer is
-            stored locally on your device and stays there.
+            Your plans stay on your device. Fezer has no account, no ads, and no cloud copy of your
+            schedule. To keep the app working we send anonymous product analytics, crash reports, and
+            masked session recordings to our analytics provider. We cannot read what you wrote, and we
+            do not sell any of this.
           </p>
         </div>
 
@@ -23,127 +24,210 @@ function PrivacyPolicy() {
           <section>
             <h2 className="text-xl font-semibold">Overview</h2>
             <p className="mt-2 leading-relaxed">
-              Fezer ("the app", "we", "our", or "us") is a personal day planner, time tracker, and goal
-              tracker for iPhone and iPad. This Privacy Policy describes how the app and this website
-              handle information. By using the app or the website, you agree to this policy.
+              Fezer (“the app”, “we”, “our”, or “us”) is a personal day planner, time tracker, and goal
+              tracker. This policy covers the iPhone and iPad app, Fezer on Android where it is
+              available, and this website. By using Fezer you agree to it.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">Data the App Collects</h2>
+            <h2 className="text-xl font-semibold">Your plans stay on your device</h2>
             <p className="mt-2 leading-relaxed">
-              None. Fezer does not require an account or sign-in, and it does not send any data to us or
-              to third parties. The app does not connect to any server operated by us, does not include
-              third-party SDKs, and does not use analytics, advertising, or tracking technologies of any
-              kind.
+              Everything you create in Fezer (fronts, goals, steps, schedule blocks, checkpoints, time
+              tracking history, notes, vision boards, and attachments) is stored in the app’s private
+              storage on your device. We do not run a Fezer account, and we do not keep a copy of your
+              planner on a server of ours. The app never uploads your titles, notes, photos, files, or
+              the times you planned or tracked.
+            </p>
+            <p className="mt-2 leading-relaxed">
+              If you use Apple’s device backup (iCloud Backup or a computer backup), your Fezer data
+              may be included like any other app. Those backups are managed by Apple under{' '}
+              <a className="underline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple’s privacy policy</a>.
+              We cannot open them.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">Where Your Content Is Stored</h2>
+            <h2 className="text-xl font-semibold">What leaves the device</h2>
             <p className="mt-2 leading-relaxed">
-              Everything you create in Fezer, including fronts, goals, steps, schedule blocks, checkpoints, time
-              tracking history, notes, and attachments (photos and files), is stored locally in the
-              app&apos;s private storage on your device. We have no access to it, and it is never uploaded
-              to us or anyone else by the app.
+              The planner itself works without a network. A small amount of technical information is
+              sent so we can see whether the app is healthy and which parts people actually use. It is
+              not a profile of you, and it is not your day.
+            </p>
+
+            <div className="mt-4 space-y-4">
+              <div>
+                <h3 className="font-medium">Product analytics</h3>
+                <p className="mt-1 leading-relaxed">
+                  We record things like the app opening, which screen you are on, whether onboarding
+                  was finished, and that you created an area, a goal, a block, or a pin. For Fezer Plus
+                  we record that the paywall was shown or dismissed, and that a purchase, restore, or
+                  cancellation happened, including which plan. Events carry counts, durations, and
+                  similar structure. They do not carry the names you typed, notes, file names, image
+                  data, locations, exact dates, prices, or receipts.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium">Crashes</h3>
+                <p className="mt-1 leading-relaxed">
+                  If the app crashes, we receive a report with the stack trace, app version, and device
+                  class so we can fix it. Your planner content is not attached.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium">Session recordings</h3>
+                <p className="mt-1 leading-relaxed">
+                  To see how a crash or a rough edge actually happened, we capture anonymized session
+                  recordings. Before a frame leaves the device, Fezer hides the text on screen and the
+                  images on screen. We can see that someone tapped a button. We cannot read your
+                  schedule, notes, or photos.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium">Device and app metadata</h3>
+                <p className="mt-1 leading-relaxed">
+                  App version, build, operating system, device class, and a random identifier created
+                  on the device so we can tell a new install from a returning one. That identifier is
+                  not your name, email, or Apple Account.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold">Who processes this</h2>
+            <p className="mt-2 leading-relaxed">
+              Product analytics, crash reports, and session recordings are processed by{' '}
+              <a className="underline" href="https://posthog.com" target="_blank" rel="noopener noreferrer">PostHog</a>
+              {' '}on our behalf, in the United States. We configure PostHog so it does not build a named
+              profile of you. PostHog’s own practices are described in{' '}
+              <a className="underline" href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">their privacy policy</a>.
             </p>
             <p className="mt-2 leading-relaxed">
-              If you use Apple&apos;s device backup features (such as iCloud Backup or a computer backup),
-              your Fezer data may be included in those backups like the data of any other app. Those
-              backups are managed entirely by Apple under{' '}
-              <a className="underline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple&apos;s privacy policy</a>;
-              we cannot access them.
+              We do not sell this information. We do not use it for advertising. We do not share it
+              with data brokers, ad networks, or other apps so they can track you. If the law requires
+              us to disclose something, or if Fezer is sold as a business, the information may move
+              with it under this policy.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">Device Permissions</h2>
+            <h2 className="text-xl font-semibold">Fezer Plus and Apple</h2>
+            <p className="mt-2 leading-relaxed">
+              If you subscribe to Fezer Plus, the purchase is made through Apple. Apple charges your
+              Apple Account, keeps the receipt, and decides whether the subscription is active. We do
+              not receive your card number, billing address, or App Store receipt. Entitlement lives
+              on the device through StoreKit. We may record that a purchase or restore happened, and
+              which plan, as described above.
+            </p>
+            <p className="mt-2 leading-relaxed">
+              Managing or cancelling a subscription is done in your Apple Account settings, or from
+              Manage Fezer Plus inside the app, which opens Apple’s subscription sheet.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold">Device permissions</h2>
             <div className="mt-2 space-y-4">
               <div>
                 <h3 className="font-medium">Camera (optional)</h3>
                 <p className="mt-1 leading-relaxed">
-                  If you choose to take a photo to attach to a step, the app asks for camera permission.
-                  Photos you take are stored only in the app&apos;s local storage on your device. The
-                  camera is never used without your action.
+                  If you take a photo to attach to a step, the app asks for camera permission. Photos
+                  you take stay in the app’s local storage. The camera is never used without your action.
                 </p>
               </div>
               <div>
                 <h3 className="font-medium">Photos</h3>
                 <p className="mt-1 leading-relaxed">
-                  Fezer uses Apple&apos;s system photo picker to let you attach images. With this picker,
-                  the app never gains access to your photo library. Only the specific images you select
-                  are copied into the app&apos;s local storage.
+                  Fezer uses the system photo picker. The app never gains access to your whole library.
+                  Only the images you select are copied into local storage.
                 </p>
               </div>
               <div>
                 <h3 className="font-medium">Files</h3>
                 <p className="mt-1 leading-relaxed">
-                  Fezer uses Apple&apos;s system document picker to let you attach files. Only the files
-                  you select are copied into the app&apos;s local storage.
+                  Fezer uses the system document picker. Only the files you select are copied into
+                  local storage.
                 </p>
               </div>
               <p className="leading-relaxed">
-                You can revoke the camera permission at any time in iOS Settings. The app remains fully
-                functional; the corresponding feature is simply unavailable.
+                You can revoke camera permission in iOS Settings. The rest of the app keeps working.
               </p>
             </div>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">Analytics and Diagnostics</h2>
+            <h2 className="text-xl font-semibold">Apple diagnostics</h2>
             <p className="mt-2 leading-relaxed">
-              The app contains no analytics or crash-reporting SDKs. If you have opted in to share
-              analytics with app developers in your iOS settings, Apple may provide us with aggregated,
-              anonymized crash and usage statistics. That sharing is controlled by you in your device
-              settings and governed by Apple&apos;s privacy policy.
+              Separate from Fezer’s own analytics: if you have opted in to share analytics with app
+              developers in iOS Settings, Apple may provide us with aggregated crash and usage
+              statistics. That sharing is controlled by you and governed by{' '}
+              <a className="underline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple’s privacy policy</a>.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">Deleting Your Data</h2>
+            <h2 className="text-xl font-semibold">Deleting your data</h2>
             <p className="mt-2 leading-relaxed">
-              You can delete any item (goals, blocks, attachments, and so on) inside the app at any time.
-              Deleting the app from your device permanently removes all Fezer data stored on that
-              device. Because there is no account and we hold no copy of your data, there is nothing for
-              us to delete on a server.
+              Delete any item inside the app at any time. Deleting Fezer from the device permanently
+              removes the planner data stored there, and stops further analytics from that install.
+            </p>
+            <p className="mt-2 leading-relaxed">
+              Because there is no account, we cannot look you up by name. If you want us to delete
+              analytics we already hold, write to{' '}
+              <a className="underline" href="mailto:hello@fezer.app">hello@fezer.app</a>
+              {' '}from the device if you can, and tell us roughly when you installed. We will delete
+              what we can identify.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">Children&apos;s Privacy</h2>
+            <h2 className="text-xl font-semibold">Children</h2>
             <p className="mt-2 leading-relaxed">
-              Fezer does not collect personal data from anyone, including children. The app is suitable
-              for general audiences and contains no third-party content, ads, or external links that
-              collect data.
+              Fezer is not directed at children under 13, and we do not knowingly collect information
+              from them. If you believe a child has used Fezer in a way that sent us analytics, write
+              to us and we will delete what we can find. There are no ads.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">This Website</h2>
+            <h2 className="text-xl font-semibold">People in the EEA and UK</h2>
             <p className="mt-2 leading-relaxed">
-              This website includes optional feedback and beta-access forms. If you submit one, we receive
-              the information you provide, such as your feedback, name, email address, or an optional image
-              attachment, and use it only to improve Fezer or respond to you. Our hosting provider processes
-              these submissions and may also process standard technical server logs (such as IP address,
-              browser type, and request time) as necessary to operate and secure the site. We do not sell
-              this information or use it for advertising.
+              We process the technical information above to run and improve Fezer (legitimate
+              interests), and to provide a subscription you buy through Apple (contract with Apple,
+              not with a Fezer account). You can ask us for access, correction, or deletion of the
+              analytics we hold, or object to that processing, at{' '}
+              <a className="underline" href="mailto:hello@fezer.app">hello@fezer.app</a>.
+              You may also complain to your local data protection authority.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">Changes to This Policy</h2>
+            <h2 className="text-xl font-semibold">This website</h2>
             <p className="mt-2 leading-relaxed">
-              If the app&apos;s data practices ever change (for example, if a future version adds optional
-              sync), we will update this policy before those changes take effect and update the
-              &quot;Last updated&quot; date above.
+              Optional feedback and beta-access forms send us what you type (feedback, name, email,
+              an optional image). We use that only to improve Fezer or reply. Our host may keep
+              ordinary server logs (IP address, browser, time) to run and secure the site.
+            </p>
+            <p className="mt-2 leading-relaxed">
+              The website uses Google Analytics to understand which pages are read. That is separate
+              from the app. We do not sell website form submissions or use them for advertising.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold">Changes</h2>
+            <p className="mt-2 leading-relaxed">
+              If these practices change (for example if a future version adds optional sync), we will
+              update this page first and change the date above.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold">Questions</h2>
             <p className="mt-2 leading-relaxed">
-              Fezer stores all data on your device. See the sections above for how to manage or
-              delete your information.
+              Write to{' '}
+              <a className="underline" href="mailto:hello@fezer.app">hello@fezer.app</a>.
             </p>
           </section>
         </div>

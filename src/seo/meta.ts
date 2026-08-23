@@ -366,7 +366,7 @@ export const ROUTES_META: RouteMeta[] = [
     path: '/privacypolicy',
     title: 'Privacy Policy -  Fezer',
     description:
-      'How Fezer handles your data: no accounts, no analytics, no tracking. Everything you create in the app stays on your device.',
+      'How Fezer handles your data: your plans stay on your device. No account, no ads. Anonymous product analytics help us keep the app working.',
     robots: 'index, follow',
     indexable: true,
   },

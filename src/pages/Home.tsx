@@ -315,10 +315,10 @@ export default function Home() {
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Private by design</h2>
                   <p className="mt-3 text-neutral-600 max-w-3xl text-[15px] sm:text-base leading-relaxed dark:text-neutral-400">
-                    Fezer works entirely on your device. There is no account to create, no sign-in,
-                    and no server. Your goals, schedule, tracking history, notes, and attachments
-                    are stored locally on your iPhone or iPad and are never sent to us or anyone
-                    else. No analytics, no ads, no tracking.
+                    Your goals, schedule, tracking history, notes, and attachments stay on your
+                    iPhone or iPad. There is no account, no sign-in, and no cloud copy of your day.
+                    We use anonymous product analytics to keep the app working. We cannot read what
+                    you wrote, and we do not sell any of it.
                   </p>
                   <a
                     href="/privacypolicy"

@@ -267,7 +267,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       {
         heading: 'What "no account" actually means here',
         paragraphs: [
-          'It is not a privacy mode you switch on, or a paid tier. Fezer ships without any authentication system, without a backend and without analytics inside the app. There is no user record for you because there is no user table.',
+          'It is not a privacy mode you switch on, or a paid tier. Fezer has no authentication system and no cloud copy of your schedule. There is no user table of your day, because your plans never leave the device.',
           'The practical consequences: nothing to sign up for, nothing to log into, no password to lose, no session to expire, and no company database that can be breached with your schedule in it.',
         ],
       },
@@ -296,7 +296,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         heading: 'What Fezer does with the privacy it buys you',
         paragraphs: [
           'Because the data never leaves, Fezer can be relaxed about how much of it you keep. Track every session with checkpoints, attach photos and documents to steps, keep long notes on goals, build vision boards -  none of it increases your exposure, because none of it is uploaded.',
-          'The website you are reading does use Google Analytics, which is separate from the app. The app itself contains no analytics, no advertising identifiers and no third-party trackers.',
+          'The website you are reading uses Google Analytics, which is separate from the app. The app sends anonymous product analytics, crash reports and masked session recordings so we can keep it working. Those events do not include your schedule, notes or photos. Details are in the Privacy Policy.',
         ],
       },
     ],
@@ -330,7 +330,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
     faq: [
       {
         q: 'Does Fezer need an internet connection?',
-        a: 'No. Every feature works offline, permanently. Fezer does not make network requests to run, so airplane mode and dead zones change nothing about how it behaves.',
+        a: 'Planning, tracking and your goals work with the network off. A small number of anonymous diagnostic events wait on the device and send when a connection is available. They are not required for the app to run.',
       },
       {
         q: 'Do I have to create an account to use Fezer?',
@@ -338,15 +338,15 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Where is my data stored?',
-        a: 'On your device only. Your schedule, tracked time, goals, steps, notes, photos and attachments are written to local storage on the iPhone or iPad and are never uploaded.',
+        a: 'Your schedule, tracked time, goals, steps, notes, photos and attachments stay in local storage on the iPhone or iPad and are never uploaded. The app also sends anonymous product analytics so we can keep it working. Those events do not include what you wrote.',
       },
       {
         q: 'Does Fezer track my usage or show ads?',
-        a: 'No. The app contains no analytics SDK, no advertising identifiers and no third-party trackers. There are no ads.',
+        a: 'There are no ads, and we do not use advertising identifiers to track you across apps. The app does send anonymous product analytics, crash reports and masked session recordings to help us improve Fezer. Details are in the Privacy Policy.',
       },
       {
         q: 'What happens to my data if I delete the app?',
-        a: 'It is deleted with the app, because that is the only place it exists. There is no server copy to request removal of and no account to close.',
+        a: 'Your planner data is deleted with the app, because that is the only place it lives. Uninstalling also stops further analytics from that install. If you want us to delete analytics we already hold, write to hello@fezer.app.',
       },
       {
         q: 'Can I back up or move my data to a new phone?',

@@ -19,7 +19,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'Do I need to create an account?',
-        a: 'No. Fezer has no accounts, no sign-up and no login. You install the app and start planning. There is no user record of you anywhere, because there is no server for one to live on.',
+        a: 'No. Fezer has no accounts, no sign-up and no login. You install the app and start planning. Your plans stay on the device. We do not create a Fezer account for you.',
       },
       {
         q: 'What do I need to run Fezer?',
@@ -36,15 +36,15 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'Where is my data stored?',
-        a: 'On your device, and only there. Your schedule, tracked sessions, goals, steps, notes, photos and attachments are written to local storage on your iPhone or iPad and are never uploaded. The App Store privacy label reads "Data Not Collected" because there is nothing collected.',
+        a: 'Your schedule, tracked sessions, goals, steps, notes, photos and attachments are written to local storage on your iPhone or iPad and are never uploaded. The app also sends anonymous product analytics, crash reports and masked session recordings so we can keep it working. Those events do not include what you wrote. See the Privacy Policy for the detail.',
       },
       {
         q: 'Does Fezer work offline?',
-        a: 'Yes -  permanently and completely. Fezer makes no network requests to function, so airplane mode, dead zones and week-long disconnection change nothing about how it behaves.',
+        a: 'Yes. Planning, tracking and your goals work with the network off. A small number of anonymous diagnostic events wait on the device and send when a connection is available. They are not required for the app to run.',
       },
       {
         q: 'Does Fezer sync between my iPhone and iPad?',
-        a: 'No. Each device keeps its own local data and nothing is transmitted anywhere, so there is no sync between devices. This is a deliberate design decision, not a missing feature: the same architecture that prevents sync is what guarantees your schedule cannot leak from a server.',
+        a: 'No. Each device keeps its own local planner data. There is no cloud copy of your schedule to sync from. Anonymous product analytics are separate from that, and they do not include your plans.',
       },
       {
         q: 'How do I back up my data or move it to a new phone?',
@@ -52,7 +52,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'How do I delete my data?',
-        a: 'Delete the app. Your data exists only on your device, so removing the app removes all of it. There is no server copy to request deletion of and no account to close.',
+        a: 'Delete the app. That removes your plans, tracked time, goals, notes and attachments from the device, and stops further analytics from that install. If you want us to delete analytics we already hold, write to hello@fezer.app.',
       },
     ],
   },

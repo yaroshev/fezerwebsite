@@ -214,7 +214,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
       { title: 'Goal-aware tracking', desc: 'Attach sessions to fronts, goals or steps so tracked time counts toward something.' },
       { title: 'Tracked blocks', desc: 'Sessions appear on your schedule beside the plan, not in a separate report.' },
       { title: 'Plan vs. reality analytics', desc: 'Day, week, month and year breakdowns by front and goal.' },
-      { title: 'Completely private', desc: 'Tracking history is stored on your device only. No account, no cloud, no analytics SDKs.' },
+      { title: 'Completely private', desc: 'Your tracking history stays on the device. No account, no cloud copy of your day.' },
     ],
     related: [
       { path: '/time-blocking-app', label: 'Plan the time you are about to track' },
