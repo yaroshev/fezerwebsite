@@ -2,26 +2,49 @@ import React from 'react';
 import { Play } from 'lucide-react';
 import { INTRO_VIDEO, trackEvent } from '../seo/constants';
 
-/**
- * Click-to-load YouTube embed for the launch video. The initial render is a
- * local poster image and a play button -- no request reaches YouTube until the
- * visitor chooses to play, at which point the youtube-nocookie iframe loads
- * with autoplay. Keeps page weight down and matches the site's privacy stance.
- */
-export default function VideoEmbed({ location }: { location: string }) {
-  const [playing, setPlaying] = React.useState(false);
+function embedSrc({ autoplay, muted, loop }: { autoplay: boolean; muted: boolean; loop: boolean }) {
+  const params = new URLSearchParams({
+    autoplay: autoplay ? '1' : '0',
+    playsinline: '1',
+    rel: '0',
+  });
+  if (muted) params.set('mute', '1');
+  if (loop) {
+    params.set('loop', '1');
+    params.set('playlist', INTRO_VIDEO.id);
+  }
+  return `${INTRO_VIDEO.embedUrl}?${params.toString()}`;
+}
 
-  const play = () => {
-    setPlaying(true);
+/**
+ * YouTube embed for the launch video. Default is click-to-load: a local poster
+ * and play button, with no request to YouTube until the visitor chooses to play.
+ * Pass `autoPlay` to load immediately, muted, looping, so browsers will start it.
+ */
+export default function VideoEmbed({
+  location,
+  autoPlay = false,
+}: {
+  location: string;
+  autoPlay?: boolean;
+}) {
+  const [playing, setPlaying] = React.useState(autoPlay);
+  const tracked = React.useRef(false);
+
+  React.useEffect(() => {
+    if (!playing || tracked.current) return;
+    tracked.current = true;
     trackEvent('video_play', { video_title: INTRO_VIDEO.title, link_location: location });
-  };
+  }, [playing, location]);
+
+  const play = () => setPlaying(true);
 
   return (
     <div className="mx-auto w-full max-w-[300px] sm:max-w-[320px]">
       <div className="relative aspect-[9/16] overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-900 shadow-xl shadow-[#0d2b57]/10 dark:border-neutral-800">
         {playing ? (
           <iframe
-            src={`${INTRO_VIDEO.embedUrl}?autoplay=1&playsinline=1&rel=0`}
+            src={embedSrc({ autoplay: true, muted: autoPlay, loop: autoPlay })}
             title={INTRO_VIDEO.title}
             allow="autoplay; encrypted-media; picture-in-picture"
             allowFullScreen
@@ -50,7 +73,7 @@ export default function VideoEmbed({ location }: { location: string }) {
             </span>
             <span className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-4 pt-10 text-left">
               <span className="block text-sm font-semibold text-white">{INTRO_VIDEO.title}</span>
-              <span className="block text-xs text-white/80">29 seconds · YouTube</span>
+              <span className="block text-xs text-white/80">{INTRO_VIDEO.durationLabel} · YouTube</span>
             </span>
           </button>
         )}

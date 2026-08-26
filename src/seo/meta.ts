@@ -2,7 +2,7 @@ import { FEATURE_PAGES } from '../content/features';
 import { COMPARISON_PAGES } from '../content/comparisons';
 import { GUIDES } from '../content/guides';
 import { FAQ_ITEMS } from '../content/faq';
-import { APP_STORE_URL, INTRO_VIDEO, SITE_URL, SCREENSHOTS } from './constants';
+import { APP_STORE_URL, APP_VERSION, INTRO_VIDEO, PLAY_STORE_URL, PRICING, SITE_URL, SCREENSHOTS } from './constants';
 
 export type RouteMeta = {
   path: string;
@@ -45,7 +45,7 @@ const WEBSITE = {
   url: `${SITE_URL}/`,
   publisher: { '@id': `${SITE_URL}/#organization` },
   description:
-    'Fezer is a private day planner, time tracker, goal planner and vision board app for iPhone and iPad.',
+    'Fezer is a private day planner, time tracker, goal planner and vision board app for iPhone, iPad and Android.',
 };
 
 const SOFTWARE_APPLICATION = {
@@ -55,11 +55,35 @@ const SOFTWARE_APPLICATION = {
   alternateName: 'Fezer',
   applicationCategory: 'ProductivityApplication',
   applicationSubCategory: 'Day Planner',
-  operatingSystem: 'iOS, iPadOS',
-  softwareVersion: '1.0',
-  downloadUrl: APP_STORE_URL,
+  operatingSystem: 'iOS, iPadOS, Android',
+  softwareVersion: APP_VERSION,
+  downloadUrl: [APP_STORE_URL, PLAY_STORE_URL],
   installUrl: APP_STORE_URL,
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  // Free to install, with two paid plans. Stating all three lets Google show a
+  // price range instead of a bare "Free" that the paid tier then contradicts.
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Fezer',
+      price: '0',
+      priceCurrency: PRICING.currency,
+      description: 'Plan the day in time blocks and track it, free and without an account.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Fezer Plus, monthly',
+      price: PRICING.monthly.amount.toFixed(2),
+      priceCurrency: PRICING.currency,
+      category: 'subscription',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Fezer Plus, yearly',
+      price: PRICING.yearly.amount.toFixed(2),
+      priceCurrency: PRICING.currency,
+      category: 'subscription',
+    },
+  ],
   image: `${SITE_URL}/fezer-app-icon.png`,
   screenshot: [
     `${SITE_URL}${SCREENSHOTS.timeBlocking}`,
@@ -74,10 +98,11 @@ const SOFTWARE_APPLICATION = {
     'Day planning with time blocks',
     'Time blocking with repeating blocks',
     'One-tap time tracking with checkpoints',
-    'Goal planning with fronts, goals and steps',
+    'Goal planning with areas, plans and steps',
     'Vision boards for goals and life areas',
     'Plan vs. reality analytics',
   ],
+  isAccessibleForFree: true,
   author: { '@id': `${SITE_URL}/#organization` },
   publisher: { '@id': `${SITE_URL}/#organization` },
 };
@@ -335,6 +360,39 @@ export const ROUTES_META: RouteMeta[] = [
           about: { '@id': `${SITE_URL}/#app` },
         },
         INTRO_VIDEO_JSONLD,
+      ],
+    },
+  },
+  {
+    path: '/vision',
+    title: 'Vision & Objectives -  Fezer',
+    description:
+      'The long-term vision guiding Fezer: a future of abundance beyond Earth, built through self-managing systems aligned with humanity’s flourishing — and the objectives that move that work forward.',
+    robots: 'index, follow',
+    indexable: true,
+    ogSlug: 'vision',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        ORGANIZATION,
+        WEBSITE,
+        {
+          '@type': 'AboutPage',
+          '@id': `${SITE_URL}/vision`,
+          url: `${SITE_URL}/vision`,
+          name: 'Vision & Objectives -  Fezer',
+          description:
+            'The long-term vision guiding Fezer, and the objectives that move that work forward.',
+          isPartOf: { '@id': `${SITE_URL}/#website` },
+          about: { '@id': `${SITE_URL}/#organization` },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Fezer', item: `${SITE_URL}/` },
+            { '@type': 'ListItem', position: 2, name: 'Vision', item: `${SITE_URL}/vision` },
+          ],
+        },
       ],
     },
   },

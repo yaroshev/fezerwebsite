@@ -14,6 +14,26 @@ export type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    date: '2026-08-26',
+    kind: 'site',
+    title: 'Vision and objectives',
+    items: [
+      'New page at /vision with Fezer\u2019s long-term vision statement and the ten objectives that guide how it is built.',
+    ],
+  },
+  {
+    date: '2026-08-26',
+    kind: 'site',
+    title: 'The site catches up with the app',
+    items: [
+      'Fezer Plus is now described on the site, with what each tier includes and what it costs.',
+      'Android is documented everywhere it was previously listed as unavailable.',
+      'Terminology across the site follows the app: areas, plans and steps.',
+      'Live Activities, widgets and the Control Center control are documented for the first time.',
+      'Corrected every claim that Fezer collects no analytics. It does, anonymously, and always has -  the Privacy Policy was right and the rest of the site was wrong.',
+    ],
+  },
+  {
     date: '2026-08-04',
     kind: 'site',
     title: 'Guides, FAQ, press kit and the launch video',
@@ -29,7 +49,7 @@ export const CHANGELOG: ChangelogEntry[] = [
     kind: 'site',
     title: 'fezer.app launches',
     items: [
-      'Launched this website with feature pages for day planning, time blocking, time tracking, goals, vision boards and weekly planning.',
+      'Launched this website with feature pages for day planning, time blocking, time tracking, plans, vision boards and weekly planning.',
       'First comparison page (Fezer vs. Structured) and the offline-and-private deep dive.',
       'Android beta request form and the footer feedback form.',
     ],
@@ -43,10 +63,10 @@ export const CHANGELOG: ChangelogEntry[] = [
       'First public release for iPhone and iPad.',
       'Schedule with Plan, Track and Compare modes -  time blocks, deadline pins and repeating blocks.',
       'One-tap time tracking with checkpoints, landing tracked sessions beside the plan.',
-      'Goals organized into fronts, broken into steps, committed onto the schedule as deadlines or blocks.',
-      'Vision boards for fronts and goals, with typed pins and focus lenses.',
-      'Analytics across day, week, month and year, broken down by front and goal.',
-      'Everything on-device: no account, no server, no analytics, free.',
+      'Plans organized into areas, broken into steps, committed onto the schedule as deadlines or blocks.',
+      'Vision boards for areas and plans, with typed pins and focus lenses.',
+      'Analytics across day, week, month and year, broken down by area and plan.',
+      'Everything you write stays on-device: no account, no server.',
     ],
   },
 ];

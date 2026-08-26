@@ -25,25 +25,27 @@ function PrivacyPolicy() {
             <h2 className="text-xl font-semibold">Overview</h2>
             <p className="mt-2 leading-relaxed">
               Fezer (“the app”, “we”, “our”, or “us”) is a personal day planner, time tracker, and goal
-              tracker. This policy covers the iPhone and iPad app, Fezer on Android where it is
-              available, and this website. By using Fezer you agree to it.
+              tracker. This policy covers the iPhone and iPad app, the Android app, and this website. By using Fezer you agree to it.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold">Your plans stay on your device</h2>
             <p className="mt-2 leading-relaxed">
-              Everything you create in Fezer (fronts, goals, steps, schedule blocks, checkpoints, time
+              Everything you create in Fezer (areas, plans, steps, schedule blocks, checkpoints, time
               tracking history, notes, vision boards, and attachments) is stored in the app’s private
               storage on your device. We do not run a Fezer account, and we do not keep a copy of your
               planner on a server of ours. The app never uploads your titles, notes, photos, files, or
               the times you planned or tracked.
             </p>
             <p className="mt-2 leading-relaxed">
-              If you use Apple’s device backup (iCloud Backup or a computer backup), your Fezer data
-              may be included like any other app. Those backups are managed by Apple under{' '}
-              <a className="underline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple’s privacy policy</a>.
-              We cannot open them.
+              If you use your device’s own backup — iCloud Backup or a computer backup on iPhone and
+              iPad, or Google’s Auto Backup on Android — your Fezer data may be included like any
+              other app. Those backups are managed by{' '}
+              <a className="underline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple</a>
+              {' '}and{' '}
+              <a className="underline" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a>
+              {' '}under their own privacy policies. We cannot open them.
             </p>
           </section>
 
@@ -60,7 +62,7 @@ function PrivacyPolicy() {
                 <h3 className="font-medium">Product analytics</h3>
                 <p className="mt-1 leading-relaxed">
                   We record things like the app opening, which screen you are on, whether onboarding
-                  was finished, and that you created an area, a goal, a block, or a pin. For Fezer Plus
+                  was finished, and that you created an area, a plan, a block, or a pin. For Fezer Plus
                   we record that the paywall was shown or dismissed, and that a purchase, restore, or
                   cancellation happened, including which plan. Events carry counts, durations, and
                   similar structure. They do not carry the names you typed, notes, file names, image
@@ -112,17 +114,27 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold">Fezer Plus and Apple</h2>
+            <h2 className="text-xl font-semibold">Fezer Plus and the app stores</h2>
             <p className="mt-2 leading-relaxed">
-              If you subscribe to Fezer Plus, the purchase is made through Apple. Apple charges your
-              Apple Account, keeps the receipt, and decides whether the subscription is active. We do
-              not receive your card number, billing address, or App Store receipt. Entitlement lives
-              on the device through StoreKit. We may record that a purchase or restore happened, and
-              which plan, as described above.
+              Fezer Plus is sold by the store you installed the app from, never by us. On iPhone and
+              iPad that is Apple; on Android it is Google Play. The store charges your account, keeps
+              the receipt, and decides whether the subscription is active. We do not receive your card
+              number, billing address, or store receipt. Entitlement reaches the app through StoreKit
+              on Apple devices and Google Play Billing on Android, and is held on the device. We may
+              record that a paywall was shown, and that a purchase or restore happened and which plan,
+              as described above.
             </p>
             <p className="mt-2 leading-relaxed">
-              Managing or cancelling a subscription is done in your Apple Account settings, or from
-              Manage Fezer Plus inside the app, which opens Apple’s subscription sheet.
+              Apple’s handling of the purchase is covered by{' '}
+              <a className="underline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple’s privacy policy</a>
+              {' '}and Google’s by{' '}
+              <a className="underline" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s privacy policy</a>.
+              Because there is no Fezer account, we hold nothing that identifies you as a subscriber.
+            </p>
+            <p className="mt-2 leading-relaxed">
+              Managing or cancelling a subscription is done where you bought it: in your Apple Account
+              settings, or from Manage Fezer Plus inside the app, which opens Apple’s subscription
+              sheet; or in your Google Play subscriptions on Android.
             </p>
           </section>
 
@@ -194,8 +206,8 @@ function PrivacyPolicy() {
             <h2 className="text-xl font-semibold">People in the EEA and UK</h2>
             <p className="mt-2 leading-relaxed">
               We process the technical information above to run and improve Fezer (legitimate
-              interests), and to provide a subscription you buy through Apple (contract with Apple,
-              not with a Fezer account). You can ask us for access, correction, or deletion of the
+              interests), and to provide a subscription you buy through Apple or Google Play (a contract
+              with that store, not with a Fezer account). You can ask us for access, correction, or deletion of the
               analytics we hold, or object to that processing, at{' '}
               <a className="underline" href="mailto:hello@fezer.app">hello@fezer.app</a>.
               You may also complain to your local data protection authority.

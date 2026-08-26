@@ -85,7 +85,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
       { title: 'Deadline pins', desc: 'Pin due items directly onto the day so deadlines live inside the plan.' },
       { title: 'Now view', desc: 'One glance shows what is live, what is next and what is due.' },
       { title: 'Plan, Track, Compare', desc: 'Three schedule modes: plan the day, track it, then see both side by side.' },
-      { title: 'Goal-connected planning', desc: 'Commit steps from your goals straight onto the schedule.' },
+      { title: 'Plan-connected scheduling', desc: 'Commit steps from your plans straight onto the schedule.' },
       { title: 'Private by design', desc: 'No account, no server. The whole plan stays on your device.' },
     ],
     related: [
@@ -124,7 +124,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
         },
         {
           title: 'Block time for your goals',
-          body: 'From any goal, choose Commit and then Work on to turn a step into a scheduled block -  optionally repeating. Your goals claim real hours instead of waiting in a backlog.',
+          body: 'From any plan, choose Commit and then Work on to turn a step into a scheduled block -  optionally repeating. Your plans claim real hours instead of waiting in a backlog.',
         },
         {
           title: 'Check the blocks against reality',
@@ -147,7 +147,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     capabilities: [
       { title: 'Visual time blocks', desc: 'Draggable blocks on a day timeline, quick to add and rearrange.' },
       { title: 'Repeating blocks', desc: 'Every Day, Weekdays, Every Week or Every 2 Weeks -  routines build themselves.' },
-      { title: 'Work on commitments', desc: 'Turn goal steps into scheduled blocks without leaving your goals.' },
+      { title: 'Work on commitments', desc: 'Turn plan steps into scheduled blocks without leaving your plans.' },
       { title: 'Compare mode', desc: 'Planned and tracked columns side by side for every day.' },
       { title: 'Deadline pins', desc: 'Deadlines sit on the same timeline as your blocks.' },
       { title: 'On-device data', desc: 'Your schedule never leaves your iPhone or iPad.' },
@@ -180,7 +180,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
       steps: [
         {
           title: 'Tap Begin',
-          body: 'One big button starts a session. Optionally attach it to a front, a goal or a specific step -  or just track and name it later.',
+          body: 'One big button starts a session. Optionally attach it to an area, a plan or a specific step -  or just track and name it later.',
         },
         {
           title: 'Drop checkpoints as you go',
@@ -192,7 +192,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
         },
         {
           title: 'Read the results in Analytics',
-          body: 'Analytics breaks tracked time down by front and goal across the day, week, month or year -  and Compare shows planned versus actual for any day.',
+          body: 'Analytics breaks tracked time down by area and plan across the day, week, month or year -  and Compare shows planned versus actual for any day.',
         },
       ],
     },
@@ -211,9 +211,9 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     capabilities: [
       { title: 'One-tap sessions', desc: 'Begin and End. That is the whole workflow when you want it to be.' },
       { title: 'Checkpoints', desc: 'Add notes and photos mid-session to capture how the work actually unfolded.' },
-      { title: 'Goal-aware tracking', desc: 'Attach sessions to fronts, goals or steps so tracked time counts toward something.' },
+      { title: 'Plan-aware tracking', desc: 'Attach sessions to areas, plans or steps so tracked time counts toward something.' },
       { title: 'Tracked blocks', desc: 'Sessions appear on your schedule beside the plan, not in a separate report.' },
-      { title: 'Plan vs. reality analytics', desc: 'Day, week, month and year breakdowns by front and goal.' },
+      { title: 'Plan vs. reality analytics', desc: 'Day, week, month and year breakdowns by area and plan.' },
       { title: 'Completely private', desc: 'Your tracking history stays on the device. No account, no cloud copy of your day.' },
     ],
     related: [
@@ -227,10 +227,10 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     navLabel: 'Goal planner',
     title: 'Goal Planner and Tracker -  Fezer',
     metaDescription:
-      'Organize goals into fronts, break them into steps and commit each step onto your daily schedule. Fezer is a goal planner and tracker for iPhone and iPad.',
+      'Organize plans into areas, break them into steps and commit each step onto your daily schedule. Fezer is a goal planner and tracker for iPhone and iPad.',
     h1: 'A goal planner that ends on your calendar',
     intro:
-      'Goals fail in the gap between "written down" and "scheduled." Fezer closes that gap: organize goals into fronts, break them into steps, and commit each step to a deadline or a block of time on your actual day.',
+      'Goals fail in the gap between "written down" and "scheduled." Fezer closes that gap: organize plans into areas, break them into steps, and commit each step to a deadline or a block of time on your actual day.',
     problem: {
       heading: 'Why written goals stall',
       paragraphs: [
@@ -240,19 +240,19 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     },
     how: {
       heading: 'How goal planning works in Fezer',
-      lede: 'The Goals tab organizes everything as fronts \u2192 goals \u2192 steps.',
+      lede: 'The Plan tab organizes everything as areas \u2192 plans \u2192 steps.',
       steps: [
         {
-          title: 'Create fronts for areas of life',
-          body: 'A front is a life area or theme -  Personal Wellbeing, Family, Work. Every goal belongs to a front, so progress is visible per area, not just per task.',
+          title: 'Create areas for areas of life',
+          body: 'An area is a life area or theme -  Personal Wellbeing, Family, Work. Every plan belongs to an area, so progress is visible per area, not just per task.',
         },
         {
           title: 'Define each goal with a beginning and an end',
           body: 'Each goal records why it was created and what the end result looks like. Between those two anchors sits the strip of steps.',
         },
         {
-          title: 'Break goals into steps',
-          body: 'Steps are ordered pieces of real work. Attach notes, photos and files to each step, and watch goal progress move as steps complete.',
+          title: 'Break plans into steps',
+          body: 'Steps are ordered pieces of real work. Attach notes, photos and files to each step, and watch plan progress move as steps complete.',
         },
         {
           title: 'Commit steps onto the schedule',
@@ -262,26 +262,26 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     },
     screenshot: {
       src: SCREENSHOTS.goalPlanner,
-      alt: 'Fezer goal planner showing goals organized under a Personal Wellbeing front',
-      caption: 'Goals grouped by front -  each one decomposes into steps you can schedule.',
+      alt: 'Fezer goal planner showing plans organized under a Personal Wellbeing area',
+      caption: 'Plans grouped by area -  each one decomposes into steps you can schedule.',
     },
     useCase: {
       heading: 'Example: from "get fit" to Tuesday at 7 AM',
       paragraphs: [
-        'You create a Personal Wellbeing front and add a goal: Consistent Work Out Routine. The end result is written down -  three sessions a week, sustained for three months. The steps: choose a gym, plan a starter program, complete the first week, then each following week.',
+        'You create a Personal Wellbeing area and add a plan: Consistent Work Out Routine. The end result is written down -  three sessions a week, sustained for three months. The steps: choose a gym, plan a starter program, complete the first week, then each following week.',
         '"Choose a gym" gets a Complete-by pin on Saturday. "Complete the first week" becomes three repeating Work-on blocks at 7 AM. From that point on, the goal is not a wish on a list -  it is visible on your schedule, in your Now view, and in your weekly analytics.',
       ],
     },
     capabilities: [
-      { title: 'Fronts', desc: 'Group goals by life area so no front of your life goes quietly neglected.' },
-      { title: 'Steps with anchors', desc: 'Every goal spans from "why it was created" to "the end result," with ordered steps between.' },
+      { title: 'Areas', desc: 'Group plans by life area so no part of your life goes quietly neglected.' },
+      { title: 'Steps with anchors', desc: 'Every plan spans from "why it was created" to "the end result," with ordered steps between.' },
       { title: 'Commit: Complete by', desc: 'Pin a step as a deadline directly on your day.' },
       { title: 'Commit: Work on', desc: 'Block time for a step, once or on repeat.' },
-      { title: 'Progress and accomplishment', desc: 'Goal progress follows completed steps; finished goals are marked Accomplished.' },
+      { title: 'Progress and accomplishment', desc: 'Plan progress follows completed steps; finished plans are marked Accomplished.' },
       { title: 'Time that counts', desc: 'Tracked sessions attach to goals, so analytics show the hours each goal actually received.' },
     ],
     related: [
-      { path: '/vision-board-app', label: 'Build a digital vision board for your fronts' },
+      { path: '/vision-board-app', label: 'Build a digital vision board for your areas' },
       { path: '/time-blocking-app', label: 'Turn steps into time blocks' },
       { path: '/day-planner-app', label: 'See committed steps inside your day plan' },
     ],
@@ -291,10 +291,10 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     navLabel: 'Vision board',
     title: 'Vision Board App for Goals -  Fezer',
     metaDescription:
-      'Build a digital vision board for every area of your life and connect it to real goals, steps and scheduled time. Fezer is a private vision board app for iPhone.',
+      'Build a digital vision board for every area of your life and connect it to real plans, steps and scheduled time. Fezer is a private vision board app for iPhone.',
     h1: 'A vision board connected to an actual plan',
     intro:
-      'A vision board is only decoration until something links it to action. In Fezer, every board belongs to a front or a goal -  the same goals that break into steps and land on your daily schedule.',
+      'A vision board is only decoration until something links it to action. In Fezer, every board belongs to an area or a plan -  the same plans that break into steps and land on your daily schedule.',
     problem: {
       heading: 'The problem with pretty boards',
       paragraphs: [
@@ -304,7 +304,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     },
     how: {
       heading: 'How the vision board works in Fezer',
-      lede: 'Each front and each goal can carry its own freeform pin board.',
+      lede: 'Each area and each plan can carry its own freeform pin board.',
       steps: [
         {
           title: 'Pin what matters',
@@ -315,37 +315,37 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
           body: 'Focus lenses -  Dream, Plan, Remember or All -  change what the board emphasizes, from pure aspiration to concrete intention to reflection on how far you have come.',
         },
         {
-          title: 'Scope boards to fronts or goals',
-          body: 'A Personal Wellbeing front gets its own board; a specific goal inside it can have another. Vision stays attached to the area of life it belongs to.',
+          title: 'Scope boards to areas or plans',
+          body: 'A Personal Wellbeing area gets its own board; a specific plan inside it can have another. Vision stays attached to the area of life it belongs to.',
         },
         {
           title: 'Walk the pins into goals',
-          body: 'Because boards live beside your goals, a Want is one tab away from becoming a goal with steps, deadlines and scheduled time.',
+          body: 'Because boards live beside your plans, a Want is one tab away from becoming a plan with steps, deadlines and scheduled time.',
         },
       ],
     },
     screenshot: {
       src: SCREENSHOTS.visionBoard,
       alt: 'Fezer vision board with Want and Need pins including fitness, home and car goals',
-      caption: 'Want and Need pins on a front\u2019s vision board -  one tab away from goals and schedule.',
+      caption: 'Want and Need pins on an area\u2019s vision board -  one tab away from plans and schedule.',
     },
     useCase: {
-      heading: 'Example: a wellbeing front with a vision',
+      heading: 'Example: a wellbeing area with a vision',
       paragraphs: [
-        'Your Personal Wellbeing front has goals for sleep, diet and a workout routine. Its vision board carries the reasons: a Need pin for a strong, healthy body; Want pins for the milestones that make the discipline feel worth it.',
+        'Your Personal Wellbeing area has plans for sleep, diet and a workout routine. Its vision board carries the reasons: a Need pin for a strong, healthy body; Want pins for the milestones that make the discipline feel worth it.',
         'During a weekly review, you open the board in the Remember lens and add a Reflection pin about the first full week of workouts. The board stops being a poster and becomes a record -  evidence that the daily blocks are moving you somewhere.',
       ],
     },
     capabilities: [
       { title: 'Typed pins', desc: 'Want, Need, Idea, Thought and Reflection -  intent is part of every pin.' },
       { title: 'Focus lenses', desc: 'Dream, Plan, Remember or All shift what the board emphasizes.' },
-      { title: 'Boards per front or goal', desc: 'Vision scoped to the area of life or the specific goal it serves.' },
+      { title: 'Boards per area or plan', desc: 'Vision scoped to the part of life or the specific plan it serves.' },
       { title: 'Images and text', desc: 'Freeform boards with photos, captions and notes.' },
       { title: 'Reflections strip', desc: 'Reflections accumulate into a running record of progress.' },
       { title: 'Private boards', desc: 'Your aspirations are stored on your device, not on someone\u2019s server.' },
     ],
     related: [
-      { path: '/goal-planner', label: 'Turn pins into goals with steps' },
+      { path: '/goal-planner', label: 'Turn pins into plans with steps' },
       { path: '/day-planner-app', label: 'See how vision becomes a daily plan' },
       { path: '/weekly-planner', label: 'Review your vision alongside your week' },
     ],
@@ -375,8 +375,8 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
           body: 'Blocks repeating on Weekdays, Every Week or Every 2 Weeks form the standing structure of your week -  workouts, deep work, family time -  without re-planning each morning.',
         },
         {
-          title: 'Commit goal steps across the week',
-          body: 'From your goals, commit steps with Work on to claim specific slots during the week, or pin deadlines with Complete by on the days they are due.',
+          title: 'Commit plan steps across the week',
+          body: 'From your plans, commit steps with Work on to claim specific slots during the week, or pin deadlines with Complete by on the days they are due.',
         },
         {
           title: 'Navigate the week day by day',
@@ -384,7 +384,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
         },
         {
           title: 'Close the week with Analytics',
-          body: 'Switch Analytics to the Week range and compare Planned against Actual, broken down by front and goal. The next week\u2019s plan starts from what this week really looked like.',
+          body: 'Switch Analytics to the Week range and compare Planned against Actual, broken down by area and plan. The next week\u2019s plan starts from what this week really looked like.',
         },
       ],
     },
@@ -396,7 +396,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     useCase: {
       heading: 'Example: a Sunday reset that takes ten minutes',
       paragraphs: [
-        'Sunday evening, you open Analytics on the Week range. The compare view shows the plan-versus-reality picture: work absorbed its blocks and then some, while the Family front got half its planned hours -  mostly lost to a Thursday that went sideways.',
+        'Sunday evening, you open Analytics on the Week range. The compare view shows the plan-versus-reality picture: work absorbed its blocks and then some, while the Family area got half its planned hours -  mostly lost to a Thursday that went sideways.',
         'The correction takes two edits: the Thursday work block shrinks, and a repeating family block moves to a slot that survived every week so far. No journaling ritual, no spreadsheet -  the week critiques itself, and the plan absorbs the lesson.',
       ],
     },
@@ -404,7 +404,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
       { title: 'Repeating structure', desc: 'Weekday and weekly repeats give the week a stable skeleton.' },
       { title: 'Week-range analytics', desc: 'This Week at a glance: planned, actual and the gap between them.' },
       { title: 'Plan vs. Reality', desc: 'Compare mode for any day; week analytics for the whole picture.' },
-      { title: 'Front and goal breakdowns', desc: 'See which areas of life got their hours and which got squeezed.' },
+      { title: 'Area and plan breakdowns', desc: 'See which parts of life got their hours and which got squeezed.' },
       { title: 'Fast day navigation', desc: 'Move through the week\u2019s days and fix collisions before they happen.' },
       { title: 'Deadlines in place', desc: 'Complete-by pins put due dates on the exact day they matter.' },
     ],

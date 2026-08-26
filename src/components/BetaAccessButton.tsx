@@ -25,7 +25,7 @@ export default function BetaAccessButton({
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent('play_store_click', { link_location: location })}
-      className={`btn-press inline-flex items-center justify-center gap-2 rounded-full border-2 border-neutral-200 bg-white text-neutral-700 px-6 py-3 text-sm font-semibold hover:border-neutral-300 hover:bg-neutral-50 transition-colors dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800 ${className}`}
+      className={`btn-press inline-flex items-center justify-center gap-2 rounded-full bg-[#0d4a32] text-white px-6 py-3 text-sm font-semibold hover:opacity-90 transition-opacity ${className}`}
       aria-label="Download Fezer on Google Play"
     >
       <AndroidLogoIcon />

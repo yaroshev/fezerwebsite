@@ -5,7 +5,9 @@ import AppStoreButton from '../components/AppStoreButton';
 import BetaAccessButton from '../components/BetaAccessButton';
 import SiteFooter from '../components/SiteFooter';
 import VideoEmbed from '../components/VideoEmbed';
-import { SCREENSHOTS } from '../seo/constants';
+import HeroVideo from '../components/HeroVideo';
+import Pricing from '../components/Pricing';
+import { INTRO_VIDEO, PLUS_AVAILABILITY, PRICING, SCREENSHOTS } from '../seo/constants';
 
 const FEATURES = [
   {
@@ -19,8 +21,8 @@ const FEATURES = [
     Icon: Calendar,
   },
   {
-    title: 'Goals & Fronts',
-    desc: 'Organize goals into fronts, break them into steps, and commit steps straight onto your schedule.',
+    title: 'Goals & Areas',
+    desc: 'Organize plans into areas, break them into steps, and commit steps straight onto your schedule.',
     Icon: Target,
   },
   {
@@ -30,7 +32,7 @@ const FEATURES = [
   },
   {
     title: 'Analytics',
-    desc: 'See where your time actually went, broken down by front and goal across the day or week.',
+    desc: 'See where your time actually went, broken down by area and plan across the day or week.',
     Icon: PieChart,
   },
   {
@@ -82,20 +84,20 @@ const CATEGORY_SECTIONS: {
     id: 'goals',
     heading: 'Turn goals into scheduled steps',
     paragraphs: [
-      'Goals in Fezer are organized into fronts -  the areas of your life -  and broken into ordered steps. Each step can be committed onto your schedule: pinned as a deadline or blocked as time to work on it.',
+      'Goals in Fezer are organized into areas -  the areas of your life -  and broken into ordered steps. Each step can be committed onto your schedule: pinned as a deadline or blocked as time to work on it.',
       'That commit is the difference between a goal you wrote down and a goal that shows up in your Tuesday.',
     ],
     links: [{ href: '/goal-planner', label: 'Create a goal plan' }],
     image: {
       src: SCREENSHOTS.goalPlanner,
-      alt: 'Fezer goal planner with goals organized under a Personal Wellbeing front',
+      alt: 'Fezer goal planner with plans organized under a Personal Wellbeing area',
     },
   },
   {
     id: 'vision',
     heading: 'Build a vision for every area of life',
     paragraphs: [
-      'Every front and goal can carry its own vision board -  pins for what you want, need, think and reflect on, with lenses for dreaming, planning and remembering.',
+      'Every area and goal can carry its own vision board -  pins for what you want, need, think and reflect on, with lenses for dreaming, planning and remembering.',
       'Because the board lives beside your goals and schedule, vision and execution finally share one place.',
     ],
     links: [{ href: '/vision-board-app', label: 'Build a digital vision board' }],
@@ -108,7 +110,7 @@ const CATEGORY_SECTIONS: {
     id: 'review',
     heading: 'Review, compare and improve',
     paragraphs: [
-      'Compare mode puts the planned day and the tracked day side by side. Analytics rolls the same data up by front and goal across the day, week, month or year -  plan versus reality, in numbers.',
+      'Compare mode puts the planned day and the tracked day side by side. Analytics rolls the same data up by area and plan across the day, week, month or year -  plan versus reality, in numbers.',
       'Each week\u2019s plan starts from evidence about the last one. That loop is how days actually get better.',
     ],
     links: [{ href: '/weekly-planner', label: 'Plan and review your week' }],
@@ -146,30 +148,46 @@ export default function Home() {
 
       <main id="top" className="relative">
         {/* Hero */}
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 pt-14 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
-          <div className="flex flex-col items-center text-center animate-fade-up">
-            <img
-              src="/fezer-app-icon.png"
-              alt="Fezer app icon"
-              width={1024}
-              height={1024}
-              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-[22%] shadow-2xl shadow-[#0d2b57]/25 animate-float"
-            />
-            <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight max-w-3xl">
-              Own your day with Fezer
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg sm:text-xl md:text-2xl text-neutral-500 leading-relaxed dark:text-neutral-400">
-              A private day planner, time tracker and goal planner that connects what you want with
-              what you do each day.
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-3">
-              <div className="flex flex-row flex-wrap items-center justify-center gap-3">
+        <div className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-center overflow-hidden">
+          <HeroVideo />
+          <div className="relative mx-auto flex w-full max-w-xl flex-col items-center px-6 py-16 sm:py-20">
+            <div className="flex w-full flex-col items-center text-center animate-fade-up">
+              <img
+                src="/fezer-app-icon.png"
+                alt="Fezer app icon"
+                width={1024}
+                height={1024}
+                className="h-14 w-14 rounded-[22%] object-cover shadow-xl shadow-[#0d2b57]/25 sm:h-16 sm:w-16"
+              />
+              <h1 className="mt-6 text-[1.75rem] font-semibold tracking-tight leading-[1.15] text-neutral-950 sm:text-4xl sm:leading-[1.12] md:text-[2.75rem] dark:text-white">
+                Fezer - Own Your Day
+              </h1>
+
+              <div className="mt-5 max-w-md space-y-1.5 sm:mt-6">
+                <p className="text-lg leading-snug text-neutral-800 sm:text-xl dark:text-neutral-200">
+                  Live a life you mean to live.
+                </p>
+                <p className="text-[15px] leading-snug text-neutral-500 sm:text-base dark:text-neutral-400">
+                  Infrastructure for humanity&rsquo;s next frontier.
+                </p>
+              </div>
+
+              <a
+                href="/vision"
+                className="mt-6 text-sm font-medium text-[#0d2b57] hover:opacity-70 dark:text-[#9ec7ff]"
+              >
+                Fezer Vision Statement
+              </a>
+
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5 sm:mt-10 sm:gap-4">
                 <AppStoreButton location="hero" />
                 <BetaAccessButton location="hero" />
               </div>
-              <span className="text-sm text-neutral-400 dark:text-neutral-500">
-                Free · iPhone &amp; iPad · No account required
-              </span>
+
+              <p className="mt-4 text-[13px] leading-relaxed text-neutral-500 dark:text-neutral-400">
+                Free to plan and track · iPhone, iPad &amp; Android · No account required
+                {PLUS_AVAILABILITY.ios ? ` · Fezer Plus from ${PRICING.perMonthOnYearly}/month` : ''}
+              </p>
             </div>
           </div>
         </div>
@@ -177,17 +195,18 @@ export default function Home() {
         {/* Launch video */}
         <section id="video" className="w-full bg-white dark:bg-neutral-950">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-20">
-            <div className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(280px,340px)] lg:gap-16">
+            <div className="grid items-center gap-8 lg:grid-cols-[minmax(280px,340px)_1fr] lg:gap-16">
+              <VideoEmbed location="home" autoPlay />
               <div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-                  See Fezer in 29 seconds
+                  See Fezer in {INTRO_VIDEO.durationLabel}
                 </h2>
                 <p className="mt-4 max-w-2xl text-[15px] sm:text-base md:text-lg text-neutral-600 leading-relaxed dark:text-neutral-400">
                   Plan the day in time blocks, track what actually happens with one tap, and see
                   the two side by side. The whole idea of Fezer fits in one short video.
                 </p>
                 <p className="mt-3 max-w-2xl text-[15px] sm:text-base text-neutral-500 leading-relaxed dark:text-neutral-400">
-                  Nothing loads from YouTube until you press play.
+                  Plays muted in a loop. Tap the video if you want sound.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
                   <a
@@ -198,7 +217,6 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              <VideoEmbed location="home" />
             </div>
           </div>
         </section>
@@ -304,6 +322,8 @@ export default function Home() {
           </div>
         </section>
 
+        <Pricing />
+
         {/* Privacy */}
         <section id="privacy" className="w-full bg-white dark:bg-neutral-950">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-20">
@@ -316,7 +336,8 @@ export default function Home() {
                   <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Private by design</h2>
                   <p className="mt-3 text-neutral-600 max-w-3xl text-[15px] sm:text-base leading-relaxed dark:text-neutral-400">
                     Your goals, schedule, tracking history, notes, and attachments stay on your
-                    iPhone or iPad. There is no account, no sign-in, and no cloud copy of your day.
+                    phone or tablet, on iOS and Android alike. There is no account, no sign-in, and
+                    no cloud copy of your day.
                     We use anonymous product analytics to keep the app working. We cannot read what
                     you wrote, and we do not sell any of it.
                   </p>

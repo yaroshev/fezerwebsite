@@ -312,7 +312,7 @@ export const GUIDES: GuideContent[] = [
     inFezer: {
       heading: 'Doing this in Fezer',
       paragraphs: [
-        'Fezer generates both review artifacts as a by-product of using it: the planned week exists because you block your days, and the record exists because tracking is one tap. Compare mode answers Question 1 visually -  planned and actual, day by day on the same hours -  and Analytics on the Week range rolls time up by front and goal, which is where recurring unplanned hours and starved life areas show themselves.',
+        'Fezer generates both review artifacts as a by-product of using it: the planned week exists because you block your days, and the record exists because tracking is one tap. Compare mode answers Question 1 visually -  planned and actual, day by day on the same hours -  and Analytics on the Week range rolls time up by area and plan, which is where recurring unplanned hours and starved life areas show themselves.',
         'The review itself fits in a ten-minute repeating block, and everything involved stays on your device.',
       ],
       links: [
@@ -402,8 +402,8 @@ export const GUIDES: GuideContent[] = [
     inFezer: {
       heading: 'Doing this in Fezer',
       paragraphs: [
-        'This guide is close to a description of Fezer’s goal layer. Fronts hold the areas of your life; each goal records why it began and what the end looks like, with ordered steps between. Commit turns a step into schedule -  "Complete by" pins a deadline, "Work on" claims a block, once or repeating. Tracked time attaches to goals, so weekly Analytics is precisely the hours-received audit, and every front and goal carries its own vision board with reflection pins.',
-        'All of it is free and on-device: no account, no server, no subscription.',
+        'This guide is close to a description of Fezer’s goal layer. Areas hold the areas of your life; each goal records why it began and what the end looks like, with ordered steps between. Commit turns a step into schedule -  "Complete by" pins a deadline, "Work on" claims a block, once or repeating. Tracked time attaches to goals, so weekly Analytics is precisely the hours-received audit, and every area and goal carries its own vision board with reflection pins.',
+        'All of it is on-device: no account and no server. Planning and tracking are free forever; Compare and Analytics are Fezer Plus.',
       ],
       links: [
         { path: '/goal-planner', label: 'The goal planner in detail' },

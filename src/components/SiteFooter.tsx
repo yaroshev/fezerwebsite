@@ -3,7 +3,7 @@ import { MessageSquare } from 'lucide-react';
 import { FEATURE_PAGES } from '../content/features';
 import { COMPARISON_PAGES } from '../content/comparisons';
 import { GUIDES } from '../content/guides';
-import { APP_STORE_URL, trackStoreClick } from '../seo/constants';
+import { APP_STORE_URL, PLAY_STORE_URL, trackEvent, trackStoreClick } from '../seo/constants';
 import FeedbackModal from './FeedbackModal';
 
 export default function SiteFooter() {
@@ -40,7 +40,7 @@ export default function SiteFooter() {
                 <span className="text-base font-semibold text-neutral-900 dark:text-neutral-100">Fezer</span>
               </div>
               <p className="mt-3 text-sm text-neutral-500 leading-relaxed dark:text-neutral-400">
-                A private day planner, time tracker and goal planner for iPhone and iPad.
+                A private day planner, time tracker and goal planner for iPhone, iPad and Android.
               </p>
               <a
                 href={APP_STORE_URL}
@@ -50,6 +50,15 @@ export default function SiteFooter() {
                 className="mt-4 inline-block text-sm font-medium text-[#0d2b57] hover:opacity-80 dark:text-blue-300"
               >
                 Download Fezer on the App Store
+              </a>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('play_store_click', { link_location: 'footer' })}
+                className="mt-2 inline-block text-sm font-medium text-[#0d2b57] hover:opacity-80 dark:text-blue-300"
+              >
+                Get Fezer on Google Play
               </a>
             </div>
 
@@ -110,6 +119,11 @@ export default function SiteFooter() {
               <div>
                 <h2 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">More</h2>
                 <ul className="mt-3 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                  <li>
+                    <a href="/vision" className="hover:text-neutral-900 transition-colors dark:hover:text-neutral-100">
+                      Vision
+                    </a>
+                  </li>
                   <li>
                     <a href="/faq" className="hover:text-neutral-900 transition-colors dark:hover:text-neutral-100">
                       FAQ

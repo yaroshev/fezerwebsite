@@ -79,7 +79,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       heading: 'Where Structured is stronger',
       paragraphs: [
         'Structured has been shipping since 2020, has well over a hundred thousand App Store ratings, and runs on iPhone, iPad, Apple Watch and Mac with iCloud sync between them. It is localised into more than two dozen languages, has serious accessibility work behind it, and its paid tier connects Google, Apple and Outlook calendars plus Reminders. If you need your planner on your wrist and your desktop, or you need your existing calendars pulled in automatically, Structured does things Fezer does not do today.',
-        'Fezer is new, English-only, iPhone and iPad only, and deliberately does not sync anywhere. Those are real trade-offs, and they are the direct consequence of the design choice described below.',
+        'Fezer is new, has no collaboration or integrations, and deliberately does not sync anywhere. Those are real trade-offs, and they are the direct consequence of the design choice described below.',
       ],
     },
     sections: [
@@ -100,7 +100,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       {
         heading: 'Goals that claim real hours',
         paragraphs: [
-          'Fezer also carries a goal layer that sits above the day. You organize work into fronts, break each into goals and steps, then commit a step directly onto the schedule as a block. The chain runs goal to step to a specific hour on a specific day, and the time you spend on it is tracked against it.',
+          'Fezer also carries a planning layer that sits above the day. You organize work into areas, break each into plans and steps, then commit a step directly onto the schedule as a block. The chain runs plan to step to a specific hour on a specific day, and the time you spend on it is tracked against it.',
           'The effect is that your goals compete for hours in a visible way, instead of living in a separate list that never touches the calendar.',
         ],
       },
@@ -143,14 +143,14 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
           us: 'Yes -  Compare mode, side by side',
         },
         {
-          capability: 'Goals broken into steps and scheduled',
+          capability: 'Plans broken into steps and scheduled',
           them: 'Sub-tasks within a task',
-          us: 'Fronts, goals and steps committed onto the day',
+          us: 'Areas, plans and steps committed onto the day',
         },
         {
           capability: 'Vision board',
           them: null,
-          us: 'Yes -  boards per goal and life area',
+          us: 'Yes -  boards per plan and life area',
         },
         {
           capability: 'Focus / Pomodoro timer',
@@ -180,7 +180,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'Data stored off-device',
           them: 'Yes -  iCloud sync, calendar connections',
-          us: 'No -  everything stays on your iPhone or iPad',
+          us: 'No -  everything stays on your device',
         },
         {
           capability: 'Price',
@@ -222,14 +222,14 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
     faq: [
       {
         q: 'Is Fezer free?',
-        a: 'Yes. Fezer is free on the App Store with no subscription, no ads and no account. Repeating blocks, time tracking, Compare mode, goals and vision boards are all included.',
+        a: 'Partly. Planning your day and tracking it are free forever, with no account and no ads -  repeating blocks, deadline pins, one-tap tracking with checkpoints and the schedule timeline all sit in the free tier. Compare, Analytics, the list and month views and unlimited areas, plans and steps are Fezer Plus, at $5.99 a month or $55.99 a year with a week free on the yearly plan.',
       },
       {
         q: 'Can Fezer import my Google or Apple Calendar?',
         a: 'Not today. Fezer does not connect to external calendars, because it has no server component and does not request access to your calendar accounts. If automatic calendar import is essential to you, Structured Pro handles it well.',
       },
       {
-        q: 'Does Fezer sync between my iPhone and iPad?',
+        q: 'Does Fezer sync between my devices?',
         a: 'No. Fezer stores everything locally on each device and never sends it anywhere, so there is no sync between devices. This is deliberate -  it is the same design decision that means your data cannot be exposed by a server breach.',
       },
       {
@@ -242,7 +242,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Is Fezer available on Android?',
-        a: 'Not yet. Fezer is currently an iPhone and iPad app. You can request Android access from the button on the homepage and we will let you know when there is something to try.',
+        a: 'Yes. Fezer is on Google Play, and the Android app carries the same planning, tracking and Compare loop as the iPhone one. There is no Mac app and no web version, because everything is stored on the device.',
       },
     ],
     related: [
@@ -258,9 +258,9 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
     navLabel: 'Offline & private',
     title: 'Offline Day Planner App for iPhone -  No Account -  Fezer',
     metaDescription:
-      'Fezer is an offline day planner for iPhone and iPad. No account, no sign-up, no cloud sync and no tracking. Your schedule, goals and notes stay on your device.',
+      'Fezer is an offline day planner for iPhone, iPad and Android. No account, no sign-up and no cloud sync. Your schedule, goals and notes stay on your device.',
     ogSlug: 'offline-planner-app',
-    h1: 'A planner with no account, no cloud and no tracking',
+    h1: 'A planner with no account, no cloud and nothing of yours on a server',
     intro:
       'Most planner apps want an email address before they will show you a calendar. Fezer does not have accounts at all. You install it, you open it, you plan. Nothing you write is transmitted anywhere, because there is nowhere for it to go.',
     sections: [
@@ -295,7 +295,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       {
         heading: 'What Fezer does with the privacy it buys you',
         paragraphs: [
-          'Because the data never leaves, Fezer can be relaxed about how much of it you keep. Track every session with checkpoints, attach photos and documents to steps, keep long notes on goals, build vision boards -  none of it increases your exposure, because none of it is uploaded.',
+          'Because the data never leaves, Fezer can be relaxed about how much of it you keep. Track every session with checkpoints, attach photos and documents to steps, keep long notes on plans, build vision boards -  none of it increases your exposure, because none of it is uploaded.',
           'The website you are reading uses Google Analytics, which is separate from the app. The app sends anonymous product analytics, crash reports and masked session recordings so we can keep it working. Those events do not include your schedule, notes or photos. Details are in the Privacy Policy.',
         ],
       },
@@ -338,7 +338,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Where is my data stored?',
-        a: 'Your schedule, tracked time, goals, steps, notes, photos and attachments stay in local storage on the iPhone or iPad and are never uploaded. The app also sends anonymous product analytics so we can keep it working. Those events do not include what you wrote.',
+        a: 'Your schedule, tracked time, plans, steps, notes, photos and attachments stay in local storage on the iPhone or iPad and are never uploaded. The app also sends anonymous product analytics so we can keep it working. Those events do not include what you wrote.',
       },
       {
         q: 'Does Fezer track my usage or show ads?',
@@ -396,8 +396,8 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       {
         heading: 'Analytics across days and weeks',
         paragraphs: [
-          'Single days are noisy. Fezer’s Analytics view aggregates tracked time by front and by goal across a day or a week, so you can see where the hours are really going at a level above individual blocks.',
-          'This is where the goal layer pays off: because steps are committed onto the schedule and tracked against their goal, you get an honest read on which goals are actually receiving time and which have been getting intentions.',
+          'Single days are noisy. Fezer’s Analytics view aggregates tracked time by area and by plan across a day or a week, so you can see where the hours are really going at a level above individual blocks.',
+          'This is where the planning layer pays off: because steps are committed onto the schedule and tracked against their goal, you get an honest read on which goals are actually receiving time and which have been getting intentions.',
         ],
       },
       {
@@ -449,7 +449,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Can I see planned against actual time for a whole week?',
-        a: 'Yes. Compare mode works day by day, and the Analytics view aggregates tracked time by front and by goal across a day or a week.',
+        a: 'Yes. Compare mode works day by day, and the Analytics view aggregates tracked time by area and by plan across a day or a week.',
       },
       {
         q: 'Is this the same as a Pomodoro timer?',
@@ -473,7 +473,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
     navLabel: 'vs Sunsama',
     title: 'Sunsama Alternative for iPhone -  Fezer',
     metaDescription:
-      'Looking for a Sunsama alternative? Fezer keeps the part that matters -  planning your day and comparing it with what actually happened -  free, on your iPhone, with no account and no subscription.',
+      'Looking for a Sunsama alternative? Fezer keeps the part that matters -  planning your day and tracking it -  free forever, on iPhone, iPad and Android, with no account and no trial clock.',
     ogSlug: 'sunsama-alternative',
     h1: 'The Sunsama loop, without the subscription or the servers',
     intro:
@@ -482,7 +482,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       heading: 'Where Sunsama is stronger',
       paragraphs: [
         'Sunsama is a mature product built for professionals. It runs on iPhone, Android, Mac, Windows, Linux and the web, and its whole premise is pulling your working life into one place: more than twenty integrations bring in tasks from tools like Asana, ClickUp, Trello and Todoist alongside your Google and Outlook calendars. Its guided daily planning ritual -  set a realistic workload, timebox it onto the calendar, review at the end -  is genuinely well designed, and a focus mode can mute distracting apps while you work.',
-        'Fezer does none of that aggregation. It is an iPhone and iPad app with no integrations, no desktop version and no guided ritual. If your day is spread across work tools and a desk, Sunsama is built for exactly that and Fezer is not.',
+        'Fezer does none of that aggregation. It is a phone and tablet app with no integrations, no desktop version and no guided ritual. If your day is spread across work tools and a desk, Sunsama is built for exactly that and Fezer is not.',
       ],
     },
     sections: [
@@ -497,21 +497,21 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         heading: 'Built for a workday vs. built for a whole life',
         paragraphs: [
           'Sunsama’s centre of gravity is professional work. It assumes a desk, a calendar full of meetings, and tasks scattered across team tools -  and it earns its keep by unifying them. The ritual language is about workload, burnout and finishing the workday cleanly.',
-          'Fezer’s centre of gravity is the whole day. Its goal layer organizes life into fronts -  health, family, work, projects -  each with goals, steps and its own vision board, and steps get committed onto the same timeline as everything else. Training for a race and shipping a project claim hours from the same day, and the analytics show which fronts actually received time.',
+          'Fezer’s centre of gravity is the whole day. Its planning layer organizes life into areas -  health, family, work, projects -  each with plans, steps and its own vision board, and steps get committed onto the same timeline as everything else. Training for a race and shipping a project claim hours from the same day, and the analytics show which areas actually received time.',
         ],
       },
       {
         heading: 'The subscription question',
         paragraphs: [
           'Sunsama is subscription software with a fourteen-day free trial and no permanent free tier. That is not a criticism: it runs servers, maintains twenty-plus integrations and syncs your data across six platforms, and subscriptions are the honest way to pay for that.',
-          'Fezer is free with no subscription, no ads and no paid tier -  and the reason is structural rather than promotional. There are no servers to pay for, because there is nothing to sync and nothing to integrate. You are not getting a teaser version of a paid product; you are getting an app whose design removed its own running costs.',
+          'Fezer is free to plan and track, with no ads -  and the shape of the pricing is structural rather than promotional. There are no servers to pay for, because there is nothing to sync and nothing to integrate. You are not getting a teaser version of a paid product; you are getting an app whose design removed its own running costs.',
         ],
       },
       {
         heading: 'Where your data lives',
         paragraphs: [
           'To do its job, Sunsama has to hold your data: an account, your tasks, and connections into your calendars and work tools. For a work aggregator that is a reasonable trade, and Sunsama is upfront about it.',
-          'Fezer makes the opposite trade. No account, no server, nothing transmitted -  your schedule, tracked sessions, goals and vision boards exist only on your device. The cost is real: no sync, no web version, no pulling in your calendar. If custody of your data matters more than convergence of your tools, that is the trade Fezer is built around.',
+          'Fezer makes the opposite trade. No account, no server, nothing transmitted -  your schedule, tracked sessions, plans and vision boards exist only on your device. The cost is real: no sync, no web version, no pulling in your calendar. If custody of your data matters more than convergence of your tools, that is the trade Fezer is built around.',
         ],
       },
     ],
@@ -551,19 +551,19 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
           us: 'Tracked sessions with checkpoints instead',
         },
         {
-          capability: 'Goals broken into steps and scheduled',
+          capability: 'Plans broken into steps and scheduled',
           them: 'Weekly goals and objectives',
-          us: 'Fronts, goals and steps committed onto the day',
+          us: 'Areas, plans and steps committed onto the day',
         },
         {
           capability: 'Vision board',
           them: null,
-          us: 'Yes -  boards per goal and life area',
+          us: 'Yes -  boards per plan and life area',
         },
         {
           capability: 'Platforms',
           them: 'iPhone, Android, Mac, Windows, Linux, web',
-          us: 'iPhone and iPad',
+          us: 'iPhone, iPad and Android',
         },
         {
           capability: 'Sync across devices',
@@ -578,12 +578,12 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'Data stored off-device',
           them: 'Yes -  accounts, sync and integrations require it',
-          us: 'No -  everything stays on your iPhone or iPad',
+          us: 'No -  everything stays on your device',
         },
         {
           capability: 'Price',
           them: 'Subscription after a 14-day trial; no free tier',
-          us: 'Free -  no subscription, no ads',
+          us: 'Free to plan and track; Plus from $5.99/mo',
         },
       ],
       footnote:
@@ -612,7 +612,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
           'You want the planned-versus-actual loop for your life, not just your job.',
           'You plan from your phone, not from a desk.',
           'You do not want another subscription for something you do every day.',
-          'You want goals and vision boards attached to the same schedule.',
+          'You want plans and vision boards attached to the same schedule.',
           'You would rather your calendar never touched anyone’s server.',
         ],
       },
@@ -620,7 +620,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
     faq: [
       {
         q: 'Is Fezer really free where Sunsama is subscription-only?',
-        a: 'Yes. Sunsama offers a 14-day free trial and then requires a subscription. Fezer is free on the App Store with no subscription, no ads and no paid tier -  it has no servers to fund, so there is nothing the price needs to cover.',
+        a: 'Yes, but not in the same shape. Sunsama offers a 14-day free trial and then requires a subscription to use it at all. Fezer stays usable free forever -  planning and tracking never expire -  and charges only for Compare, Analytics, the extra schedule views and unlimited areas, plans and steps. It has no servers to fund, so there is nothing the price needs to cover.',
       },
       {
         q: 'Does Fezer have Sunsama’s guided daily planning ritual?',
@@ -632,7 +632,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Both apps show planned vs. actual time -  what is the difference?',
-        a: 'Sunsama reports where your time went against your plan as part of its work-focused analytics. Fezer draws the planned day and the tracked day as two columns on the same hourly timeline in Compare mode, and its analytics break tracked time down by the fronts and goals of your personal life.',
+        a: 'Sunsama reports where your time went against your plan as part of its work-focused analytics. Fezer draws the planned day and the tracked day as two columns on the same hourly timeline in Compare mode, and its analytics break tracked time down by the areas and plans of your personal life.',
       },
       {
         q: 'Does Fezer sync between devices like Sunsama does?',
@@ -640,12 +640,12 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Is Fezer available on Android or desktop?',
-        a: 'Not today. Fezer runs on iPhone and iPad. You can request Android access from the homepage and we will let you know when there is something to try.',
+        a: 'Android yes -  Fezer is on Google Play. Desktop no: there is no Mac app and no web version, because everything is stored on the device.',
       },
     ],
     related: [
       { path: '/plan-vs-actual-time-tracking', label: 'How plan vs. actual works in Fezer' },
-      { path: '/goal-planner', label: 'Fronts, goals and steps explained' },
+      { path: '/goal-planner', label: 'Areas, plans and steps explained' },
       { path: '/offline-planner-app', label: 'Why Fezer keeps everything on your device' },
     ],
   },
@@ -665,7 +665,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       heading: 'Where TickTick is stronger',
       paragraphs: [
         'TickTick runs on practically everything -  iPhone, iPad, Android, Mac, Windows and the web -  with sync across all of it. Capturing a task is close to effortless: natural-language input understands "pay rent friday 9am", and tasks come in via widgets, voice and browser extensions. Around the core list it has built a habit tracker, a Pomodoro timer with focus statistics, an Eisenhower priority matrix, Kanban and timeline views, and shared lists for working with other people. It has a generous free tier and a decade of polish.',
-        'Fezer has none of that breadth. It is English-only, iPhone and iPad only, has no collaboration and no natural-language capture. What it has is a different starting point, described below.',
+        'Fezer has none of that breadth. It has no collaboration and no natural-language capture. What it has is a different starting point, described below.',
       ],
     },
     sections: [
@@ -686,15 +686,15 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       {
         heading: 'Where goals live',
         paragraphs: [
-          'In a task manager, a goal is usually a list or a tag -  a container of tasks. Fezer gives goals their own structure: fronts for the areas of your life, goals with a written beginning and end state, ordered steps, and a vision board attached to each front and goal.',
-          'The structural difference shows up in the analytics. Because tracked time attaches to fronts and goals, the week answers a question a completed-task count cannot: which parts of your life actually received hours, and which received intentions.',
+          'In a task manager, a goal is usually a list or a tag -  a container of tasks. Fezer gives your work its own structure: areas for the parts of your life, goals with a written beginning and end state, ordered steps, and a vision board attached to each area and plan.',
+          'The structural difference shows up in the analytics. Because tracked time attaches to areas and plans, the week answers a question a completed-task count cannot: which parts of your life actually received hours, and which received intentions.',
         ],
       },
       {
         heading: 'Accounts, sync and the price of everywhere',
         paragraphs: [
           'TickTick’s everywhere-sync requires an account, and your tasks live on its servers -  the normal architecture for a cross-platform product, and TickTick maintains a paid Premium tier on top of a capable free one.',
-          'Fezer has no account, no server and no premium tier. Everything on this site’s comparison table is included, free, and everything you write stays on your device. The cost is that "everywhere" shrinks to your iPhone and iPad. That is the trade, stated plainly.',
+          'Fezer has no account and no server, and Fezer is free to plan and track, with no account and no ads; Compare, Analytics, the list and month views and unlimited areas, plans and steps are Fezer Plus, at $5.99 a month or $55.99 a year with a week free on the yearly plan. Everything you write stays on your device. The cost is that "everywhere" shrinks to your iPhone and iPad. That is the trade, stated plainly.',
         ],
       },
     ],
@@ -711,7 +711,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'To-do lists, tags and filters',
           them: 'Yes -  lists, tags, filters, Kanban, timeline views',
-          us: 'Not the model -  work lives as blocks, deadlines and goal steps',
+          us: 'Not the model -  work lives as blocks, deadlines and plan steps',
         },
         {
           capability: 'Visual day timeline',
@@ -741,12 +741,12 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'Goals with structure',
           them: 'Lists and tags act as containers',
-          us: 'Fronts, goals, ordered steps, committed onto the day',
+          us: 'Areas, plans, ordered steps, committed onto the day',
         },
         {
           capability: 'Vision board',
           them: null,
-          us: 'Yes -  boards per goal and life area',
+          us: 'Yes -  boards per plan and life area',
         },
         {
           capability: 'Collaboration and shared lists',
@@ -756,7 +756,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'Platforms',
           them: 'iPhone, iPad, Android, Mac, Windows, web',
-          us: 'iPhone and iPad',
+          us: 'iPhone, iPad and Android',
         },
         {
           capability: 'Sync across devices',
@@ -788,7 +788,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         label: 'Stay with TickTick if',
         points: [
           'Fast capture is the feature -  you live by getting things out of your head instantly.',
-          'You need your tasks on Android, Windows, Mac or the web.',
+          'You need your tasks on Windows, Mac or the web.',
           'You share lists with family or colleagues.',
           'You want habits, Pomodoro and tasks in a single app.',
           'A to-do list genuinely is the right model for your work.',
@@ -808,7 +808,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
     faq: [
       {
         q: 'Is Fezer free? TickTick already has a free tier.',
-        a: 'Yes, and the difference is where the ceiling sits. TickTick’s free tier is capable but holds some features for Premium. Fezer has no tiers: repeating blocks, tracking, Compare mode, goals, analytics and vision boards are all included, free, with no ads.',
+        a: 'Yes, and the difference is where the ceiling sits. TickTick’s free tier is capable but holds some features for Premium. Fezer’s free tier never expires and its paid tier is narrower: repeating blocks, deadline pins, one-tap tracking with checkpoints and the schedule timeline are free forever, with no ads. Compare, Analytics, the list and month views and unlimited areas, plans and steps are Fezer Plus, at $5.99 a month or $55.99 a year.',
       },
       {
         q: 'Can Fezer import my tasks from TickTick?',
@@ -824,7 +824,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Can I use Fezer on my Mac or on Android?',
-        a: 'No. Fezer is an iPhone and iPad app, and because it stores everything on-device there is no web version. You can request Android access from the homepage.',
+        a: 'Android yes -  Fezer is on Google Play. Mac no, and because it stores everything on-device there is no web version either.',
       },
       {
         q: 'Why would I give up TickTick’s capture speed?',
@@ -844,11 +844,11 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
     navLabel: 'vs Tiimo',
     title: 'Tiimo Alternative for iPhone -  Fezer',
     metaDescription:
-      'Looking for a Tiimo alternative? Fezer is a visual day planner that also records how the day went -  planned time next to actual time. Free, no subscription, no account, all on-device.',
+      'Looking for a Tiimo alternative? Fezer is a visual day planner that also records how the day went -  planned time next to actual time. Free to plan and track, no account, all on-device.',
     ogSlug: 'tiimo-alternative',
     h1: 'A visual day planner that also records how the day went',
     intro:
-      'Tiimo and Fezer share a starting conviction: a day you can see is easier to follow than a list you have to hold in your head. Tiimo builds on that with design centred on neurodivergent users and an AI planner. Fezer builds on it with a feedback loop -  and no subscription.',
+      'Tiimo and Fezer share a starting conviction: a day you can see is easier to follow than a list you have to hold in your head. Tiimo builds on that with design centred on neurodivergent users and an AI planner. Fezer builds on it with a feedback loop: the day you planned, measured against the day you got.',
     fairness: {
       heading: 'Where Tiimo is stronger',
       paragraphs: [
@@ -872,17 +872,17 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         ],
       },
       {
-        heading: 'A goal layer above the day',
+        heading: 'A planning layer above the day',
         paragraphs: [
-          'Fezer also carries structure that Tiimo’s task-and-routine model does not: fronts for the areas of your life, goals with a written end state, ordered steps, and vision boards attached to each front and goal. Steps get committed onto the schedule as deadlines or blocks of time.',
-          'The payoff arrives in the weekly analytics, where tracked time rolls up by front and goal -  an honest account of which parts of your life received hours, not just which tasks got checked.',
+          'Fezer also carries structure that Tiimo’s task-and-routine model does not: areas for the parts of your life, plans with a written end state, ordered steps, and vision boards attached to each area and goal. Steps get committed onto the schedule as deadlines or blocks of time.',
+          'The payoff arrives in the weekly analytics, where tracked time rolls up by area and plan -  an honest account of which parts of your life received hours, not just which tasks got checked.',
         ],
       },
       {
         heading: 'Subscription vs. free, cloud vs. device',
         paragraphs: [
           'Tiimo uses a freemium model: a free version with the essentials and a Tiimo Pro subscription for the full feature set, with cross-device sync as part of the product. That is a reasonable architecture for a multi-platform app with AI features -  those things cost money to run.',
-          'Fezer is free in full, with no Pro tier, no ads and no account -  possible because there is nothing server-side to fund. Everything you plan and track stays on your iPhone or iPad and is never transmitted. The cost is no sync, no watch app and no web access; the benefit is that a fairly intimate record of your days is never in anyone’s custody but yours.',
+          'Fezer is free to plan and track, with no ads and no account, and Fezer is free to plan and track, with no account and no ads; Compare, Analytics, the list and month views and unlimited areas, plans and steps are Fezer Plus, at $5.99 a month or $55.99 a year with a week free on the yearly plan. Everything you plan and track stays on your iPhone or iPad and is never transmitted. The cost is no sync, no watch app and no web access; the benefit is that a fairly intimate record of your days is never in anyone’s custody but yours.',
         ],
       },
     ],
@@ -909,7 +909,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'Widgets',
           them: 'Yes -  see what is next without opening the app',
-          us: null,
+          us: 'Yes -  Home Screen, Lock Screen, Control Center and a Live Activity',
         },
         {
           capability: 'Focus timer',
@@ -932,19 +932,19 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
           us: 'Yes -  Compare mode, side by side',
         },
         {
-          capability: 'Goals broken into steps and scheduled',
+          capability: 'Plans broken into steps and scheduled',
           them: 'To-dos and routines',
-          us: 'Fronts, goals and steps committed onto the day',
+          us: 'Areas, plans and steps committed onto the day',
         },
         {
           capability: 'Vision board',
           them: null,
-          us: 'Yes -  boards per goal and life area',
+          us: 'Yes -  boards per plan and life area',
         },
         {
           capability: 'Platforms',
           them: 'iPhone, iPad, Apple Watch, Android, web',
-          us: 'iPhone and iPad',
+          us: 'iPhone, iPad and Android',
         },
         {
           capability: 'Sync across devices',
@@ -976,9 +976,9 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         label: 'Stay with Tiimo if',
         points: [
           'Design built around ADHD or autism is what makes planning work for you.',
-          'You rely on widgets or an Apple Watch to see what is next.',
+          'You rely on an Apple Watch to see what is next.',
           'You want AI to turn a brain-dump into a schedule.',
-          'You need your planner on Android or the web.',
+          'You need your planner on the web, or on a Mac.',
           'Mood tracking alongside your schedule matters to you.',
         ],
       },
@@ -987,7 +987,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         points: [
           'You want a visual day that also keeps a record of the real one.',
           'Seeing planned time against actual time would change how you plan.',
-          'You want goals and vision boards wired to the same timeline.',
+          'You want plans and vision boards wired to the same timeline.',
           'You would rather everything be free than partly behind a Pro tier.',
           'You want your schedule kept on your device, with no account.',
         ],
@@ -1000,7 +1000,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Is Fezer completely free where Tiimo has a Pro tier?',
-        a: 'Yes. Everything in Fezer -  repeating blocks, tracking, Compare mode, goals, analytics, vision boards -  is free, with no subscription, ads or in-app purchases. Fezer has no servers or AI infrastructure to fund, which is what makes that sustainable.',
+        a: 'The parts you use every day, yes. Repeating blocks, deadline pins, one-tap tracking with checkpoints and the schedule timeline are free forever, with no ads. Compare, Analytics, the list and month views and unlimited areas, plans and steps are Fezer Plus, at $5.99 a month or $55.99 a year. Fezer has no servers or AI infrastructure to fund, which is what keeps the free tier genuinely usable rather than a demo.',
       },
       {
         q: 'Does Fezer have an AI planner?',
@@ -1008,7 +1008,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Does Fezer work on Apple Watch or Android?',
-        a: 'No. Fezer runs on iPhone and iPad only. You can request Android access from the homepage and we will let you know when there is something to try.',
+        a: 'Android yes -  Fezer is on Google Play. Apple Watch, not yet.',
       },
       {
         q: 'Does Fezer sync between devices?',
@@ -1041,7 +1041,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       heading: 'Where Todoist is stronger',
       paragraphs: [
         'Todoist has been refined for nearly two decades and it shows. Capture is instant and natural-language dates ("every other friday at 4pm") are best in class. It runs on essentially everything, syncs seamlessly, and scales from a grocery list to shared team projects with assignments, comments and permissions. Its free tier is genuinely usable, and the Pro tier adds a calendar layout, task durations and AI assistance.',
-        'Fezer competes with none of that breadth. It is iPhone and iPad only, has no collaboration, no natural-language capture and no integrations. It is built around one loop Todoist does not have, described below.',
+        'Fezer competes with none of that breadth. It has no collaboration, no natural-language capture and no integrations. It is built around one loop Todoist does not have, described below.',
       ],
     },
     sections: [
@@ -1060,10 +1060,10 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         ],
       },
       {
-        heading: 'Projects vs. fronts',
+        heading: 'Projects vs. areas',
         paragraphs: [
-          'Todoist organizes work into projects and sub-tasks, which suits deliverables. Fezer organizes life into fronts -  areas like health, family and work -  each holding goals with a written end state, ordered steps, and a vision board. A step becomes real by being committed onto the schedule: pinned as a deadline or blocked as time.',
-          'Because tracked time attaches to fronts and goals, Fezer’s analytics answer a question a productivity streak cannot: which areas of your life actually received hours this week, and which only received good intentions.',
+          'Todoist organizes work into projects and sub-tasks, which suits deliverables. Fezer organizes life into areas -  areas like health, family and work -  each holding plans with a written end state, ordered steps, and a vision board. A step becomes real by being committed onto the schedule: pinned as a deadline or blocked as time.',
+          'Because tracked time attaches to areas and plans, Fezer’s analytics answer a question a productivity streak cannot: which areas of your life actually received hours this week, and which only received good intentions.',
         ],
       },
       {
@@ -1087,7 +1087,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'Projects, labels and filters',
           them: 'Yes -  with more of each in paid tiers',
-          us: 'Fronts, goals and steps instead of projects',
+          us: 'Areas, plans and steps instead of projects',
         },
         {
           capability: 'Visual day timeline',
@@ -1117,7 +1117,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'Vision board',
           them: null,
-          us: 'Yes -  boards per goal and life area',
+          us: 'Yes -  boards per plan and life area',
         },
         {
           capability: 'Collaboration and shared projects',
@@ -1132,7 +1132,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         {
           capability: 'Platforms',
           them: 'iPhone, iPad, Android, Mac, Windows, web and more',
-          us: 'iPhone and iPad',
+          us: 'iPhone, iPad and Android',
         },
         {
           capability: 'Sync across devices',
@@ -1165,7 +1165,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
         points: [
           'Frictionless capture from anywhere is the feature you live by.',
           'You share projects with a team, a partner or clients.',
-          'You need your tasks on Android, desktop and the web.',
+          'You need your tasks on desktop and the web.',
           'Your work is genuinely list-shaped: many small items, few time decisions.',
           'You want AI help drafting and organizing tasks.',
         ],
@@ -1204,7 +1204,7 @@ export const COMPARISON_PAGES: ComparisonPageContent[] = [
       },
       {
         q: 'Is Fezer available on Android or the web?',
-        a: 'No. Fezer runs on iPhone and iPad. You can request Android access from the homepage and we will let you know when there is something to try.',
+        a: 'Android yes -  Fezer is on Google Play. The web, no -  everything is stored on the device, so there is nothing to sign in to.',
       },
     ],
     related: [

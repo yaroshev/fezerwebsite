@@ -1,6 +1,7 @@
 import { Download, ExternalLink } from 'lucide-react';
 import Nav from '../components/Nav';
 import AppStoreButton from '../components/AppStoreButton';
+import BetaAccessButton from '../components/BetaAccessButton';
 import SiteFooter from '../components/SiteFooter';
 import VideoEmbed from '../components/VideoEmbed';
 import { INTRO_VIDEO, SCREENSHOTS, trackEvent } from '../seo/constants';
@@ -9,11 +10,11 @@ const FACTS: { label: string; value: string }[] = [
   { label: 'Name', value: 'Fezer Planner (Fezer)' },
   { label: 'Category', value: 'Productivity -  day planner, time tracker, goal planner' },
   { label: 'Developer', value: 'Yaroslav Shevchenko, independent developer' },
-  { label: 'Released', value: 'July 25, 2026' },
-  { label: 'Platforms', value: 'iPhone and iPad (iOS / iPadOS 26.5 or later)' },
-  { label: 'Price', value: 'Free -  no subscription, no ads, no in-app purchases' },
-  { label: 'Download size', value: 'About 3.5 MB' },
-  { label: 'Languages', value: 'English' },
+  { label: 'Released', value: 'iPhone and iPad July 25, 2026; Android August 2026' },
+  { label: 'Platforms', value: 'iPhone and iPad (iOS / iPadOS 26 or later); Android (8.0 or later)' },
+  { label: 'Price', value: 'Free to plan and track. Fezer Plus $5.99/month or $55.99/year, 7-day free trial on the yearly plan. No ads.' },
+  { label: 'Version', value: 'iOS 3.0.5; Android 1.1.6' },
+  { label: 'Languages', value: '40 languages on iPhone and iPad; English on Android' },
   { label: 'Privacy', value: 'Plans stay on device. No account, no ads. Anonymous product analytics; see the Privacy Policy.' },
   { label: 'Website', value: 'fezer.app' },
 ];
@@ -36,7 +37,7 @@ const ASSETS: { label: string; desc: string; href: string }[] = [
   },
   {
     label: 'Screenshot: goal planner',
-    desc: 'Goals organized under fronts (WebP)',
+    desc: 'Plans organized under areas (WebP)',
     href: SCREENSHOTS.goalPlanner,
   },
   {
@@ -91,7 +92,7 @@ export default function PressPage() {
                   Fezer is a day planner, time tracker and goal planner built around a loop most
                   planners skip: plan the day in time blocks, track what actually happens with one
                   tap, then compare the two side by side so tomorrow’s plan starts from evidence.
-                  Above the day sits a goal layer -  life areas called fronts, goals broken into
+                  Above the day sits a goal layer -  life areas called areas, goals broken into
                   steps, and vision boards -  whose steps commit directly onto the schedule. The
                   app has no accounts: everything a user plans and tracks stays on their
                   device. We use anonymous product analytics to keep the app working; we
@@ -104,7 +105,7 @@ export default function PressPage() {
                 <ul className="mt-4 space-y-3 max-w-2xl">
                   {[
                     'Plan vs. actual: almost every planner records intentions; Fezer also records the day as it ran and confronts the two -  the core loop is calibration, not organization.',
-                    'Genuinely free, structurally: with no servers, sync or AI infrastructure to fund, there is nothing a subscription would pay for. No premium tier exists.',
+                    'Free where it counts, structurally: with no servers, sync or AI infrastructure to fund, the free tier is a working planner rather than a demo. What Plus charges for is the analysis layer, not access. Fezer Plus pays for the developer, not for servers.',
                     'Privacy as architecture: no account, no cloud copy of the day. Plans stay on the device. Product analytics are anonymous and cannot read a schedule.',
                     'A 3.5 MB app in 2026: a full planner, tracker, goal system and vision board smaller than most app updates.',
                     'Built by one person: designed, developed and shipped by a solo independent developer.',
@@ -218,6 +219,10 @@ export default function PressPage() {
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <AppStoreButton location="press-cta" className="!bg-white !text-[#0d2b57]" />
+              <BetaAccessButton
+                location="press-cta"
+                className="!border-white/40 !bg-transparent !text-white hover:!bg-white/10 dark:!border-white/40 dark:!bg-transparent dark:!text-white"
+              />
               <a
                 href={INTRO_VIDEO.channelUrl}
                 target="_blank"

@@ -4,6 +4,17 @@ export default {
   darkMode: 'media',
   theme: {
     extend: {
+      fontFamily: {
+        vision: [
+          '"Iowan Old Style"',
+          '"Palatino Linotype"',
+          'Palatino',
+          'Charter',
+          'Georgia',
+          '"Times New Roman"',
+          'serif',
+        ],
+      },
       colors: {
         dark: {
           bg: '#000000',

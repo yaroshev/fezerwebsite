@@ -1,6 +1,7 @@
 import { Check, Minus } from 'lucide-react';
 import Nav from '../components/Nav';
 import AppStoreButton from '../components/AppStoreButton';
+import BetaAccessButton from '../components/BetaAccessButton';
 import SiteFooter from '../components/SiteFooter';
 import { ComparisonPageContent } from '../content/comparisons';
 
@@ -225,10 +226,15 @@ export default function ComparisonPage({ content }: { content: ComparisonPageCon
           <div className="rounded-3xl bg-[#0d2b57] p-8 sm:p-12 text-center text-white">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Try Fezer for free</h2>
             <p className="mx-auto mt-3 max-w-xl text-[15px] sm:text-base text-blue-100 leading-relaxed">
-              No account, no ads, no tracking -  everything stays on your device.
+              Free to plan and track, on iPhone, iPad and Android. No account, no ads, and nothing you
+              write ever leaves your device.
             </p>
-            <div className="mt-6 flex justify-center">
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
               <AppStoreButton location={`${content.path}-cta`} className="!bg-white !text-[#0d2b57]" />
+              <BetaAccessButton
+                location={`${content.path}-cta`}
+                className="!border-white/40 !bg-transparent !text-white hover:!bg-white/10 dark:!border-white/40 dark:!bg-transparent dark:!text-white"
+              />
             </div>
           </div>
         </section>
