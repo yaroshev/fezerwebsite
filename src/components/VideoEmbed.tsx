@@ -40,7 +40,7 @@ export default function VideoEmbed({
   const play = () => setPlaying(true);
 
   return (
-    <div className="mx-auto w-full max-w-[300px] sm:max-w-[320px]">
+    <div className="mx-auto w-full max-w-[260px] sm:max-w-[300px]">
       <div className="relative aspect-[9/16] overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-900 shadow-xl shadow-[#0d2b57]/10 dark:border-neutral-800">
         {playing ? (
           <iframe

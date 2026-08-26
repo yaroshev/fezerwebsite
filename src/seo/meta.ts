@@ -364,13 +364,13 @@ export const ROUTES_META: RouteMeta[] = [
     },
   },
   {
-    path: '/vision',
-    title: 'Vision & Objectives -  Fezer',
+    path: '/about',
+    title: 'About -  Fezer',
     description:
-      'The long-term vision guiding Fezer: a future of abundance beyond Earth, built through self-managing systems aligned with humanity’s flourishing — and the objectives that move that work forward.',
+      'The long-term vision guiding Fezer, the product thesis, the objectives that move that work forward, and the principles it is built on.',
     robots: 'index, follow',
     indexable: true,
-    ogSlug: 'vision',
+    ogSlug: 'about',
     jsonLd: {
       '@context': 'https://schema.org',
       '@graph': [
@@ -378,11 +378,11 @@ export const ROUTES_META: RouteMeta[] = [
         WEBSITE,
         {
           '@type': 'AboutPage',
-          '@id': `${SITE_URL}/vision`,
-          url: `${SITE_URL}/vision`,
-          name: 'Vision & Objectives -  Fezer',
+          '@id': `${SITE_URL}/about`,
+          url: `${SITE_URL}/about`,
+          name: 'About -  Fezer',
           description:
-            'The long-term vision guiding Fezer, and the objectives that move that work forward.',
+            'The long-term vision guiding Fezer, the product thesis, the objectives, and the principles behind it.',
           isPartOf: { '@id': `${SITE_URL}/#website` },
           about: { '@id': `${SITE_URL}/#organization` },
         },
@@ -390,7 +390,7 @@ export const ROUTES_META: RouteMeta[] = [
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Fezer', item: `${SITE_URL}/` },
-            { '@type': 'ListItem', position: 2, name: 'Vision', item: `${SITE_URL}/vision` },
+            { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE_URL}/about` },
           ],
         },
       ],

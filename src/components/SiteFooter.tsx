@@ -120,8 +120,8 @@ export default function SiteFooter() {
                 <h2 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">More</h2>
                 <ul className="mt-3 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
                   <li>
-                    <a href="/vision" className="hover:text-neutral-900 transition-colors dark:hover:text-neutral-100">
-                      Vision
+                    <a href="/about" className="hover:text-neutral-900 transition-colors dark:hover:text-neutral-100">
+                      About
                     </a>
                   </li>
                   <li>

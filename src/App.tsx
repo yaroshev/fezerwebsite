@@ -8,7 +8,7 @@ import GuidesIndex from './pages/GuidesIndex';
 import FaqPage from './pages/FaqPage';
 import PressPage from './pages/PressPage';
 import WhatsNew from './pages/WhatsNew';
-import VisionPage from './pages/VisionPage';
+import AboutPage from './pages/AboutPage';
 import NotFound from './pages/NotFound';
 import { FEATURE_PAGES } from './content/features';
 import { COMPARISON_PAGES } from './content/comparisons';
@@ -24,7 +24,7 @@ function App({ path }: { path: string }) {
   if (normalized === '/faq') return <FaqPage />;
   if (normalized === '/press') return <PressPage />;
   if (normalized === '/whats-new') return <WhatsNew />;
-  if (normalized === '/vision') return <VisionPage />;
+  if (normalized === '/about' || normalized === '/vision') return <AboutPage />;
 
   const feature = FEATURE_PAGES.find((page) => page.path === normalized);
   if (feature) return <FeaturePage content={feature} />;

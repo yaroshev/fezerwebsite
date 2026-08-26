@@ -16,9 +16,9 @@ export const CHANGELOG: ChangelogEntry[] = [
   {
     date: '2026-08-26',
     kind: 'site',
-    title: 'Vision and objectives',
+    title: 'About Fezer',
     items: [
-      'New page at /vision with Fezer\u2019s long-term vision statement and the ten objectives that guide how it is built.',
+      'New page at /about with Fezer\u2019s vision statement, product thesis, objectives, and principles.',
     ],
   },
   {

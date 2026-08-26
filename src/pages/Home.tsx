@@ -3,11 +3,12 @@ import { Zap, Calendar, Target, Timer, PieChart, Paperclip, ShieldCheck } from '
 import Nav from '../components/Nav';
 import AppStoreButton from '../components/AppStoreButton';
 import BetaAccessButton from '../components/BetaAccessButton';
+import VisionStatementLightbox from '../components/VisionStatementLightbox';
 import SiteFooter from '../components/SiteFooter';
 import VideoEmbed from '../components/VideoEmbed';
 import HeroVideo from '../components/HeroVideo';
 import Pricing from '../components/Pricing';
-import { INTRO_VIDEO, PLUS_AVAILABILITY, PRICING, SCREENSHOTS } from '../seo/constants';
+import { INTRO_VIDEO, SCREENSHOTS } from '../seo/constants';
 
 const FEATURES = [
   {
@@ -119,6 +120,7 @@ const CATEGORY_SECTIONS: {
 
 export default function Home() {
   const [activeSection, setActiveSection] = React.useState<string>('top');
+  const [visionOpen, setVisionOpen] = React.useState(false);
 
   // Track active section for nav highlighting
   React.useEffect(() => {
@@ -172,32 +174,32 @@ export default function Home() {
                 </p>
               </div>
 
-              <a
-                href="/vision"
-                className="mt-6 text-sm font-medium text-[#0d2b57] hover:opacity-70 dark:text-[#9ec7ff]"
+              <button
+                type="button"
+                onClick={() => setVisionOpen(true)}
+                aria-haspopup="dialog"
+                aria-expanded={visionOpen}
+                className="nav-link relative mt-6 py-1 text-sm font-medium text-[#0d2b57] transition-colors duration-200 hover:text-[#071d3c] touch-manipulation dark:text-[#9ec7ff] dark:hover:text-white"
               >
-                Fezer Vision Statement
-              </a>
+                View vision statement
+              </button>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5 sm:mt-10 sm:gap-4">
                 <AppStoreButton location="hero" />
                 <BetaAccessButton location="hero" />
               </div>
-
-              <p className="mt-4 text-[13px] leading-relaxed text-neutral-500 dark:text-neutral-400">
-                Free to plan and track · iPhone, iPad &amp; Android · No account required
-                {PLUS_AVAILABILITY.ios ? ` · Fezer Plus from ${PRICING.perMonthOnYearly}/month` : ''}
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Launch video */}
-        <section id="video" className="w-full bg-white dark:bg-neutral-950">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-20">
-            <div className="grid items-center gap-8 lg:grid-cols-[minmax(280px,340px)_1fr] lg:gap-16">
-              <VideoEmbed location="home" autoPlay />
-              <div>
+        {/* Launch video + category sections share one column track */}
+        <div className="w-full bg-white dark:bg-neutral-950">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-20 space-y-16 sm:space-y-24">
+            <section
+              id="video"
+              className="grid items-center gap-8 lg:grid-cols-[minmax(260px,340px)_1fr] lg:gap-16"
+            >
+              <div className="lg:order-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
                   See Fezer in {INTRO_VIDEO.durationLabel}
                 </h2>
@@ -217,58 +219,63 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Category sections */}
-        <div className="w-full bg-white dark:bg-neutral-950">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-20 space-y-16 sm:space-y-24">
-            {CATEGORY_SECTIONS.map((section, index) => (
-              <div
-                key={section.id}
-                className={`grid items-center gap-8 lg:gap-16 ${
-                  section.image ? 'lg:grid-cols-[1fr_minmax(260px,340px)]' : ''
-                }`}
-              >
-                <div className={section.image && index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-                    {section.heading}
-                  </h2>
-                  {section.paragraphs.map((text) => (
-                    <p
-                      key={text.slice(0, 32)}
-                      className="mt-4 max-w-2xl text-[15px] sm:text-base md:text-lg text-neutral-600 leading-relaxed dark:text-neutral-400"
-                    >
-                      {text}
-                    </p>
-                  ))}
-                  <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
-                    {section.links.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        className="text-[15px] font-medium text-[#0d2b57] hover:opacity-80 transition-opacity dark:text-blue-300"
-                      >
-                        {link.label} →
-                      </a>
-                    ))}
-                  </div>
-                </div>
-                {section.image && (
-                  <img
-                    src={section.image.src}
-                    alt={section.image.alt}
-                    width={920}
-                    height={1996}
-                    loading="lazy"
-                    className={`mx-auto w-full max-w-[260px] sm:max-w-[300px] rounded-3xl border border-neutral-200/80 shadow-xl shadow-[#0d2b57]/10 dark:border-neutral-800 ${
-                      index % 2 === 1 ? 'lg:order-1' : ''
-                    }`}
-                  />
-                )}
+              <div className="lg:order-1">
+                <VideoEmbed location="home" autoPlay />
               </div>
-            ))}
+            </section>
+
+            {CATEGORY_SECTIONS.map((section, index) => {
+              const mediaOnLeft = Boolean(section.image) && index % 2 === 1;
+              return (
+                <div
+                  key={section.id}
+                  className={`grid items-center gap-8 lg:gap-16 ${
+                    !section.image
+                      ? ''
+                      : mediaOnLeft
+                        ? 'lg:grid-cols-[minmax(260px,340px)_1fr]'
+                        : 'lg:grid-cols-[1fr_minmax(260px,340px)]'
+                  }`}
+                >
+                  <div className={mediaOnLeft ? 'lg:order-2' : ''}>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
+                      {section.heading}
+                    </h2>
+                    {section.paragraphs.map((text) => (
+                      <p
+                        key={text.slice(0, 32)}
+                        className="mt-4 max-w-2xl text-[15px] sm:text-base md:text-lg text-neutral-600 leading-relaxed dark:text-neutral-400"
+                      >
+                        {text}
+                      </p>
+                    ))}
+                    <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+                      {section.links.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          className="text-[15px] font-medium text-[#0d2b57] hover:opacity-80 transition-opacity dark:text-blue-300"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  {section.image && (
+                    <img
+                      src={section.image.src}
+                      alt={section.image.alt}
+                      width={920}
+                      height={1996}
+                      loading="lazy"
+                      className={`mx-auto w-full max-w-[260px] sm:max-w-[300px] rounded-3xl border border-neutral-200/80 shadow-xl shadow-[#0d2b57]/10 dark:border-neutral-800 ${
+                        mediaOnLeft ? 'lg:order-1' : ''
+                      }`}
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -355,6 +362,7 @@ export default function Home() {
       </main>
 
       <SiteFooter />
+      <VisionStatementLightbox open={visionOpen} onClose={() => setVisionOpen(false)} />
     </div>
   );
 }

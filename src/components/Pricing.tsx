@@ -86,7 +86,7 @@ export default function Pricing() {
             {!PLUS_AVAILABILITY.ios && (
               <p className="mt-6 rounded-2xl bg-white/10 px-4 py-3 text-[14px] leading-relaxed text-white/80">
                 Fezer Plus is available on Google Play today. The iPhone and iPad version is with
-                Apple for review — until it clears, the App Store build is the free tier, and
+                Apple for review - until it clears, the App Store build is the free tier, and
                 nothing in it will ask you to pay.
               </p>
             )}

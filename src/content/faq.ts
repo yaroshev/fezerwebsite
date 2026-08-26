@@ -16,11 +16,11 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'What is Fezer?',
-        a: 'Fezer is a day planner, time tracker and goal planner for iPhone, iPad and Android. You plan your day in time blocks, track what actually happens with one tap, and compare the two side by side. Above the day sits a planning layer — areas, plans, steps and vision boards — whose steps commit directly onto your schedule.',
+        a: 'Fezer is a day planner, time tracker and goal planner for iPhone, iPad and Android. You plan your day in time blocks, track what actually happens with one tap, and compare the two side by side. Above the day sits a planning layer - areas, plans, steps and vision boards - whose steps commit directly onto your schedule.',
       },
       {
         q: 'How much does Fezer cost?',
-        a: 'Planning your day and tracking it are free, permanently, with no account and no trial clock. A new install includes 3 areas, 3 plans in each, 7 steps per plan, one vision board with up to 10 pins, and the schedule timeline in both Plan and Tracked views. Fezer Plus opens the rest — Compare, Analytics, the list and month views, and unlimited areas, plans, steps and vision boards — for $5.99 a month or $55.99 a year, with a 7-day free trial on the yearly plan.',
+        a: 'Planning your day and tracking it are free, permanently, with no account and no trial clock. A new install includes 3 areas, 3 plans in each, 7 steps per plan, one vision board with up to 10 pins, and the schedule timeline in both Plan and Tracked views. Fezer Plus opens the rest - Compare, Analytics, the list and month views, and unlimited areas, plans, steps and vision boards - for $5.99 a month or $55.99 a year, with a 7-day free trial on the yearly plan.',
       },
       {
         q: 'What does Fezer Plus include?',
@@ -28,7 +28,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'Do I need to create an account?',
-        a: 'No. Fezer has no accounts, no sign-up and no login. You install the app and start planning. Your plans stay on the device. Even a Fezer Plus subscription needs no account — your entitlement comes from the App Store or Google Play, not from us.',
+        a: 'No. Fezer has no accounts, no sign-up and no login. You install the app and start planning. Your plans stay on the device. Even a Fezer Plus subscription needs no account - your entitlement comes from the App Store or Google Play, not from us.',
       },
       {
         q: 'What do I need to run Fezer?',
@@ -36,7 +36,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'Is Fezer available on Android, Mac or the web?',
-        a: 'Android yes — Fezer is on Google Play, and the Android app carries the same planning, tracking and Compare loop as the iPhone one. Mac and web, no. Because everything is stored on the device there is no web version, and there is no Mac app today.',
+        a: 'Android yes - Fezer is on Google Play, and the Android app carries the same planning, tracking and Compare loop as the iPhone one. Mac and web, no. Because everything is stored on the device there is no web version, and there is no Mac app today.',
       },
       {
         q: 'How do I cancel Fezer Plus?',
@@ -53,7 +53,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'So does Fezer track me or not?',
-        a: 'Neither answer on its own is honest, so here is both. Nothing you write leaves the device: no titles, notes, dates, photos or file names, ever. What does leave is anonymous diagnostics — that the app opened, which screen you are on, that you created an area or a block, that a crash happened, and for Plus that a paywall was shown or a purchase completed. Session recordings are captured with all text and images masked on-device before a frame is sent. It is processed by PostHog on our behalf and it is never sold. If you have seen us say "no tracking" anywhere, that was wrong and it has been corrected.',
+        a: 'Neither answer on its own is honest, so here is both. Nothing you write leaves the device: no titles, notes, dates, photos or file names, ever. What does leave is anonymous diagnostics - that the app opened, which screen you are on, that you created an area or a block, that a crash happened, and for Plus that a paywall was shown or a purchase completed. Session recordings are captured with all text and images masked on-device before a frame is sent. It is processed by PostHog on our behalf and it is never sold. If you have seen us say "no tracking" anywhere, that was wrong and it has been corrected.',
       },
       {
         q: 'Does Fezer work offline?',
@@ -61,11 +61,11 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'Does Fezer sync between my devices?',
-        a: 'No. Each device keeps its own local planner data. There is no cloud copy of your schedule to sync from. A Fezer Plus subscription does follow you, because the store account carries it — but your plans do not travel with it.',
+        a: 'No. Each device keeps its own local planner data. There is no cloud copy of your schedule to sync from. A Fezer Plus subscription does follow you, because the store account carries it - but your plans do not travel with it.',
       },
       {
         q: 'How do I back up my data or move it to a new phone?',
-        a: 'Fezer data is included in a standard device backup — iCloud Backup or a computer backup on iPhone and iPad, and Google’s Auto Backup on Android — so restoring a device from backup restores your planner with it. There is no separate export, and no live sync between two devices in use at the same time.',
+        a: 'Fezer data is included in a standard device backup - iCloud Backup or a computer backup on iPhone and iPad, and Google’s Auto Backup on Android - so restoring a device from backup restores your planner with it. There is no separate export, and no live sync between two devices in use at the same time.',
       },
       {
         q: 'How do I delete my data?',
@@ -78,11 +78,11 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'What is Compare?',
-        a: 'The view that puts your planned day and your actual day side by side on the same hourly timeline — planned blocks in one column, tracked sessions in the other. Late starts, overruns, blocks that never happened and work that was never planned all become visible at a glance, which is what makes the next day’s plan more realistic than the last. Compare is part of Fezer Plus.',
+        a: 'The view that puts your planned day and your actual day side by side on the same hourly timeline - planned blocks in one column, tracked sessions in the other. Late starts, overruns, blocks that never happened and work that was never planned all become visible at a glance, which is what makes the next day’s plan more realistic than the last. Compare is part of Fezer Plus.',
       },
       {
         q: 'How does time tracking work?',
-        a: 'One tap on Begin starts a session; checkpoints let you drop notes or photos along the way without stopping the timer; End lands the session on your schedule as a tracked block. Sessions can attach to an area, plan or step so the time counts toward something, and ending a session linked to a plan writes a completed step with the time on it. You can also start tracking something you never planned, or re-open a session you ended too early. There is no automatic background tracking — that would require monitoring you, which Fezer will not do.',
+        a: 'One tap on Begin starts a session; checkpoints let you drop notes or photos along the way without stopping the timer; End lands the session on your schedule as a tracked block. Sessions can attach to an area, plan or step so the time counts toward something, and ending a session linked to a plan writes a completed step with the time on it. You can also start tracking something you never planned, or re-open a session you ended too early. There is no automatic background tracking - that would require monitoring you, which Fezer will not do.',
       },
       {
         q: 'Can I start and stop tracking without opening the app?',
@@ -94,7 +94,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'Does Fezer have repeating blocks for routines?',
-        a: 'Yes — a block can repeat every day, on weekdays, every week or every two weeks, so your morning routine and standing commitments rebuild themselves and you only plan the exceptions. A repeating series can also start at different times on different weekdays.',
+        a: 'Yes - a block can repeat every day, on weekdays, every week or every two weeks, so your morning routine and standing commitments rebuild themselves and you only plan the exceptions. A repeating series can also start at different times on different weekdays.',
       },
       {
         q: 'What can a time block hold?',
@@ -102,11 +102,11 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'What are areas?',
-        a: 'Areas are the parts of your life — health, family, work, a side project — and every plan belongs to one. Because tracked time rolls up by area, your analytics show which parts of your life actually received hours and which were quietly starved.',
+        a: 'Areas are the parts of your life - health, family, work, a side project - and every plan belongs to one. Because tracked time rolls up by area, your analytics show which parts of your life actually received hours and which were quietly starved.',
       },
       {
         q: 'What is a vision board for?',
-        a: 'Every area and every plan can carry its own board of pins — typed as Want, Need, Idea, Goal, Dream, Thought or Reflection, with images and text. Lenses let you look at the same board as Dream, Plan or Remember, dimming what is not relevant rather than hiding it. Because the board sits beside the plans it belongs to, the thing you are working toward is one tap from the hour you are working in.',
+        a: 'Every area and every plan can carry its own board of pins - typed as Want, Need, Idea, Goal, Dream, Thought or Reflection, with images and text. Lenses let you look at the same board as Dream, Plan or Remember, dimming what is not relevant rather than hiding it. Because the board sits beside the plans it belongs to, the thing you are working toward is one tap from the hour you are working in.',
       },
     ],
   },
@@ -115,7 +115,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: 'How do I report a bug or request a feature?',
-        a: 'Use the Send feedback link in the footer of this site — it takes a message, an optional email if you want a reply, and an optional screenshot. Feedback goes straight to the developer and genuinely shapes what gets built next.',
+        a: 'Use the Send feedback link in the footer of this site - it takes a message, an optional email if you want a reply, and an optional screenshot. Feedback goes straight to the developer and genuinely shapes what gets built next.',
       },
       {
         q: 'Who makes Fezer?',

@@ -16,7 +16,13 @@
 
 # All pages are prerendered to static HTML at build time, so no SPA
 # rewrites are needed. /privacy is a legacy alias for the policy page.
+# /vision is a legacy alias for the about page.
 [[redirects]]
   from = "/privacy"
   to = "/privacypolicy"
+  status = 301
+
+[[redirects]]
+  from = "/vision"
+  to = "/about"
   status = 301

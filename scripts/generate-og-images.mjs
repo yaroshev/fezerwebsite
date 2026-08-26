@@ -326,9 +326,9 @@ const CARDS = [
     screenshot: '/images/fezer-time-blocking-planner.webp',
   },
   {
-    slug: 'vision',
-    eyebrow: 'Vision',
-    title: 'The long-term vision guiding Fezer',
+    slug: 'about',
+    eyebrow: 'About',
+    title: 'Vision, objectives, and the product thesis',
     footnote: 'Infrastructure for humanity’s next frontier',
     screenshot: '/images/fezer-vision-board-app.webp',
   },

@@ -39,8 +39,8 @@ function PrivacyPolicy() {
               the times you planned or tracked.
             </p>
             <p className="mt-2 leading-relaxed">
-              If you use your device’s own backup — iCloud Backup or a computer backup on iPhone and
-              iPad, or Google’s Auto Backup on Android — your Fezer data may be included like any
+              If you use your device’s own backup - iCloud Backup or a computer backup on iPhone and
+              iPad, or Google’s Auto Backup on Android - your Fezer data may be included like any
               other app. Those backups are managed by{' '}
               <a className="underline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple</a>
               {' '}and{' '}

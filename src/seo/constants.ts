@@ -66,7 +66,7 @@ export const FREE_INCLUDES = [
 ];
 
 export const PLUS_INCLUDES = [
-  'Compare \u2014 the day you planned beside the day you got',
+  'Compare - the day you planned beside the day you got',
   'Analytics by day, week, month and year, broken down by area and plan',
   'The list and month views of your schedule',
   'Unlimited areas, plans and steps',
