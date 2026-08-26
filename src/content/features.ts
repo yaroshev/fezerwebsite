@@ -35,7 +35,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     navLabel: 'Day planner',
     title: 'Day Planner App for iPhone -  Fezer',
     metaDescription:
-      'Plan your day in time blocks, keep deadlines in view and always know what to work on now. Fezer is a private day planner app for iPhone and iPad.',
+      'Plan your day in time blocks, keep deadlines in view and always know what to work on now. Fezer is a private day planner app for iPhone, iPad and Android.',
     h1: 'A day planner built around what you do now',
     intro:
       'Fezer plans your day as a sequence of time blocks and deadlines, then keeps one commitment in front of you at a time. Not a longer to-do list -  a clearer answer to "what should I be doing right now?"',
@@ -99,7 +99,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     navLabel: 'Time blocking',
     title: 'Time-Blocking Planner for iPhone -  Fezer',
     metaDescription:
-      'Fezer is a time-blocking planner for iPhone and iPad. Build your day from time blocks, repeat your routines and compare the plan with what actually happened.',
+      'Fezer is a time-blocking planner for iPhone, iPad and Android. Build your day from time blocks, repeat your routines and compare the plan with what actually happened.',
     h1: 'Time blocking that survives contact with a real day',
     intro:
       'Time blocking means giving every hour a job before the day starts. Fezer makes the blocks fast to place, easy to repeat and honest at the end of the day -  because it also shows what actually happened.',
@@ -150,7 +150,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
       { title: 'Work on commitments', desc: 'Turn plan steps into scheduled blocks without leaving your plans.' },
       { title: 'Compare mode', desc: 'Planned and tracked columns side by side for every day.' },
       { title: 'Deadline pins', desc: 'Deadlines sit on the same timeline as your blocks.' },
-      { title: 'On-device data', desc: 'Your schedule never leaves your iPhone or iPad.' },
+      { title: 'On-device data', desc: 'Your schedule stays on your phone or tablet. Anonymous product analytics do not include what you wrote.' },
     ],
     related: [
       { path: '/day-planner-app', label: 'See Fezer as a full day planner' },
@@ -163,7 +163,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     navLabel: 'Time tracker',
     title: 'Personal Time Tracker -  Fezer',
     metaDescription:
-      'Track your time with one tap, add checkpoints as you work and see where your day really went. Fezer is a private personal time tracker for iPhone and iPad.',
+      'Track your time with one tap, add checkpoints as you work and see where your day really went. Fezer is a private personal time tracker for iPhone, iPad and Android.',
     h1: 'A personal time tracker, not a surveillance tool',
     intro:
       'Most time trackers were built for billing clients: timers, categories, exports. Fezer tracks time for one audience -  you. One tap to begin, checkpoints along the way, and analytics that show where your time actually went.',
@@ -227,7 +227,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     navLabel: 'Goal planner',
     title: 'Goal Planner and Tracker -  Fezer',
     metaDescription:
-      'Organize plans into areas, break them into steps and commit each step onto your daily schedule. Fezer is a goal planner and tracker for iPhone and iPad.',
+      'Organize plans into areas, break them into steps and commit each step onto your daily schedule. Fezer is a goal planner and tracker for iPhone, iPad and Android.',
     h1: 'A goal planner that ends on your calendar',
     intro:
       'Goals fail in the gap between "written down" and "scheduled." Fezer closes that gap: organize plans into areas, break them into steps, and commit each step to a deadline or a block of time on your actual day.',
@@ -247,8 +247,8 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
           body: 'An area is a life area or theme -  Personal Wellbeing, Family, Work. Every plan belongs to an area, so progress is visible per area, not just per task.',
         },
         {
-          title: 'Define each goal with a beginning and an end',
-          body: 'Each goal records why it was created and what the end result looks like. Between those two anchors sits the strip of steps.',
+          title: 'Define each plan with a beginning and an end',
+          body: 'Each plan records why it was created and what the end result looks like. Between those two anchors sits the strip of steps.',
         },
         {
           title: 'Break plans into steps',
@@ -256,7 +256,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
         },
         {
           title: 'Commit steps onto the schedule',
-          body: 'From any step, choose Commit: "Complete by" pins a deadline on your day, "Work on" blocks time for it -  optionally repeating. This is the moment a goal becomes a plan.',
+          body: 'From any step, choose Commit: "Complete by" pins a deadline on your day, "Work on" blocks time for it -  optionally repeating. This is the moment a written plan becomes a scheduled one.',
         },
       ],
     },
@@ -278,7 +278,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
       { title: 'Commit: Complete by', desc: 'Pin a step as a deadline directly on your day.' },
       { title: 'Commit: Work on', desc: 'Block time for a step, once or on repeat.' },
       { title: 'Progress and accomplishment', desc: 'Plan progress follows completed steps; finished plans are marked Accomplished.' },
-      { title: 'Time that counts', desc: 'Tracked sessions attach to goals, so analytics show the hours each goal actually received.' },
+      { title: 'Time that counts', desc: 'Tracked sessions attach to plans, so analytics show the hours each plan actually received.' },
     ],
     related: [
       { path: '/vision-board-app', label: 'Build a digital vision board for your areas' },
@@ -291,7 +291,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     navLabel: 'Vision board',
     title: 'Vision Board App for Goals -  Fezer',
     metaDescription:
-      'Build a digital vision board for every area of your life and connect it to real plans, steps and scheduled time. Fezer is a private vision board app for iPhone.',
+      'Build a digital vision board for every area of your life and connect it to real plans, steps and scheduled time. Fezer is a private vision board app for iPhone, iPad and Android.',
     h1: 'A vision board connected to an actual plan',
     intro:
       'A vision board is only decoration until something links it to action. In Fezer, every board belongs to an area or a plan -  the same plans that break into steps and land on your daily schedule.',
@@ -319,7 +319,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
           body: 'A Personal Wellbeing area gets its own board; a specific plan inside it can have another. Vision stays attached to the area of life it belongs to.',
         },
         {
-          title: 'Walk the pins into goals',
+          title: 'Walk the pins into plans',
           body: 'Because boards live beside your plans, a Want is one tab away from becoming a plan with steps, deadlines and scheduled time.',
         },
       ],
@@ -355,7 +355,7 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     navLabel: 'Weekly planner',
     title: 'Weekly Planner App -  Fezer',
     metaDescription:
-      'Plan your week with repeating time blocks, review it with weekly analytics and compare your plan with reality. Fezer is a weekly planner app for iPhone and iPad.',
+      'Plan your week with repeating time blocks, review it with weekly analytics and compare your plan with reality. Fezer is a weekly planner app for iPhone, iPad and Android.',
     h1: 'Plan the week once, correct it with evidence',
     intro:
       'A week is the natural unit for improving how you spend time: long enough to show patterns, short enough to fix them. Fezer builds your week from repeating blocks and closes it with analytics that compare plan against reality.',

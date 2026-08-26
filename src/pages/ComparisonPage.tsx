@@ -4,6 +4,7 @@ import AppStoreButton from '../components/AppStoreButton';
 import BetaAccessButton from '../components/BetaAccessButton';
 import SiteFooter from '../components/SiteFooter';
 import { ComparisonPageContent } from '../content/comparisons';
+import { HERO_CHIP } from '../seo/constants';
 
 export default function ComparisonPage({ content }: { content: ComparisonPageContent }) {
   const { h1, intro, fairness, sections, table, screenshot, verdict, faq, related } = content;
@@ -24,9 +25,8 @@ export default function ComparisonPage({ content }: { content: ComparisonPageCon
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <AppStoreButton location={content.path} />
-              <span className="text-sm text-neutral-400 dark:text-neutral-500">
-                Free · iPhone &amp; iPad · No account required
-              </span>
+              <BetaAccessButton location={content.path} />
+              <span className="text-sm text-neutral-400 dark:text-neutral-500">{HERO_CHIP}</span>
             </div>
           </div>
         </header>

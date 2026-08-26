@@ -11,18 +11,18 @@ COPY["keywords"] = (                                      # limit 100, no spaces
 )
 
 COPY["promo"] = (                                         # limit 170
-    "New: vision boards. Pin what you want, turn it into goals with steps, "
+    "New: vision boards. Pin what you want, turn it into plans with steps, "
     "and block real time for them on today's schedule."
 )
 
 COPY["whatsNew"] = (                                      # limit 4000
     "Vision boards are here.\n\n"
-    "Every front and every goal can now carry its own pin board. Add Want, "
+    "Every area and every plan can now carry its own pin board. Add Want, "
     "Need, Idea, Thought and Reflection pins with images and text, then shift "
     "the Focus lens between Dream, Plan and Remember to change what the board "
     "emphasizes.\n\n"
-    "Because boards sit beside your goals, a Want is one tab away from becoming "
-    "a goal with steps, deadlines and scheduled time. Vision stops being a "
+    "Because boards sit beside your plans, a Want is one tab away from becoming "
+    "a plan with steps, deadlines and scheduled time. Vision stops being a "
     "poster and starts being a plan.\n\n"
     "Also in this release: smoother schedule dragging and faster day navigation."
 )
@@ -41,19 +41,19 @@ TRACK TIME WITH ONE TAP
 Tap Begin. That is the whole workflow. Drop checkpoints as you work, with notes or photos, to capture how the session actually unfolded. Tracked time lands on your schedule as its own column, next to what you planned.
 
 COMPARE PLAN VS. REALITY
-Compare mode shows the planned day beside the tracked day. See which blocks are realistic and which are wishful thinking. Analytics break your time down by front and goal across day, week, month and year.
+Compare mode shows the planned day beside the tracked day. See which blocks are realistic and which are wishful thinking. Analytics break your time down by area and plan across day, week, month and year.
 
-TURN GOALS INTO SCHEDULED TIME
-Goals fail in the gap between written down and scheduled. Fezer closes it. Organize goals into fronts (Work, Family, Personal Wellbeing), record why each goal exists and what the end result looks like, then break it into ordered steps. From any step, Commit: "Complete by" pins a deadline on your day, "Work on" blocks real hours for it, optionally repeating. Progress follows completed steps, and tracked sessions attach to goals, so analytics show the hours each goal truly received.
+TURN PLANS INTO SCHEDULED TIME
+Plans fail in the gap between written down and scheduled. Fezer closes it. Organize plans into areas (Work, Family, Personal Wellbeing), record why each plan exists and what the end result looks like, then break it into ordered steps. From any step, Commit: "Complete by" pins a deadline on your day, "Work on" blocks real hours for it, optionally repeating. Progress follows completed steps, and tracked sessions attach to plans, so analytics show the hours each plan truly received.
 
 BUILD A VISION BOARD THAT LEADS SOMEWHERE
-Each front and goal can carry a freeform pin board. Add Want, Need, Idea, Thought and Reflection pins with images and text. Focus lenses shift the board between Dream, Plan and Remember. Because the board lives beside your goals, aspiration is one tab away from a scheduled block.
+Each area and plan can carry a freeform pin board. Add Want, Need, Idea, Thought and Reflection pins with images and text. Focus lenses shift the board between Dream, Plan and Remember. Because the board lives beside your plans, aspiration is one tab away from a scheduled block.
 
 PLAN AND REVIEW YOUR WEEK
-Repeating blocks form a standing weekly skeleton. Commit goal steps across the week, move through days quickly to fix collisions before they happen, then close the week in Analytics with planned versus actual by front and goal.
+Repeating blocks form a standing weekly skeleton. Commit plan steps across the week, move through days quickly to fix collisions before they happen, then close the week in Analytics with planned versus actual by area and plan.
 
 PRIVATE BY DESIGN
-No account. No sign-up. No server. No analytics SDKs. Your schedule, your tracked hours and your vision boards stay on your device, and that is the only place they exist.
+No account. No sign-up. No server copy of your day. Anonymous product analytics help us keep the app working; they cannot read what you wrote. Your schedule, tracked hours and vision boards stay on your device.
 
 WHAT YOU GET
 - Draggable time blocks with repeats
@@ -61,12 +61,12 @@ WHAT YOU GET
 - Now view with LIVE / NOW / NEXT / DUE badges
 - One-tap time tracking with checkpoints
 - Plan, Track and Compare schedule modes
-- Fronts, goals, steps and progress
+- Areas, plans, steps and progress
 - Commit steps as deadlines or time blocks
 - Vision boards with typed pins and focus lenses
 - Analytics by day, week, month and year
-- iPhone and iPad
-- Fully offline and private
+- iPhone, iPad and Android
+- Fully offline planner, with anonymous product analytics
 
 Fezer is for people who already know what they want to do and are tired of losing the day anyway.
 

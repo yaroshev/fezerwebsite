@@ -8,15 +8,15 @@ function PrivacyPolicy() {
 
       <main className="mx-auto w-full max-w-3xl px-4 sm:px-6 md:px-10 py-10">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight dark:text-neutral-100">Privacy Policy</h1>
-        <p className="mt-3 text-neutral-600 dark:text-neutral-400">Fezer · Last updated: August 23, 2026</p>
+        <p className="mt-3 text-neutral-600 dark:text-neutral-400">Fezer · Last updated: August 26, 2026</p>
 
         <div className="mt-6 rounded-2xl border border-neutral-200/80 bg-white p-5 sm:p-6 dark:border-neutral-800 dark:bg-neutral-900">
           <h2 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">Summary</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-300">
             Your plans stay on your device. Fezer has no account, no ads, and no cloud copy of your
             schedule. To keep the app working we send anonymous product analytics, crash reports, and
-            masked session recordings to our analytics provider. We cannot read what you wrote, and we
-            do not sell any of this.
+            masked session recordings. On Android we also use Google Analytics for Firebase. We cannot
+            read what you wrote, and we do not sell any of this.
           </p>
         </div>
 
@@ -40,12 +40,10 @@ function PrivacyPolicy() {
             </p>
             <p className="mt-2 leading-relaxed">
               If you use your device’s own backup - iCloud Backup or a computer backup on iPhone and
-              iPad, or Google’s Auto Backup on Android - your Fezer data may be included like any
-              other app. Those backups are managed by{' '}
+              iPad - your Fezer data may be included like any other app. Those backups are managed by{' '}
               <a className="underline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple</a>
-              {' '}and{' '}
-              <a className="underline" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a>
-              {' '}under their own privacy policies. We cannot open them.
+              {' '}under Apple’s privacy policy. We cannot open them. The Android app opts out of
+              Google’s Auto Backup, so a factory reset or a new phone does not restore your planner.
             </p>
           </section>
 
@@ -101,15 +99,27 @@ function PrivacyPolicy() {
             <p className="mt-2 leading-relaxed">
               Product analytics, crash reports, and session recordings are processed by{' '}
               <a className="underline" href="https://posthog.com" target="_blank" rel="noopener noreferrer">PostHog</a>
-              {' '}on our behalf, in the United States. We configure PostHog so it does not build a named
-              profile of you. PostHog’s own practices are described in{' '}
+              {' '}on our behalf, in the United States, on both the iPhone and Android apps. We
+              configure PostHog so it does not build a named profile of you. PostHog’s own practices
+              are described in{' '}
               <a className="underline" href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">their privacy policy</a>.
             </p>
             <p className="mt-2 leading-relaxed">
-              We do not sell this information. We do not use it for advertising. We do not share it
-              with data brokers, ad networks, or other apps so they can track you. If the law requires
-              us to disclose something, or if Fezer is sold as a business, the information may move
-              with it under this policy.
+              The Android app also includes{' '}
+              <a className="underline" href="https://firebase.google.com/docs/analytics" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a>.
+              {' '}That SDK records sessions and screen views so we can see where Android installs
+              come from and whether they stick. It uses an app-instance identifier. Where Google Play
+              Services supplies one, it may also read the advertising ID, which is how install
+              campaigns are attributed. Fezer does not show ads. Firebase’s practices are described
+              in{' '}
+              <a className="underline" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s privacy policy</a>.
+              {' '}iPhone and iPad do not include Firebase.
+            </p>
+            <p className="mt-2 leading-relaxed">
+              We do not sell this information. We do not use it to advertise other products to you.
+              We do not share it with data brokers, ad networks, or other apps so they can track you.
+              If the law requires us to disclose something, or if Fezer is sold as a business, the
+              information may move with it under this policy.
             </p>
           </section>
 
@@ -163,7 +173,8 @@ function PrivacyPolicy() {
                 </p>
               </div>
               <p className="leading-relaxed">
-                You can revoke camera permission in iOS Settings. The rest of the app keeps working.
+                You can revoke camera permission in iOS Settings or Android settings. The rest of the
+                app keeps working.
               </p>
             </div>
           </section>

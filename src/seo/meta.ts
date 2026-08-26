@@ -307,7 +307,7 @@ export const ROUTES_META: RouteMeta[] = [
     path: '/faq',
     title: 'Frequently Asked Questions -  Fezer',
     description:
-      'Answers to the most common questions about Fezer: what it costs (nothing), where your data lives (your device), backups, sync, calendar import, Android and more.',
+      'Answers to the most common questions about Fezer: what is free, what Fezer Plus includes, where your data lives, backups, sync, calendar import, Android and more.',
     robots: 'index, follow',
     indexable: true,
     ogSlug: 'faq',

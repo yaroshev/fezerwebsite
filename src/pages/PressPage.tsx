@@ -81,8 +81,8 @@ export default function PressPage() {
               <div>
                 <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">In one sentence</h2>
                 <p className="mt-4 text-[15px] sm:text-base text-neutral-600 leading-relaxed max-w-2xl dark:text-neutral-400">
-                  Fezer is a free, fully on-device day planner for iPhone and iPad that shows the
-                  day you planned next to the day you actually had.
+                  Fezer is a free-to-plan, fully on-device day planner for iPhone, iPad and Android
+                  that shows the day you planned next to the day you actually had.
                 </p>
 
                 <h2 className="mt-10 text-2xl sm:text-3xl font-semibold tracking-tight">
@@ -92,8 +92,8 @@ export default function PressPage() {
                   Fezer is a day planner, time tracker and goal planner built around a loop most
                   planners skip: plan the day in time blocks, track what actually happens with one
                   tap, then compare the two side by side so tomorrow’s plan starts from evidence.
-                  Above the day sits a goal layer -  life areas called areas, goals broken into
-                  steps, and vision boards -  whose steps commit directly onto the schedule. The
+                  Above the day sits a planning layer -  areas, plans, steps and vision boards -
+                  whose steps commit directly onto the schedule. The
                   app has no accounts: everything a user plans and tracks stays on their
                   device. We use anonymous product analytics to keep the app working; we
                   cannot read a user's schedule.

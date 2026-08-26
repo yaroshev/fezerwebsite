@@ -136,7 +136,7 @@ export const GUIDES: GuideContent[] = [
       heading: 'Doing this in Fezer',
       paragraphs: [
         'Fezer was built around exactly this loop. The Schedule tab is the day timeline: blocks are draggable, deadlines pin to the day, and repeating blocks -  daily, weekdays, weekly or biweekly -  carry your standing structure forward so you only ever plan the exceptions. The Now view holds up the current block so "follow or deliberately change" stays a one-glance decision.',
-        'The review step is native rather than a spreadsheet you have to maintain: Track mode records real sessions with one tap, and Compare mode draws the planned day and the tracked day side by side on the same hours. Everything stays on your device -  no account, no cloud, free.',
+        'The review step is native rather than a spreadsheet you have to maintain: Track mode records real sessions with one tap, and Compare mode draws the planned day and the tracked day side by side on the same hours. Planner data stays on your device -  no account, no cloud. Planning and tracking are free.',
       ],
       links: [
         { path: '/time-blocking-app', label: 'The time-blocking planner in detail' },
@@ -223,7 +223,7 @@ export const GUIDES: GuideContent[] = [
       heading: 'Doing this in Fezer',
       paragraphs: [
         'Fezer exists to make the record effortless enough to actually keep. You plan the day in blocks, tap Begin and End to track real sessions as they happen, and Compare mode draws both columns on the same hours -  late starts, overruns and unplanned dark matter all become visible without a spreadsheet. Analytics then rolls the same data up by week, which is where your multipliers and your true unplanned-work budget emerge.',
-        'It is free, and the record it builds about your days never leaves your device -  no account, no server.',
+        'Planning and tracking are free, and the record it builds about your days stays on your device -  no account, no server copy of your schedule.',
       ],
       links: [
         { path: '/plan-vs-actual-time-tracking', label: 'Plan vs. actual in detail' },

@@ -16,6 +16,16 @@ export const CHANGELOG: ChangelogEntry[] = [
   {
     date: '2026-08-26',
     kind: 'site',
+    title: 'Comparison pages and the Privacy Policy',
+    items: [
+      'FAQ chrome, comparison tables and leftover "everything included" / iPhone-only copy now match Fezer Plus and Android.',
+      'Product language follows the app: areas, plans and steps -  not Fronts or Goals as the old names.',
+      'The Privacy Policy names both analytics processors: PostHog on both apps, and Google Analytics for Firebase on Android. It also matches the Android app opting out of Auto Backup.',
+    ],
+  },
+  {
+    date: '2026-08-26',
+    kind: 'site',
     title: 'About Fezer',
     items: [
       'New page at /about with Fezer\u2019s vision statement, product thesis, objectives, and principles.',

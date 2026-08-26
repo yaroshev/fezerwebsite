@@ -21,6 +21,12 @@ export const PLUS_AVAILABILITY = { ios: false, android: true };
 
 export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=me.fezer&hl=en';
 
+/**
+ * Hero chip under store buttons. Inner pages used to say "iPhone & iPad"
+ * after the homepage already listed Android; keep this the single source.
+ */
+export const HERO_CHIP = 'Free to plan and track · iPhone, iPad and Android';
+
 export const SCREENSHOTS = {
   goalPlanner: '/images/fezer-goal-planner.webp',
   timeBlocking: '/images/fezer-time-blocking-planner.webp',

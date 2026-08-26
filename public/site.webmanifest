@@ -1,7 +1,7 @@
 {
   "name": "Fezer",
   "short_name": "Fezer",
-  "description": "Fezer is a personal day planner, time tracker, and goal tracker for iPhone and iPad. Private by design.",
+  "description": "Fezer is a personal day planner, time tracker, and goal planner for iPhone, iPad and Android. Plans stay on your device.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

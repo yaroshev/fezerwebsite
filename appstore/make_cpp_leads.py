@@ -24,7 +24,7 @@ LEADS = [
         img="fezer-goal-planner.webp", top=0.00, xcrop=(0.0, 1.0),
         eyebrow="GOAL PLANNER", accent=(200, 122, 10), tint=(255, 243, 226),
         head="Turn goals into\nhours on your day",
-        sub="Fronts, goals and steps that end as scheduled\nblocks and deadlines, not another list.",
+        sub="Areas, plans and steps that end as scheduled\nblocks and deadlines, not another list.",
     )),
 ]
 

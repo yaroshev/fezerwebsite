@@ -22,7 +22,7 @@ const FEATURES = [
     Icon: Calendar,
   },
   {
-    title: 'Goals & Areas',
+    title: 'Plans & Areas',
     desc: 'Organize plans into areas, break them into steps, and commit steps straight onto your schedule.',
     Icon: Target,
   },
@@ -83,10 +83,10 @@ const CATEGORY_SECTIONS: {
   },
   {
     id: 'goals',
-    heading: 'Turn goals into scheduled steps',
+    heading: 'Turn plans into scheduled steps',
     paragraphs: [
-      'Goals in Fezer are organized into areas -  the areas of your life -  and broken into ordered steps. Each step can be committed onto your schedule: pinned as a deadline or blocked as time to work on it.',
-      'That commit is the difference between a goal you wrote down and a goal that shows up in your Tuesday.',
+      'Plans in Fezer are organized into areas -  the areas of your life -  and broken into ordered steps. Each step can be committed onto your schedule: pinned as a deadline or blocked as time to work on it.',
+      'That commit is the difference between a plan you wrote down and a plan that shows up in your Tuesday.',
     ],
     links: [{ href: '/goal-planner', label: 'Create a goal plan' }],
     image: {
@@ -98,8 +98,8 @@ const CATEGORY_SECTIONS: {
     id: 'vision',
     heading: 'Build a vision for every area of life',
     paragraphs: [
-      'Every area and goal can carry its own vision board -  pins for what you want, need, think and reflect on, with lenses for dreaming, planning and remembering.',
-      'Because the board lives beside your goals and schedule, vision and execution finally share one place.',
+      'Every area and plan can carry its own vision board -  pins for what you want, need, think and reflect on, with lenses for dreaming, planning and remembering.',
+      'Because the board lives beside your plans and schedule, vision and execution finally share one place.',
     ],
     links: [{ href: '/vision-board-app', label: 'Build a digital vision board' }],
     image: {
@@ -287,7 +287,7 @@ export default function Home() {
                 One place for your day
               </h2>
               <p className="mt-2 sm:mt-3 text-neutral-500 max-w-2xl text-[15px] sm:text-base leading-relaxed dark:text-neutral-400">
-                Fezer brings your commitments, schedule, and goals together so you always know what
+                Fezer brings your commitments, schedule, and plans together so you always know what
                 to work on now.
               </p>
             </div>
@@ -342,7 +342,7 @@ export default function Home() {
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Private by design</h2>
                   <p className="mt-3 text-neutral-600 max-w-3xl text-[15px] sm:text-base leading-relaxed dark:text-neutral-400">
-                    Your goals, schedule, tracking history, notes, and attachments stay on your
+                    Your plans, schedule, tracking history, notes, and attachments stay on your
                     phone or tablet, on iOS and Android alike. There is no account, no sign-in, and
                     no cloud copy of your day.
                     We use anonymous product analytics to keep the app working. We cannot read what

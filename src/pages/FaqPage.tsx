@@ -1,7 +1,9 @@
 import Nav from '../components/Nav';
 import AppStoreButton from '../components/AppStoreButton';
+import BetaAccessButton from '../components/BetaAccessButton';
 import SiteFooter from '../components/SiteFooter';
 import { FAQ_GROUPS } from '../content/faq';
+import { HERO_CHIP } from '../seo/constants';
 
 export default function FaqPage() {
   return (
@@ -15,14 +17,13 @@ export default function FaqPage() {
               Frequently asked questions
             </h1>
             <p className="mt-5 text-lg sm:text-xl text-neutral-500 leading-relaxed dark:text-neutral-400">
-              Everything people ask about Fezer, answered plainly -  what it costs (nothing), where
-              your data lives (your device) and what it deliberately does not do.
+              Everything people ask about Fezer, answered plainly -  what is free, what Fezer Plus
+              opens, where your data lives and what the apps deliberately do not do.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <AppStoreButton location="/faq" />
-              <span className="text-sm text-neutral-400 dark:text-neutral-500">
-                Free · iPhone &amp; iPad · No account required
-              </span>
+              <BetaAccessButton location="/faq" />
+              <span className="text-sm text-neutral-400 dark:text-neutral-500">{HERO_CHIP}</span>
             </div>
           </div>
         </header>
@@ -62,8 +63,12 @@ export default function FaqPage() {
               Use the Send feedback link in the footer -  questions land directly with the
               developer, and the useful ones end up on this page.
             </p>
-            <div className="mt-6 flex justify-center">
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
               <AppStoreButton location="faq-cta" className="!bg-white !text-[#0d2b57]" />
+              <BetaAccessButton
+                location="faq-cta"
+                className="!border-white/40 !bg-transparent !text-white hover:!bg-white/10 dark:!border-white/40 dark:!bg-transparent dark:!text-white"
+              />
             </div>
           </div>
         </section>

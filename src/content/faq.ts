@@ -53,7 +53,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'So does Fezer track me or not?',
-        a: 'Neither answer on its own is honest, so here is both. Nothing you write leaves the device: no titles, notes, dates, photos or file names, ever. What does leave is anonymous diagnostics - that the app opened, which screen you are on, that you created an area or a block, that a crash happened, and for Plus that a paywall was shown or a purchase completed. Session recordings are captured with all text and images masked on-device before a frame is sent. It is processed by PostHog on our behalf and it is never sold. If you have seen us say "no tracking" anywhere, that was wrong and it has been corrected.',
+        a: 'Neither answer on its own is honest, so here is both. Nothing you write leaves the device: no titles, notes, dates, photos or file names, ever. What does leave is anonymous diagnostics - that the app opened, which screen you are on, that you created an area or a block, that a crash happened, and for Plus that a paywall was shown or a purchase completed. Session recordings are captured with all text and images masked on-device before a frame is sent. Both apps send this to PostHog on our behalf. The Android app also sends session and screen data to Google Analytics for Firebase, which may read the advertising ID to attribute an install. None of it is sold. If you have seen us say "no tracking" or "no analytics SDKs" anywhere, that was wrong and it has been corrected.',
       },
       {
         q: 'Does Fezer work offline?',
@@ -65,7 +65,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'How do I back up my data or move it to a new phone?',
-        a: 'Fezer data is included in a standard device backup - iCloud Backup or a computer backup on iPhone and iPad, and Google’s Auto Backup on Android - so restoring a device from backup restores your planner with it. There is no separate export, and no live sync between two devices in use at the same time.',
+        a: 'On iPhone and iPad, Fezer data is included in a standard device backup - iCloud Backup or a computer backup - so restoring a device from backup restores your planner with it. On Android the app does not take part in Google Auto Backup, so a factory reset or a new phone starts empty unless you still have the old device. There is no separate export, and no live sync between two devices in use at the same time.',
       },
       {
         q: 'How do I delete my data?',

@@ -3,6 +3,7 @@ import AppStoreButton from '../components/AppStoreButton';
 import BetaAccessButton from '../components/BetaAccessButton';
 import SiteFooter from '../components/SiteFooter';
 import { FeaturePageContent } from '../content/features';
+import { HERO_CHIP } from '../seo/constants';
 
 export default function FeaturePage({ content }: { content: FeaturePageContent }) {
   const { h1, intro, problem, how, screenshot, useCase, capabilities, related } = content;
@@ -21,9 +22,8 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
             <p className="mt-5 text-lg sm:text-xl text-neutral-500 leading-relaxed dark:text-neutral-400">{intro}</p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <AppStoreButton location={content.path} />
-              <span className="text-sm text-neutral-400 dark:text-neutral-500">
-                Free · iPhone &amp; iPad · No account required
-              </span>
+              <BetaAccessButton location={content.path} />
+              <span className="text-sm text-neutral-400 dark:text-neutral-500">{HERO_CHIP}</span>
             </div>
           </div>
         </header>
