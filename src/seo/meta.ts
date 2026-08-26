@@ -2,7 +2,7 @@ import { FEATURE_PAGES } from '../content/features';
 import { COMPARISON_PAGES } from '../content/comparisons';
 import { GUIDES } from '../content/guides';
 import { FAQ_ITEMS } from '../content/faq';
-import { APP_STORE_URL, APP_VERSION, INTRO_VIDEO, PLAY_STORE_URL, PRICING, SITE_URL, SCREENSHOTS } from './constants';
+import { APP_STORE_URL, APP_VERSION, INTRO_VIDEO, PLAY_STORE_URL, PRICING, SITE_URL, SCREENSHOTS, START_VIDEO } from './constants';
 
 export type RouteMeta = {
   path: string;
@@ -121,6 +121,19 @@ const INTRO_VIDEO_JSONLD = {
   publisher: { '@id': `${SITE_URL}/#organization` },
 };
 
+const START_VIDEO_JSONLD = {
+  '@type': 'VideoObject',
+  '@id': `${SITE_URL}/start#video`,
+  name: START_VIDEO.title,
+  description: START_VIDEO.description,
+  thumbnailUrl: [`${SITE_URL}${START_VIDEO.cover}`, `https://i.ytimg.com/vi/${START_VIDEO.id}/hqdefault.jpg`],
+  uploadDate: START_VIDEO.uploadDate,
+  duration: START_VIDEO.duration,
+  contentUrl: START_VIDEO.watchUrl,
+  embedUrl: START_VIDEO.embedUrl,
+  publisher: { '@id': `${SITE_URL}/#organization` },
+};
+
 function featurePageJsonLd(path: string, title: string, description: string) {
   const url = `${SITE_URL}${path}`;
   return {
@@ -206,6 +219,42 @@ export const ROUTES_META: RouteMeta[] = [
     jsonLd: {
       '@context': 'https://schema.org',
       '@graph': [ORGANIZATION, WEBSITE, SOFTWARE_APPLICATION, INTRO_VIDEO_JSONLD],
+    },
+  },
+  {
+    path: '/start',
+    title: 'Fezer — Plan. Track. Compare. Improve.',
+    description:
+      'Plan your day, track what actually happens, and compare the difference with Fezer. Available on iPhone and Android.',
+    robots: 'index, follow',
+    indexable: true,
+    ogSlug: 'start',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        ORGANIZATION,
+        WEBSITE,
+        SOFTWARE_APPLICATION,
+        {
+          '@type': 'WebPage',
+          '@id': `${SITE_URL}/start`,
+          url: `${SITE_URL}/start`,
+          name: 'Fezer — Plan. Track. Compare. Improve.',
+          description:
+            'Plan your day, track what actually happens, and compare the difference with Fezer. Available on iPhone and Android.',
+          isPartOf: { '@id': `${SITE_URL}/#website` },
+          about: { '@id': `${SITE_URL}/#app` },
+          primaryImageOfPage: { '@id': `${SITE_URL}/start#video` },
+        },
+        START_VIDEO_JSONLD,
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Fezer', item: `${SITE_URL}/` },
+            { '@type': 'ListItem', position: 2, name: 'Get started', item: `${SITE_URL}/start` },
+          ],
+        },
+      ],
     },
   },
   ...FEATURE_PAGES.map((page) => ({

@@ -19,9 +19,12 @@ const HOME_ITEMS: NavItem[] = [
 export default function Nav({
   activeId,
   activePath,
+  variant = 'full',
 }: {
   activeId?: string;
   activePath?: string;
+  /** Conversion pages can drop the multi-link bar. */
+  variant?: 'full' | 'minimal';
 }) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isActive = (item: NavItem) =>
@@ -50,6 +53,34 @@ export default function Nav({
       })}
     </>
   );
+
+  if (variant === 'minimal') {
+    return (
+      <nav className="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/98 backdrop-blur-xl safe-area-top dark:border-neutral-800 dark:bg-neutral-950/95">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3.5 sm:py-4 sm:px-6 md:px-10">
+          <a
+            href="/"
+            className="flex items-center gap-2 transition-opacity hover:opacity-80 active:opacity-70"
+          >
+            <img
+              src="/fezer-app-icon.png"
+              alt="Fezer"
+              className="h-7 w-7 sm:h-8 sm:w-8 rounded-lg"
+            />
+            <span className="text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+              Fezer
+            </span>
+          </a>
+          <a
+            href="/"
+            className="py-1 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+          >
+            Home
+          </a>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/98 backdrop-blur-xl safe-area-top dark:border-neutral-800 dark:bg-neutral-950/95">

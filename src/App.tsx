@@ -9,6 +9,7 @@ import FaqPage from './pages/FaqPage';
 import PressPage from './pages/PressPage';
 import WhatsNew from './pages/WhatsNew';
 import AboutPage from './pages/AboutPage';
+import StartPage from './pages/StartPage';
 import NotFound from './pages/NotFound';
 import { FEATURE_PAGES } from './content/features';
 import { COMPARISON_PAGES } from './content/comparisons';
@@ -18,6 +19,7 @@ function App({ path }: { path: string }) {
   const normalized = path.replace(/\/+$/, '') || '/';
 
   if (normalized === '/') return <Home />;
+  if (normalized === '/start') return <StartPage />;
   if (normalized === '/privacypolicy' || normalized === '/privacy') return <PrivacyPolicy />;
   if (normalized === '/delete-account') return <DeleteAccount />;
   if (normalized === '/guides') return <GuidesIndex />;

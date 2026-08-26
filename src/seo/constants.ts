@@ -79,6 +79,19 @@ export const PLUS_INCLUDES = [
   'A vision board for every area, with unlimited pins',
 ];
 
+export type SiteVideo = {
+  id: string;
+  title: string;
+  description: string;
+  watchUrl: string;
+  embedUrl: string;
+  channelUrl: string;
+  uploadDate: string;
+  duration: string;
+  durationLabel: string;
+  cover: string;
+};
+
 /**
  * The Fezer walkthrough on YouTube.
  *
@@ -87,7 +100,7 @@ export const PLUS_INCLUDES = [
  * VideoObject -- "missing a timezone" and "invalid datetime value" -- because
  * Google reads schema.org date-times strictly.
  */
-export const INTRO_VIDEO = {
+export const INTRO_VIDEO: SiteVideo = {
   id: 'xVXW7xa3Q30',
   title: 'Introducing Fezer App',
   description:
@@ -114,9 +127,70 @@ export const HERO_VIDEO = {
   poster: '/video/hero-poster.webp',
 };
 
-export function trackEvent(name: string, params: Record<string, unknown>) {
+/**
+ * Demo video for the /start conversion page.
+ *
+ * Distinct from INTRO_VIDEO (the 29-second launch short used on / and /press).
+ * Autoplay on /start is muted; YouTube will refuse unmuted autoplay.
+ */
+export const START_VIDEO: SiteVideo = {
+  id: 'xtka7vCEAOw',
+  title: 'Fezer App | Start and End Tracking. Compare Mode',
+  description:
+    'Plan the day, start and end tracking with one tap, then open Compare to see the plan beside what actually happened.',
+  watchUrl: 'https://www.youtube.com/shorts/xtka7vCEAOw',
+  embedUrl: 'https://www.youtube-nocookie.com/embed/xtka7vCEAOw',
+  channelUrl: 'https://www.youtube.com/@Fezer_app',
+  uploadDate: '2026-08-26T15:03:28-07:00',
+  duration: 'PT2M7S',
+  durationLabel: '2 minutes',
+  cover: '/images/start-video-cover.webp',
+};
+
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as const;
+
+/** Incoming campaign params from the landing URL. Empty during SSR. */
+export function campaignParams(): Record<string, string> {
+  if (typeof window === 'undefined') return {};
+  const search = new URLSearchParams(window.location.search);
+  const out: Record<string, string> = {};
+  for (const key of UTM_KEYS) {
+    const value = search.get(key);
+    if (value) out[key] = value;
+  }
+  return out;
+}
+
+/**
+ * Carry landing-page UTMs onto store URLs so a click still attributes.
+ * Google Play reads `referrer`; App Store keeps the utm_* query string and `ct`.
+ */
+export function withCampaignUrl(baseUrl: string): string {
+  const utm = campaignParams();
+  if (Object.keys(utm).length === 0) return baseUrl;
+  try {
+    const url = new URL(baseUrl);
+    if (url.hostname.includes('play.google.com')) {
+      const referrer = new URLSearchParams(url.searchParams.get('referrer') ?? '');
+      for (const [key, value] of Object.entries(utm)) referrer.set(key, value);
+      url.searchParams.set('referrer', referrer.toString());
+    } else {
+      for (const [key, value] of Object.entries(utm)) {
+        if (!url.searchParams.has(key)) url.searchParams.set(key, value);
+      }
+      if (utm.utm_campaign && !url.searchParams.has('ct')) {
+        url.searchParams.set('ct', utm.utm_campaign);
+      }
+    }
+    return url.toString();
+  } catch {
+    return baseUrl;
+  }
+}
+
+export function trackEvent(name: string, params: Record<string, unknown> = {}) {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', name, params);
+    window.gtag('event', name, { ...campaignParams(), ...params });
   }
 }
 

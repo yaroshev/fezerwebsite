@@ -193,6 +193,13 @@ const CARDS = [
     screenshot: '/images/fezer-time-blocking-planner.webp',
   },
   {
+    slug: 'start',
+    eyebrow: 'Plan. Track. Compare.',
+    title: 'Plan your day. Track what actually happened.',
+    footnote: 'Free to plan and track · iPhone, iPad and Android',
+    screenshot: '/images/fezer-time-blocking-planner.webp',
+  },
+  {
     slug: 'day-planner-app',
     eyebrow: 'Day planner',
     title: 'A day planner built around what you do now',
