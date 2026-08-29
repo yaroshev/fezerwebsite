@@ -8,10 +8,14 @@
     "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-server && node scripts/prerender.mjs",
     "lint": "eslint .",
     "og": "node scripts/generate-og-images.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "promo:import": "node --env-file-if-exists=.env scripts/promo-import.mjs",
+    "promo:stats": "node --env-file-if-exists=.env scripts/promo-stats.mjs",
+    "promo:secrets": "node scripts/promo-secrets.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
+    "postgres": "^3.4.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

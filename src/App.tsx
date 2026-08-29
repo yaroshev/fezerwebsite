@@ -10,16 +10,22 @@ import PressPage from './pages/PressPage';
 import WhatsNew from './pages/WhatsNew';
 import AboutPage from './pages/AboutPage';
 import StartPage from './pages/StartPage';
+import PromoPage from './pages/PromoPage';
+import PromoAdmin from './pages/PromoAdmin';
 import NotFound from './pages/NotFound';
+import PromoToast from './components/PromoToast';
 import { FEATURE_PAGES } from './content/features';
 import { COMPARISON_PAGES } from './content/comparisons';
 import { GUIDES } from './content/guides';
 
-function App({ path }: { path: string }) {
-  const normalized = path.replace(/\/+$/, '') || '/';
+/** The promo pages carry their own call to action; the toast would be noise. */
+const PROMO_TOAST_EXCLUDED = ['/plus-free', '/promo-admin'];
 
+function route(normalized: string) {
   if (normalized === '/') return <Home />;
   if (normalized === '/start') return <StartPage />;
+  if (normalized === '/plus-free') return <PromoPage />;
+  if (normalized === '/promo-admin') return <PromoAdmin />;
   if (normalized === '/privacypolicy' || normalized === '/privacy') return <PrivacyPolicy />;
   if (normalized === '/delete-account') return <DeleteAccount />;
   if (normalized === '/guides') return <GuidesIndex />;
@@ -38,6 +44,17 @@ function App({ path }: { path: string }) {
   if (guide) return <GuidePage content={guide} />;
 
   return <NotFound />;
+}
+
+function App({ path }: { path: string }) {
+  const normalized = path.replace(/\/+$/, '') || '/';
+
+  return (
+    <>
+      {route(normalized)}
+      {!PROMO_TOAST_EXCLUDED.includes(normalized) && <PromoToast />}
+    </>
+  );
 }
 
 export default App;

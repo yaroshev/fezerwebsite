@@ -174,6 +174,11 @@ export default function Home() {
                 </p>
               </div>
 
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5 sm:mt-10 sm:gap-4">
+                <AppStoreButton location="hero" />
+                <BetaAccessButton location="hero" />
+              </div>
+
               <button
                 type="button"
                 onClick={() => setVisionOpen(true)}
@@ -183,11 +188,6 @@ export default function Home() {
               >
                 View vision statement
               </button>
-
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5 sm:mt-10 sm:gap-4">
-                <AppStoreButton location="hero" />
-                <BetaAccessButton location="hero" />
-              </div>
             </div>
           </div>
         </div>

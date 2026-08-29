@@ -41,3 +41,11 @@ vite.config.ts.timestamp-*
 # Marketing working files -- kept local, not published to the public repo
 PROMO-POSTS.md
 promo/
+
+# Promo campaign: local code pool, claim ledger and dry-run email outbox
+.data/
+.env
+.env.local
+
+# Netlify CLI link state
+.netlify/

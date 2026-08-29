@@ -257,6 +257,49 @@ export const ROUTES_META: RouteMeta[] = [
       ],
     },
   },
+  {
+    path: '/plus-free',
+    title: 'Free Month of Fezer Plus -  Fezer',
+    description:
+      'Claim a one-time code for 30 days of Fezer Plus on iPhone, iPad or Android. One code per email, while they last.',
+    robots: 'index, follow',
+    indexable: true,
+    ogSlug: 'default',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        ORGANIZATION,
+        WEBSITE,
+        SOFTWARE_APPLICATION,
+        {
+          '@type': 'WebPage',
+          '@id': `${SITE_URL}/plus-free`,
+          url: `${SITE_URL}/plus-free`,
+          name: 'Free Month of Fezer Plus',
+          description:
+            'Claim a one-time code for 30 days of Fezer Plus on iPhone, iPad or Android.',
+          isPartOf: { '@id': `${SITE_URL}/#website` },
+          about: { '@id': `${SITE_URL}/#app` },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Fezer', item: `${SITE_URL}/` },
+            { '@type': 'ListItem', position: 2, name: 'Free month of Plus', item: `${SITE_URL}/plus-free` },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    // Operator dashboard for the promo. Kept out of search and the sitemap; the
+    // data behind it needs the admin token regardless.
+    path: '/promo-admin',
+    title: 'Promo Dashboard -  Fezer',
+    description: 'Internal dashboard for the Fezer Plus promo.',
+    robots: 'noindex, nofollow',
+    indexable: false,
+  },
   ...FEATURE_PAGES.map((page) => ({
     path: page.path,
     title: page.title,

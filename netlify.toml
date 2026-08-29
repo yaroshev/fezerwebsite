@@ -3,7 +3,14 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "22"
+
+# The Fezer Plus promo API. netlify/functions/promo.mjs declares its own routes
+# (/api/promo/*, /api/admin/*, /r/*) through the v2 `config.path` export, so no
+# redirects are needed here -- adding some would only shadow that routing.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [build.processing]
   skip_processing = false

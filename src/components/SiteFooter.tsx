@@ -3,6 +3,7 @@ import { MessageSquare } from 'lucide-react';
 import { FEATURE_PAGES } from '../content/features';
 import { COMPARISON_PAGES } from '../content/comparisons';
 import { GUIDES } from '../content/guides';
+import { PROMO_ACTIVE, PROMO_PATH } from '../content/promo';
 import { APP_STORE_URL, PLAY_STORE_URL, trackEvent, trackStoreClick } from '../seo/constants';
 import FeedbackModal from './FeedbackModal';
 
@@ -60,6 +61,15 @@ export default function SiteFooter() {
               >
                 Get Fezer on Google Play
               </a>
+              {PROMO_ACTIVE && (
+                <a
+                  href={PROMO_PATH}
+                  onClick={() => trackEvent('promo_footer_click', { link_location: 'footer-brand' })}
+                  className="mt-4 inline-block text-sm font-semibold text-[#0d2b57] hover:opacity-80 dark:text-blue-300"
+                >
+                  Get Fezer Plus free for a month
+                </a>
+              )}
             </div>
 
             <div className="grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-10">
@@ -134,6 +144,17 @@ export default function SiteFooter() {
                       What’s new
                     </a>
                   </li>
+                  {PROMO_ACTIVE && (
+                    <li>
+                      <a
+                        href={PROMO_PATH}
+                        onClick={() => trackEvent('promo_footer_click', { link_location: 'footer-more' })}
+                        className="hover:text-neutral-900 transition-colors dark:hover:text-neutral-100"
+                      >
+                        Free Plus month
+                      </a>
+                    </li>
+                  )}
                   <li>
                     <a href="/press" className="hover:text-neutral-900 transition-colors dark:hover:text-neutral-100">
                       Press kit
