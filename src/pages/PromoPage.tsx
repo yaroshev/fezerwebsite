@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertCircle, ArrowLeft, Check, Gift, Loader2, MailCheck, type LucideIcon } from 'lucide-react';
+import { AlertCircle, ArrowLeft, Check, Gift, Loader2, MailCheck } from 'lucide-react';
 import Nav from '../components/Nav';
 import SiteFooter from '../components/SiteFooter';
 import { PLUS_INCLUDES, campaignParams, trackEvent } from '../seo/constants';
@@ -8,6 +8,7 @@ import {
   PROMO_PLATFORMS,
   fetchPromoStats,
   type PromoPlatform,
+  type PromoPlatformIcon,
   type PromoStats,
 } from '../content/promo';
 
@@ -109,21 +110,23 @@ function PrimaryButton({
 function PlatformChip({
   label,
   Icon,
+  buttonClass,
   onClick,
 }: {
   label: string;
-  Icon: LucideIcon;
+  Icon: PromoPlatformIcon;
+  buttonClass: string;
   onClick: () => void;
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className="mt-5 inline-flex items-center gap-2 rounded-full bg-neutral-100 px-3 py-1.5 text-xs font-medium text-neutral-600 transition-colors hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+      className={`mt-5 inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-opacity hover:opacity-90 ${buttonClass}`}
     >
-      <Icon className="h-3.5 w-3.5" strokeWidth={2} aria-hidden={true} />
+      <Icon className="h-3.5 w-3.5" />
       {label}
-      <span className="text-neutral-400 dark:text-neutral-500">Change</span>
+      <span className="opacity-70">Change</span>
     </button>
   );
 }
@@ -321,7 +324,7 @@ export default function PromoPage() {
               return (
                 <StatTile
                   key={entry.id}
-                  label={entry.id === 'ios' ? 'iPhone & iPad' : 'Android'}
+                  label={entry.label}
                   value={left === null ? '—' : left.toLocaleString()}
                   muted={left === 0}
                 />
@@ -428,11 +431,11 @@ export default function PromoPage() {
                               setOutcome({ kind: 'idle' });
                             }}
                             aria-pressed={active}
-                            className={`flex min-h-[5.75rem] items-center gap-4 rounded-2xl border-2 p-4 text-left transition-all duration-200 sm:p-5 ${
+                            className={`btn-press flex min-h-[5.75rem] items-center gap-4 rounded-2xl border-2 p-4 text-left transition-all duration-200 sm:p-5 ${
                               out
                                 ? 'cursor-not-allowed border-neutral-200 bg-neutral-50 opacity-50 dark:border-neutral-800 dark:bg-neutral-950'
                                 : active
-                                  ? 'border-[#0d2b57] bg-[#0d2b57] text-white shadow-[0_16px_32px_-18px_rgba(13,43,87,0.7)]'
+                                  ? `${entry.buttonClass} border-transparent shadow-[0_16px_32px_-18px_rgba(13,43,87,0.55)]`
                                   : 'border-neutral-200 bg-white text-neutral-800 shadow-sm hover:border-neutral-300 hover:shadow-md dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:border-neutral-500'
                             }`}
                           >
@@ -442,10 +445,12 @@ export default function PromoPage() {
                                   ? 'bg-neutral-200 text-neutral-400 dark:bg-neutral-800'
                                   : active
                                     ? 'bg-white/15 text-white'
-                                    : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400'
+                                    : entry.id === 'ios'
+                                      ? 'bg-[#0d2b57] text-white'
+                                      : 'bg-[#0d4a32] text-white'
                               }`}
                             >
-                              <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
+                              <Icon className="h-5 w-5" />
                             </span>
                             <span className="min-w-0 flex-1">
                               <span className="block text-[17px] font-semibold tracking-tight">{entry.label}</span>
@@ -500,7 +505,12 @@ export default function PromoPage() {
                   </p>
 
                   {chosen && (
-                    <PlatformChip label={chosen.label} Icon={chosen.icon} onClick={() => goTo(1)} />
+                    <PlatformChip
+                      label={chosen.label}
+                      Icon={chosen.icon}
+                      buttonClass={chosen.buttonClass}
+                      onClick={() => goTo(1)}
+                    />
                   )}
 
                   <div className="mt-7 space-y-5">

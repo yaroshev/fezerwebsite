@@ -21,6 +21,8 @@ ANDROID_CSV="${ANDROID_CSV:-$HOME/Desktop/android promotion_codes.csv}"
 
 echo
 echo "==> Importing the code pool into Supabase"
+# Re-running is safe: codes already in the pool are skipped, so this doubles as
+# the top-up path when a new batch of store codes arrives.
 npm run --silent promo:import ios     "$IOS_CSV"
 npm run --silent promo:import android "$ANDROID_CSV"
 

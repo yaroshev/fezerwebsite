@@ -6,8 +6,8 @@
  * The pool sizes are *not* here on purpose -- those are read live from the
  * database so the page can never claim codes that are already gone.
  */
-import type { LucideIcon } from 'lucide-react';
-import { Apple, Smartphone } from 'lucide-react';
+import type { ComponentType } from 'react';
+import { AndroidLogoIcon, AppleLogoIcon } from '../components/StoreIcons';
 
 /** Flip to false when the codes run out or the campaign ends. */
 export const PROMO_ACTIVE = true;
@@ -17,12 +17,16 @@ export const PROMO_PATH = '/plus-free';
 
 export type PromoPlatform = 'ios' | 'android';
 
+export type PromoPlatformIcon = ComponentType<{ className?: string }>;
+
 export const PROMO_PLATFORMS: {
   id: PromoPlatform;
   label: string;
   sublabel: string;
   store: string;
-  icon: LucideIcon;
+  /** Matches the download button on the rest of the site. */
+  buttonClass: string;
+  icon: PromoPlatformIcon;
   /**
    * Fezer Plus has to be purchasable on the store before a code for it can be
    * redeemed. Set to false to hide a platform without touching the pool -- the
@@ -32,10 +36,11 @@ export const PROMO_PLATFORMS: {
 }[] = [
   {
     id: 'ios',
-    label: 'iPhone or iPad',
+    label: 'iOS',
     sublabel: 'Redeems in the App Store',
     store: 'App Store',
-    icon: Apple,
+    buttonClass: 'bg-[#0d2b57] text-white',
+    icon: AppleLogoIcon,
     enabled: true,
   },
   {
@@ -43,7 +48,8 @@ export const PROMO_PLATFORMS: {
     label: 'Android',
     sublabel: 'Redeems in Google Play',
     store: 'Google Play',
-    icon: Smartphone,
+    buttonClass: 'bg-[#0d4a32] text-white',
+    icon: AndroidLogoIcon,
     enabled: true,
   },
 ];

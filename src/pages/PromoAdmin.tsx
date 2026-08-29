@@ -37,7 +37,7 @@ type Summary = {
   >;
 };
 
-const PLATFORM_NAME: Record<string, string> = { ios: 'iPhone & iPad', android: 'Android' };
+const PLATFORM_NAME: Record<string, string> = { ios: 'iOS', android: 'Android' };
 
 function shortDate(value: string | null) {
   if (!value) return '—';
