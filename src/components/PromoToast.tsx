@@ -90,6 +90,11 @@ export default function PromoToast() {
   if (!visible) return null;
 
   const remaining = stats?.remaining;
+  const total = stats?.total;
+  const poolLabel =
+    typeof remaining === 'number' && typeof total === 'number'
+      ? `${remaining.toLocaleString()} of ${total.toLocaleString()} left`
+      : null;
 
   return (
     // Sits just below the sticky nav rather than on top of it: the top padding is
@@ -112,9 +117,9 @@ export default function PromoToast() {
             {PROMO_TOAST.headline}
           </p>
           <p className="mt-0.5 truncate text-[12px] leading-tight text-white/70 sm:text-[13px]">
-            {typeof remaining === 'number' ? (
+            {poolLabel ? (
               <>
-                {remaining.toLocaleString()} codes left
+                {poolLabel}
                 <span className="hidden sm:inline"> · {PROMO_TOAST.body}</span>
               </>
             ) : (
