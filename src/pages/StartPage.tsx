@@ -7,7 +7,6 @@ import SiteFooter from '../components/SiteFooter';
 import VideoEmbed from '../components/VideoEmbed';
 import {
   HERO_CHIP,
-  PLUS_AVAILABILITY,
   PLUS_INCLUDES,
   PRICING,
   SCREENSHOTS,
@@ -194,12 +193,6 @@ export default function StartPage() {
                 </li>
               ))}
             </ul>
-            {!PLUS_AVAILABILITY.ios && (
-              <p className="mt-6 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                Fezer Plus is on Google Play today. The iPhone and iPad version is with Apple for
-                review — until it clears, the App Store build is the free tier.
-              </p>
-            )}
             <div className="mt-8">
               <StoreButtons location="start-plus" />
             </div>

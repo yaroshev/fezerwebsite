@@ -1,7 +1,7 @@
 import { Check } from 'lucide-react';
 import AppStoreButton from './AppStoreButton';
 import BetaAccessButton from './BetaAccessButton';
-import { FREE_INCLUDES, PLUS_AVAILABILITY, PLUS_INCLUDES, PRICING } from '../seo/constants';
+import { FREE_INCLUDES, PLUS_INCLUDES, PRICING } from '../seo/constants';
 
 function List({ items, tone }: { items: string[]; tone: 'muted' | 'brand' }) {
   return (
@@ -83,13 +83,6 @@ export default function Pricing() {
               plan.
             </p>
             <List items={PLUS_INCLUDES} tone="brand" />
-            {!PLUS_AVAILABILITY.ios && (
-              <p className="mt-6 rounded-2xl bg-white/10 px-4 py-3 text-[14px] leading-relaxed text-white/80">
-                Fezer Plus is available on Google Play today. The iPhone and iPad version is with
-                Apple for review - until it clears, the App Store build is the free tier, and
-                nothing in it will ask you to pay.
-              </p>
-            )}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <AppStoreButton location="pricing" className="!bg-white !text-[#0d2b57]" />
               <BetaAccessButton

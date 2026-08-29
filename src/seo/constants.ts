@@ -11,13 +11,11 @@ export const APP_VERSION = '1.0.2';
 /**
  * Whether Fezer Plus can actually be bought on each store.
  *
- * The iOS build carrying StoreKit is in review; until it is approved the App
- * Store listing shows no in-app purchases, so telling an iPhone visitor the
- * price without saying where they can pay it would be the same mistake in the
- * other direction. Flip `ios` to true the day the build goes live and every
- * piece of copy that depends on it follows.
+ * Both stores carry Fezer Plus. Flip a platform to false if a store build ever
+ * ships without in-app purchases again, and every piece of copy that depends
+ * on availability follows.
  */
-export const PLUS_AVAILABILITY = { ios: false, android: true };
+export const PLUS_AVAILABILITY = { ios: true, android: true };
 
 export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=me.fezer&hl=en';
 
