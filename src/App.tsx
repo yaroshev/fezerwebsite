@@ -11,20 +11,24 @@ import WhatsNew from './pages/WhatsNew';
 import AboutPage from './pages/AboutPage';
 import StartPage from './pages/StartPage';
 import PromoPage from './pages/PromoPage';
+import FeatureArena from './pages/FeatureArena';
+import AdminPage from './pages/AdminPage';
 import PromoAdmin from './pages/PromoAdmin';
 import NotFound from './pages/NotFound';
-import PromoToast from './components/PromoToast';
+import SiteToast from './components/SiteToast';
 import { FEATURE_PAGES } from './content/features';
 import { COMPARISON_PAGES } from './content/comparisons';
 import { GUIDES } from './content/guides';
 
-/** The promo pages carry their own call to action; the toast would be noise. */
-const PROMO_TOAST_EXCLUDED = ['/plus-free', '/promo-admin'];
+/** These pages carry their own call to action; a toast on top would be noise. */
+const TOAST_EXCLUDED = ['/plus-free', '/feature-arena', '/admin', '/promo-admin'];
 
 function route(normalized: string) {
   if (normalized === '/') return <Home />;
   if (normalized === '/start') return <StartPage />;
   if (normalized === '/plus-free') return <PromoPage />;
+  if (normalized === '/feature-arena') return <FeatureArena />;
+  if (normalized === '/admin') return <AdminPage />;
   if (normalized === '/promo-admin') return <PromoAdmin />;
   if (normalized === '/privacypolicy' || normalized === '/privacy') return <PrivacyPolicy />;
   if (normalized === '/delete-account') return <DeleteAccount />;
@@ -52,7 +56,7 @@ function App({ path }: { path: string }) {
   return (
     <>
       {route(normalized)}
-      {!PROMO_TOAST_EXCLUDED.includes(normalized) && <PromoToast />}
+      {!TOAST_EXCLUDED.includes(normalized) && <SiteToast path={normalized} />}
     </>
   );
 }

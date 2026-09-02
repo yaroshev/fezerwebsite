@@ -51,6 +51,20 @@ export function db() {
 }
 
 /**
+ * Closes the pool.
+ *
+ * Only for one-shot scripts -- the build-time prerender reads the arena and
+ * would otherwise sit there with an open connection instead of exiting. Long
+ * running hosts never call this.
+ */
+export async function closeDb() {
+  if (!sql) return;
+  const pool = sql;
+  sql = undefined;
+  await pool.end({ timeout: 5 });
+}
+
+/**
  * libSQL took `?` placeholders; Postgres wants `$1`, `$2`. Rewriting here keeps
  * every query in this codebase in one dialect. No `?` appears inside a string
  * literal in any of them -- if one ever does, it has to be written as `$n` by

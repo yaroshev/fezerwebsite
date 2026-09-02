@@ -223,7 +223,7 @@ export const ROUTES_META: RouteMeta[] = [
   },
   {
     path: '/start',
-    title: 'Fezer — Plan. Track. Compare. Improve.',
+    title: 'Fezer: Plan. Track. Compare. Improve.',
     description:
       'Plan your day, track what actually happens, and compare the difference with Fezer. Available on iPhone and Android.',
     robots: 'index, follow',
@@ -239,7 +239,7 @@ export const ROUTES_META: RouteMeta[] = [
           '@type': 'WebPage',
           '@id': `${SITE_URL}/start`,
           url: `${SITE_URL}/start`,
-          name: 'Fezer — Plan. Track. Compare. Improve.',
+          name: 'Fezer: Plan. Track. Compare. Improve.',
           description:
             'Plan your day, track what actually happens, and compare the difference with Fezer. Available on iPhone and Android.',
           isPartOf: { '@id': `${SITE_URL}/#website` },
@@ -292,8 +292,52 @@ export const ROUTES_META: RouteMeta[] = [
     },
   },
   {
-    // Operator dashboard for the promo. Kept out of search and the sitemap; the
-    // data behind it needs the admin token regardless.
+    path: '/feature-arena',
+    title: 'Feature Arena -  Vote on What Fezer Builds Next',
+    description:
+      'Two candidate Fezer features go head to head. Read both, vote for the one you want, and watch the tug-of-war until the clock runs out. The winner goes into development.',
+    robots: 'index, follow',
+    indexable: true,
+    ogSlug: 'feature-arena',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        ORGANIZATION,
+        WEBSITE,
+        SOFTWARE_APPLICATION,
+        {
+          '@type': 'WebPage',
+          '@id': `${SITE_URL}/feature-arena`,
+          url: `${SITE_URL}/feature-arena`,
+          name: 'Feature Arena',
+          description:
+            'Vote on which feature Fezer builds next. Two ideas, one deadline, one vote per visitor.',
+          isPartOf: { '@id': `${SITE_URL}/#website` },
+          about: { '@id': `${SITE_URL}/#app` },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Fezer', item: `${SITE_URL}/` },
+            { '@type': 'ListItem', position: 2, name: 'Feature Arena', item: `${SITE_URL}/feature-arena` },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    // Operator dashboard: the promo campaign and the Feature Arena, behind one
+    // token. Kept out of search and the sitemap; the data behind it needs the
+    // admin token regardless.
+    path: '/admin',
+    title: 'Admin -  Fezer',
+    description: 'Internal dashboard for the Fezer Plus promo and the Feature Arena.',
+    robots: 'noindex, nofollow',
+    indexable: false,
+  },
+  {
+    // Where the promo dashboard used to live. Netlify 301s this in production;
+    // the page itself sends anyone who gets here on to /admin.
     path: '/promo-admin',
     title: 'Promo Dashboard -  Fezer',
     description: 'Internal dashboard for the Fezer Plus promo.',

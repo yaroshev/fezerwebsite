@@ -1,5 +1,7 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLiveBattle } from './arenaStore';
+import { ARENA_PATH } from '../content/arena';
 
 type NavItem = {
   label: string;
@@ -11,6 +13,7 @@ const HOME_ITEMS: NavItem[] = [
   { label: 'Home', href: '/#top', id: 'top' },
   { label: 'About', href: '/about' },
   { label: 'Features', href: '/#features', id: 'features' },
+  { label: 'Arena', href: ARENA_PATH },
   { label: 'Guides', href: '/guides' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Privacy', href: '/privacypolicy' },
@@ -27,6 +30,12 @@ export default function Nav({
   variant?: 'full' | 'minimal';
 }) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  // A quiet dot beside "Arena" while a vote is open and this visitor has not
+  // cast one. It is the only thing on the site that changes week to week, so it
+  // is worth one pixel of attention on every page.
+  const { battle } = useLiveBattle();
+  const voteOpen = Boolean(battle && !battle.myVote);
+
   const isActive = (item: NavItem) =>
     activePath ? item.href === activePath : activeId && item.id === activeId;
 
@@ -48,6 +57,12 @@ export default function Nav({
             }`}
           >
             {item.label}
+            {item.href === ARENA_PATH && voteOpen && (
+              <span
+                className="ml-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#0d2b57] align-middle dark:bg-blue-300"
+                aria-hidden="true"
+              />
+            )}
           </a>
         );
       })}
@@ -126,6 +141,14 @@ export default function Nav({
                     }`}
                   >
                     {item.label}
+                    {item.href === ARENA_PATH && voteOpen && (
+                      <span
+                        className={`ml-2 inline-block h-1.5 w-1.5 rounded-full align-middle ${
+                          active ? 'bg-white' : 'bg-[#0d2b57] dark:bg-blue-300'
+                        }`}
+                        aria-hidden="true"
+                      />
+                    )}
                   </a>
                 );
               })}

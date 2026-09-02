@@ -353,10 +353,22 @@ const CARDS = [
     footnote: 'App releases and site updates',
     screenshot: '/images/fezer-time-blocking-planner.webp',
   },
+  {
+    slug: 'feature-arena',
+    eyebrow: 'Feature Arena',
+    title: 'Two features. One gets built. You decide which.',
+    footnote: 'One vote per person · fezer.app/feature-arena',
+    screenshot: '/images/fezer-goal-planner.webp',
+  },
 ];
 
+// `npm run og -- feature-arena` rebuilds one card instead of all of them, so a
+// new page does not churn every committed image through a different sharp build.
+const only = process.argv.slice(2);
+const selected = only.length ? CARDS.filter((card) => only.includes(card.slug)) : CARDS;
+
 fs.mkdirSync(outDir, { recursive: true });
-for (const card of CARDS) {
+for (const card of selected) {
   await buildCard(card);
 }
-console.log(`[og] generated ${CARDS.length} cards`);
+console.log(`[og] generated ${selected.length} card${selected.length === 1 ? '' : 's'}`);

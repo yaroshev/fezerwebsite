@@ -3,6 +3,7 @@ import Nav from '../components/Nav';
 import AppStoreButton from '../components/AppStoreButton';
 import BetaAccessButton from '../components/BetaAccessButton';
 import SiteFooter from '../components/SiteFooter';
+import ArenaCallout from '../components/ArenaCallout';
 import { GuideContent } from '../content/guides';
 import { HERO_CHIP } from '../seo/constants';
 
@@ -131,6 +132,8 @@ export default function GuidePage({ content }: { content: GuideContent }) {
             </div>
           </div>
         </article>
+
+        <ArenaCallout source="guide-page" />
 
         {/* Related guides */}
         <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-12 sm:py-16">

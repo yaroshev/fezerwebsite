@@ -33,3 +33,9 @@
   from = "/vision"
   to = "/about"
   status = 301
+
+# The promo dashboard became a tab on the admin page.
+[[redirects]]
+  from = "/promo-admin"
+  to = "/admin"
+  status = 301

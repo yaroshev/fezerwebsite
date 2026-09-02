@@ -415,3 +415,55 @@ export const FEATURE_PAGES: FeaturePageContent[] = [
     ],
   },
 ];
+
+/**
+ * The homepage carousel: which feature pages it runs through, in what order, and
+ * the App Store promo artwork each one shows.
+ *
+ * The artwork is deliberately not `page.screenshot`. Those are plain in-app
+ * screens, right for an article that captions them; these are the promo cards,
+ * which carry their own framing and read at a glance beside a paragraph.
+ */
+export type CarouselSlide = {
+  page: FeaturePageContent;
+  image: string;
+  imageAlt: string;
+};
+
+const CAROUSEL: { path: string; image: string; imageAlt: string }[] = [
+  {
+    path: '/day-planner-app',
+    image: '/images/fezer-promo-own-your-day.webp',
+    imageAlt: 'Fezer showing the next commitment of the day on an iPhone',
+  },
+  {
+    path: '/time-tracker',
+    image: '/images/fezer-promo-progress.webp',
+    imageAlt: 'Tracking time in Fezer with a single tap',
+  },
+  {
+    path: '/goal-planner',
+    image: '/images/fezer-promo-plan.webp',
+    imageAlt: 'A Fezer plan broken into numbered steps with a checklist',
+  },
+  {
+    path: '/time-blocking-app',
+    image: '/images/fezer-promo-compare.webp',
+    imageAlt: 'A Fezer day as time blocks, with planned and tracked side by side',
+  },
+  {
+    path: '/vision-board-app',
+    image: '/images/fezer-promo-envision.webp',
+    imageAlt: 'A Fezer vision board for an area of life',
+  },
+  {
+    path: '/weekly-planner',
+    image: '/images/fezer-promo-improve.webp',
+    imageAlt: 'Fezer analytics showing where the time actually went',
+  },
+];
+
+export const HOME_CAROUSEL: CarouselSlide[] = CAROUSEL.flatMap((entry) => {
+  const page = FEATURE_PAGES.find((candidate) => candidate.path === entry.path);
+  return page ? [{ page, image: entry.image, imageAlt: entry.imageAlt }] : [];
+});

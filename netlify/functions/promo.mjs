@@ -5,5 +5,5 @@ import { handleRequest } from '../../server/router.mjs';
 export default async (request) => handleRequest(request);
 
 export const config = {
-  path: ['/api/promo/stats', '/api/promo/claim', '/api/admin/*', '/r/*'],
+  path: ['/api/promo/stats', '/api/promo/claim', '/api/arena/*', '/api/admin/*', '/r/*'],
 };

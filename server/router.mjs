@@ -4,6 +4,16 @@
 import { claimCode, openRedeemLink, stats } from './claims.mjs';
 import { claimsToCsv, listClaims, markActivated, resendClaim, summary } from './admin.mjs';
 import {
+  allBattles,
+  castVote,
+  closeBattle,
+  createBattle,
+  deleteBattle,
+  publicBattles,
+  resetVotes,
+  updateBattle,
+} from './arena.mjs';
+import {
   PLATFORMS,
   clientIp,
   emailKey,
@@ -16,6 +26,19 @@ import {
 } from './util.mjs';
 
 const CLAIMS_PER_IP_PER_HOUR = Number(process.env.PROMO_IP_HOURLY_LIMIT || 6);
+const VOTES_PER_IP_PER_HOUR = Number(process.env.ARENA_IP_HOURLY_LIMIT || 30);
+
+/**
+ * The browser's anonymous voter token.
+ *
+ * A header rather than a query parameter: a token in a URL ends up in history,
+ * in referrers and in access logs, and this one is the only thing standing
+ * between a visitor and a second vote.
+ */
+function voterKey(request) {
+  const value = String(request.headers.get('x-fezer-voter') ?? '').trim();
+  return /^[A-Za-z0-9_-]{8,100}$/.test(value) ? value : null;
+}
 
 function maskEmail(address) {
   const [local, domain] = String(address).split('@');
@@ -109,12 +132,85 @@ async function handleRedirect(request, token) {
   });
 }
 
+async function handleArena(request, path) {
+  if (path === '/api/arena/battles' && request.method === 'GET') {
+    const { live, closed } = await publicBattles(voterKey(request));
+    return json({ ok: true, live, closed });
+  }
+
+  if (path === '/api/arena/vote' && request.method === 'POST') {
+    const body = await readJson(request);
+    const voter = voterKey(request) ?? String(body?.voter ?? '').trim();
+    const ipHash = hashIp(clientIp(request));
+
+    // Coarse brake on top of the per-battle rules: one connection cannot sit
+    // there minting fresh tokens all afternoon.
+    const limit = await rateLimit('arena_ip', ipHash, VOTES_PER_IP_PER_HOUR);
+    if (!limit.ok) return json({ ok: false, error: 'rate_limited' }, { status: 429 });
+
+    const result = await castVote({
+      battleId: String(body?.battle ?? ''),
+      side: String(body?.side ?? ''),
+      voterKey: voter,
+      ipHash,
+      userAgent: request.headers.get('user-agent'),
+    });
+
+    return json(result, { status: result.ok ? 200 : (result.status ?? 400) });
+  }
+
+  return json({ ok: false, error: 'not_found', path }, { status: 404 });
+}
+
+/** `/api/admin/arena/...` -- everything an operator does to a battle. */
+async function handleAdminArena(request, segments) {
+  const id = segments[1];
+
+  if (!id && request.method === 'GET') {
+    return json({ ok: true, battles: await allBattles() });
+  }
+
+  if (!id && request.method === 'POST') {
+    const result = await createBattle(await readJson(request));
+    return json(result, { status: result.ok ? 200 : 400 });
+  }
+
+  if (!id) return json({ ok: false, error: 'not_found' }, { status: 404 });
+
+  const action = segments[2];
+
+  if (!action && (request.method === 'PATCH' || request.method === 'PUT')) {
+    const result = await updateBattle(id, await readJson(request));
+    return json(result, { status: result.ok ? 200 : result.error === 'not_found' ? 404 : 400 });
+  }
+
+  if (!action && request.method === 'DELETE') {
+    const result = await deleteBattle(id);
+    return json(result, { status: result.ok ? 200 : 404 });
+  }
+
+  if (action === 'close' && request.method === 'POST') {
+    const result = await closeBattle(id);
+    return json(result, { status: result.ok ? 200 : 404 });
+  }
+
+  if (action === 'reset' && request.method === 'POST') {
+    return json(await resetVotes(id));
+  }
+
+  return json({ ok: false, error: 'not_found' }, { status: 404 });
+}
+
 async function handleAdmin(request, url, segments) {
   if (!isAdmin(request)) {
     return json({ ok: false, error: 'unauthorized' }, { status: 401 });
   }
 
   const section = segments[0];
+
+  if (section === 'arena') {
+    return await handleAdminArena(request, segments);
+  }
 
   if (section === 'summary' && request.method === 'GET') {
     return json({ ok: true, pool: await stats(), funnel: await summary() });
@@ -187,6 +283,10 @@ export async function handleRequest(request) {
 
     if (path === '/api/promo/claim' && request.method === 'POST') {
       return await handleClaim(request);
+    }
+
+    if (path.startsWith('/api/arena/')) {
+      return await handleArena(request, path);
     }
 
     if (path.startsWith('/api/admin/')) {

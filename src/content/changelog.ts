@@ -14,6 +14,17 @@ export type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    date: '2026-09-02',
+    kind: 'site',
+    title: 'Feature Arena',
+    items: [
+      'New page at /feature-arena: two candidate features go head to head, you vote for one, and the winner is what gets built next.',
+      'One vote per visitor per battle, anonymous -  no account, no email, nothing that identifies you.',
+      'The current battle also appears on the homepage and at the end of the feature and guide pages, so you can vote without going looking for it.',
+      'Past battles stay on the page with their results, so what won is a matter of record.',
+    ],
+  },
+  {
     date: '2026-08-26',
     kind: 'site',
     title: 'Comparison pages and the Privacy Policy',

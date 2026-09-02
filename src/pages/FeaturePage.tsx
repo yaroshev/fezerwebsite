@@ -2,6 +2,7 @@ import Nav from '../components/Nav';
 import AppStoreButton from '../components/AppStoreButton';
 import BetaAccessButton from '../components/BetaAccessButton';
 import SiteFooter from '../components/SiteFooter';
+import ArenaCallout from '../components/ArenaCallout';
 import { FeaturePageContent } from '../content/features';
 import { HERO_CHIP } from '../seo/constants';
 
@@ -116,6 +117,8 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
             </div>
           </div>
         </section>
+
+        <ArenaCallout source="feature-page" />
 
         {/* Related pages */}
         <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10 py-12 sm:py-16">

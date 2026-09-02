@@ -3,17 +3,16 @@ import { Gift, X } from 'lucide-react';
 import { trackEvent } from '../seo/constants';
 import {
   PROMO_ACTIVE,
+  PROMO_DISMISS_KEY,
   PROMO_PATH,
   PROMO_TOAST,
   fetchPromoStats,
   type PromoStats,
 } from '../content/promo';
 
-const DISMISS_KEY = `fezer-promo-dismissed-${PROMO_TOAST.version}`;
-
 function isDismissed() {
   try {
-    return window.localStorage.getItem(DISMISS_KEY) === '1';
+    return window.localStorage.getItem(PROMO_DISMISS_KEY) === '1';
   } catch {
     return false; // private browsing; showing the toast is the safe failure
   }
@@ -80,7 +79,7 @@ export default function PromoToast() {
     setEntered(false);
     trackEvent('promo_toast_dismiss');
     try {
-      window.localStorage.setItem(DISMISS_KEY, '1');
+      window.localStorage.setItem(PROMO_DISMISS_KEY, '1');
     } catch {
       // Nothing to persist to; the toast simply returns on the next visit.
     }

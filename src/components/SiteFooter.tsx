@@ -4,6 +4,7 @@ import { FEATURE_PAGES } from '../content/features';
 import { COMPARISON_PAGES } from '../content/comparisons';
 import { GUIDES } from '../content/guides';
 import { PROMO_ACTIVE, PROMO_PATH } from '../content/promo';
+import { ARENA_PATH } from '../content/arena';
 import { APP_STORE_URL, PLAY_STORE_URL, trackEvent, trackStoreClick } from '../seo/constants';
 import FeedbackModal from './FeedbackModal';
 
@@ -142,6 +143,15 @@ export default function SiteFooter() {
                   <li>
                     <a href="/whats-new" className="hover:text-neutral-900 transition-colors dark:hover:text-neutral-100">
                       What’s new
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={ARENA_PATH}
+                      onClick={() => trackEvent('arena_footer_click', { link_location: 'footer-more' })}
+                      className="hover:text-neutral-900 transition-colors dark:hover:text-neutral-100"
+                    >
+                      Feature Arena
                     </a>
                   </li>
                   {PROMO_ACTIVE && (

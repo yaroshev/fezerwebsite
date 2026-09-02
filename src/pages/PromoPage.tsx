@@ -1,9 +1,11 @@
 import React from 'react';
-import { AlertCircle, ArrowLeft, Check, Gift, Loader2, MailCheck } from 'lucide-react';
+import { AlertCircle, ArrowLeft, Check, Gift, Loader2, MailCheck, Swords } from 'lucide-react';
 import Nav from '../components/Nav';
 import SiteFooter from '../components/SiteFooter';
 import { PLUS_INCLUDES, campaignParams, trackEvent } from '../seo/constants';
+import { ARENA_PATH } from '../content/arena';
 import {
+  PROMO_CLAIMED_KEY,
   PROMO_PAGE,
   PROMO_PLATFORMS,
   fetchPromoStats,
@@ -11,8 +13,6 @@ import {
   type PromoPlatformIcon,
   type PromoStats,
 } from '../content/promo';
-
-const CLAIMED_KEY = 'fezer-promo-claimed-v1';
 
 type Step = 1 | 2 | 3;
 
@@ -269,7 +269,7 @@ export default function PromoPage() {
       }
 
       try {
-        window.localStorage.setItem(CLAIMED_KEY, '1');
+        window.localStorage.setItem(PROMO_CLAIMED_KEY, '1');
       } catch {
         // Only used to keep the toast away afterwards; not worth failing over.
       }
@@ -316,7 +316,7 @@ export default function PromoPage() {
           <section aria-label="Codes remaining" className="mt-8 grid grid-cols-3 gap-3 sm:mt-10">
             <StatTile
               label="Codes left"
-              value={stats ? stats.remaining.toLocaleString() : '—'}
+              value={stats ? stats.remaining.toLocaleString() : '…'}
               muted={soldOut}
             />
             {availablePlatforms.map((entry) => {
@@ -325,7 +325,7 @@ export default function PromoPage() {
                 <StatTile
                   key={entry.id}
                   label={entry.label}
-                  value={left === null ? '—' : left.toLocaleString()}
+                  value={left === null ? '…' : left.toLocaleString()}
                   muted={left === 0}
                 />
               );
@@ -344,7 +344,7 @@ export default function PromoPage() {
                 {outcome.kind === 'already' ? (
                   <>
                     We sent one to <strong className="text-neutral-800 dark:text-neutral-200">{outcome.email}</strong>{' '}
-                    already. It is one code per email, so search your inbox for “Fezer Plus” — including
+                    already. It is one code per email, so search your inbox for “Fezer Plus”, including
                     the spam folder.
                   </>
                 ) : (
@@ -352,11 +352,22 @@ export default function PromoPage() {
                     Your code is on its way to{' '}
                     <strong className="text-neutral-800 dark:text-neutral-200">{outcome.email}</strong>. Open
                     it on your {outcome.platform === 'ios' ? 'iPhone or iPad' : 'Android phone'} and tap the
-                    redeem button — the {outcome.platform === 'ios' ? 'App Store' : 'Play Store'} fills the
+                    redeem button and the {outcome.platform === 'ios' ? 'App Store' : 'Play Store'} fills the
                     code in for you.
                   </>
                 )}
               </p>
+              {/* They have just said yes to something. This is the cheapest
+                  moment on the whole site to hand them the next thing. */}
+              <a
+                href={ARENA_PATH}
+                onClick={() => trackEvent('arena_link_click', { source: 'promo-success' })}
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-neutral-300 px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-800"
+              >
+                <Swords className="h-4 w-4 text-[#0d2b57] dark:text-blue-300" aria-hidden="true" />
+                While you are here, vote on what we build next
+              </a>
+
               <p className="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
                 Nothing after a few minutes? Check spam, then{' '}
                 <a
@@ -603,7 +614,7 @@ export default function PromoPage() {
                           Platform
                         </dt>
                         <dd className="mt-1 text-[15px] font-semibold tracking-tight text-neutral-950 dark:text-white">
-                          {chosen?.label ?? '—'}
+                          {chosen?.label ?? '…'}
                         </dd>
                       </div>
                       <button

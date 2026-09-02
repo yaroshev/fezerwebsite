@@ -64,6 +64,28 @@ export const PROMO_TOAST = {
   version: 'v2',
 };
 
+/** Set once someone has claimed a code, so the campaign stops asking. */
+export const PROMO_CLAIMED_KEY = 'fezer-promo-claimed-v1';
+export const PROMO_DISMISS_KEY = `fezer-promo-dismissed-${PROMO_TOAST.version}`;
+
+/**
+ * True when the promo has nothing left to say to this visitor -- they claimed a
+ * code, or waved the toast away. The site uses this to offer them the Feature
+ * Arena instead, rather than the same offer twice.
+ */
+export function promoSilenced(): boolean {
+  if (!PROMO_ACTIVE) return true;
+  try {
+    return (
+      window.localStorage.getItem(PROMO_CLAIMED_KEY) === '1' ||
+      window.localStorage.getItem(PROMO_DISMISS_KEY) === '1'
+    );
+  } catch {
+    // Storage blocked: assume they have seen neither.
+    return false;
+  }
+}
+
 export const PROMO_PAGE = {
   eyebrow: 'Limited promo',
   h1: 'Get Fezer Plus free for a month',
